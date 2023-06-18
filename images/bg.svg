@@ -6,7 +6,7 @@
   viewBox="0 0 1400 800"
 >
 
-  <circle cx="40" cy="0" r="5" stroke="#e6c619" fill="#e6c619">
+  <circle cx="40" cy="0" r="5" stroke="#ffc90f" fill="#ffc90f">
     <animateMotion path="M 0 0 L 0 1000" dur="33s" repeatCount="indefinite" />
   </circle>
 
@@ -14,7 +14,7 @@
     <animateMotion path="M 0 0 L 0 1000" dur="28s" repeatCount="indefinite" />
   </circle>
 
-  <circle cx="120" cy="0" r="5" stroke="#e6c619" fill="#e6c619">
+  <circle cx="120" cy="0" r="5" stroke="#ffc90f" fill="#ffc90f">
     <animateMotion path="M 0 0 L 0 1000" dur="10s" repeatCount="indefinite" />
   </circle>
 
@@ -24,7 +24,7 @@
   </circle>
 
 
-   <circle cx="200" cy="0" r="5" stroke="#e6c619" fill="#e6c619">
+   <circle cx="200" cy="0" r="5" stroke="#ffc90f" fill="#ffc90f">
     <animateMotion path="M 0 0 L 0 1000" dur="48s" repeatCount="indefinite" />
   </circle>
 
@@ -32,7 +32,7 @@
     <animateMotion path="M 0 0 L 0 1000" dur="21s" repeatCount="indefinite" />
   </circle>
 
-   <circle cx="280" cy="0" r="5" stroke="#e6c619" fill="#e6c619">
+   <circle cx="280" cy="0" r="5" stroke="#ffc90f" fill="#ffc90f">
     <animateMotion path="M 0 0 L 0 1000" dur="35s" repeatCount="indefinite" />
   </circle>
 
@@ -40,7 +40,7 @@
     <animateMotion path="M 0 0 L 0 1000" dur="32s" repeatCount="indefinite" />
   </circle>
 
-   <circle cx="360" cy="0" r="5" stroke="#e6c619" fill="#e6c619">
+   <circle cx="360" cy="0" r="5" stroke="#ffc90f" fill="#ffc90f">
     <animateMotion path="M 0 0 L 0 1000" dur="18s" repeatCount="indefinite" />
   </circle>
 
@@ -48,7 +48,7 @@
     <animateMotion path="M 0 0 L 0 1000" dur="42s" repeatCount="indefinite" />
   </circle>
 
-     <circle cx="440" cy="0" r="5" stroke="#e6c619" fill="#e6c619">
+     <circle cx="440" cy="0" r="5" stroke="#ffc90f" fill="#ffc90f">
     <animateMotion path="M 0 0 L 0 1000" dur="39s" repeatCount="indefinite" />
   </circle>
 
@@ -56,7 +56,7 @@
     <animateMotion path="M 0 0 L 0 1000" dur="17s" repeatCount="indefinite" />
   </circle>
 
-    <circle cx="520" cy="0" r="5" stroke="#e6c619" fill="#e6c619">
+    <circle cx="520" cy="0" r="5" stroke="#ffc90f" fill="#ffc90f">
     <animateMotion path="M 0 0 L 0 1000" dur="29s" repeatCount="indefinite" />
   </circle>
 
@@ -66,7 +66,7 @@
   </circle>
 
 
-   <circle cx="600" cy="0" r="5" stroke="#e6c619" fill="#e6c619">
+   <circle cx="600" cy="0" r="5" stroke="#ffc90f" fill="#ffc90f">
     <animateMotion path="M 0 0 L 0 1000" dur="40s" repeatCount="indefinite" />
   </circle>
 
@@ -74,7 +74,7 @@
     <animateMotion path="M 0 0 L 0 1000" dur="49s" repeatCount="indefinite" />
   </circle>
 
-   <circle cx="680" cy="0" r="5" stroke="#e6c619" fill="#e6c619">
+   <circle cx="680" cy="0" r="5" stroke="#ffc90f" fill="#ffc90f">
     <animateMotion path="M 0 0 L 0 1000" dur="47s" repeatCount="indefinite" />
   </circle>
 
@@ -82,7 +82,7 @@
     <animateMotion path="M 0 0 L 0 1000" dur="26s" repeatCount="indefinite" />
   </circle>
 
-   <circle cx="760" cy="0" r="5" stroke="#e6c619" fill="#e6c619">
+   <circle cx="760" cy="0" r="5" stroke="#ffc90f" fill="#ffc90f">
     <animateMotion path="M 0 0 L 0 1000" dur="43s" repeatCount="indefinite" />
   </circle>
 
@@ -90,7 +90,7 @@
     <animateMotion path="M 0 0 L 0 1000" dur="41s" repeatCount="indefinite" />
   </circle>
 
-   <circle cx="840" cy="0" r="5" stroke="#e6c619" fill="#e6c619">
+   <circle cx="840" cy="0" r="5" stroke="#ffc90f" fill="#ffc90f">
     <animateMotion path="M 0 0 L 0 1000" dur="46s" repeatCount="indefinite" />
   </circle>
 
@@ -98,7 +98,7 @@
     <animateMotion path="M 0 0 L 0 1000" dur="38s" repeatCount="indefinite" />
   </circle>
 
-    <circle cx="920" cy="0" r="5" stroke="#e6c619" fill="#e6c619">
+    <circle cx="920" cy="0" r="5" stroke="#ffc90f" fill="#ffc90f">
     <animateMotion path="M 0 0 L 0 1000" dur="23s" repeatCount="indefinite" />
   </circle>
 
@@ -108,7 +108,7 @@
   </circle>
 
 
-   <circle cx="1000" cy="0" r="5" stroke="#e6c619" fill="#e6c619">
+   <circle cx="1000" cy="0" r="5" stroke="#ffc90f" fill="#ffc90f">
     <animateMotion path="M 0 0 L 0 1000" dur="14s" repeatCount="indefinite" />
   </circle>
 
@@ -116,7 +116,7 @@
     <animateMotion path="M 0 0 L 0 1000" dur="34s" repeatCount="indefinite" />
   </circle>
 
-   <circle cx="1080" cy="0" r="5" stroke="#e6c619" fill="#e6c619">
+   <circle cx="1080" cy="0" r="5" stroke="#ffc90f" fill="#ffc90f">
     <animateMotion path="M 0 0 L 0 1000" dur="24s" repeatCount="indefinite" />
   </circle>
 
@@ -124,7 +124,7 @@
     <animateMotion path="M 0 0 L 0 1000" dur="20s" repeatCount="indefinite" />
   </circle>
 
-   <circle cx="1160" cy="0" r="5" stroke="#e6c619" fill="#e6c619">
+   <circle cx="1160" cy="0" r="5" stroke="#ffc90f" fill="#ffc90f">
     <animateMotion path="M 0 0 L 0 1000" dur="30s" repeatCount="indefinite" />
   </circle>
 
@@ -132,7 +132,7 @@
     <animateMotion path="M 0 0 L 0 1000" dur="31s" repeatCount="indefinite" />
   </circle>
 
-     <circle cx="1240" cy="0" r="5" stroke="#e6c619" fill="#e6c619">
+     <circle cx="1240" cy="0" r="5" stroke="#ffc90f" fill="#ffc90f">
     <animateMotion path="M 0 0 L 0 1000" dur="27s" repeatCount="indefinite" />
   </circle>
 
@@ -140,7 +140,7 @@
     <animateMotion path="M 0 0 L 0 1000" dur="45s" repeatCount="indefinite" />
   </circle>
 
-    <circle cx="1320" cy="0" r="5" stroke="#e6c619" fill="#e6c619">
+    <circle cx="1320" cy="0" r="5" stroke="#ffc90f" fill="#ffc90f">
     <animateMotion path="M 0 0 L 0 1000" dur="44s" repeatCount="indefinite" />
   </circle>
 
