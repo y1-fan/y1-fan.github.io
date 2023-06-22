@@ -24,6 +24,7 @@ keep-mobile()
   color: var(--text-color-2);
   font-weight: 600;
   font-size: 1.6rem;
+  margin-bottom: 25px;
 keep-tablet()
 keep-mobile()
 }
