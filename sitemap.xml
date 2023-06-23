@@ -2,7 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://y1-fan.github.io/2023/06/23/ancient-music/ancient-music-3/</loc>
+    
+    <lastmod>2023-06-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://y1-fan.github.io/2023/06/22/ancient-music/ancient-music-1/</loc>
+    
+    <lastmod>2023-06-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://y1-fan.github.io/2023/06/22/ancient-music/ancient-music-2/</loc>
     
     <lastmod>2023-06-23</lastmod>
     
@@ -14,15 +32,6 @@
     <loc>https://y1-fan.github.io/2023/06/19/latin-language-learning/latin-2/</loc>
     
     <lastmod>2023-06-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://y1-fan.github.io/2023/06/22/ancient-music/ancient-music-2/</loc>
-    
-    <lastmod>2023-06-22</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -82,6 +91,13 @@
   
   <url>
     <loc>https://y1-fan.github.io/tags/%E5%8F%A4%E4%B9%90/</loc>
+    <lastmod>2023-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://y1-fan.github.io/tags/%E5%8F%A4%E8%91%A1%E8%90%84%E7%89%99%E8%AF%AD/</loc>
     <lastmod>2023-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
