@@ -1660,7 +1660,7 @@ pre .javascript .function {
   display: flex;
   justify-content: center;
   box-sizing: border-box;
-  width: 100%;
+  width: 100% --highlight-red;
   padding: 38px 0;
 }
 @media (max-width: 800px) {
