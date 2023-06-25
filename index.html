@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="欢迎访问 y1-fan 的博客。">
+    <meta name="author" content="Yi Fan">
+    <meta name="msvalidate.01" content="9007710388DA7C23790FC73B316C2B1D" />
+    <meta name="google-site-verification" content="O0fQKhDwSjGzeBg6fUCS3GrIVLbt3Qb7uCHMIKkRGKg" />
+    
+    <title>
+        
+        y1-fan&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/font/css/brands.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"y1-fan.github.io","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#BB2649","logo":"/images/logo.png","favicon":"/images/logo.png","avatar":"/images/avatar.jpg","font_size":null,"font_family":null,"hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"header_transparent":true,"background_img":"/images/bg.svg","description":null,"font_color":null,"hitokoto":true},"scroll":{"progress_bar":false,"percent":false}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"obsidian"},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":false,"wordcount":false,"min2read":false},"img_align":"center","copyright_info":false},"version":"3.6.1"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+        
+<style>
+@import url('https://fonts.font.im/css2?&family=Noto+Serif+TC:wght@500&display=swap');
+@font-face {
+    font-family: Futura-Medium;
+    src: url('/font/Futura-Medium.woff');
+}
+</style>
+<div class="first-screen-container flex-center fade-in-down-animation">
+    <div class="content flex-center" style="
+        font-family: 'Futura-Medium','Noto Serif TC', SimSun, sans-serif;
+    ">
+        
+            <div class="description hitokoto">
+                
+                    <div class="desc-item">欢迎访问 y1-fan 的博客。</div>
+                
+            </div>
+        
+        
+            <script async >
+                (function hitokoto(){
+                    let n = 0;
+                    let sentenceList = ["Was ist ein Bild? (Gottfried Boehm, 1994)",
+                                        "Corazón malherido / por cinco espadas. (Federico García Lorca)",
+                                        "Homo sum, humani nihil a me alienum puto. (Publius Terentius Afer)",
+                                        "悠悠蒼天，此何人哉？（《王風·黍離》）",
+                                        "Nous reconnaissons les choses, nous ne les connaissons pas. (Gilles Deleuze, 1979)",
+                                        "Und jeder, wer sich vertieft in die verborgenen inneren Schätze seiner Kunst, ist ein beneidenswerter Mitarbeiter an der geistigen Pyramide, die bis zum Himmel reichen wird. (Wassily Kandinsky, 1912)"];
+                    let m = sentenceList.length - 1;
+                    let randnum = parseInt(Math.random()*(m-n+1)+n);
+                    var hitokoto = sentenceList[randnum];
+                    var dom=document.querySelector('.hitokoto');
+                    Array.isArray(dom)?dom[0].innerText=hitokoto:dom.innerText=hitokoto;
+                })()
+            </script>
+        
+        
+            <div class="s-icon-list">
+                
+                    
+                        
+                        <div class="tooltip s-icon-item "
+                             data-content="GitHub"
+                             data-name="github"
+                             
+                        >
+                            
+                                
+                                    <a target="_blank" href="https://github.com/y1-fan">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                
+                            
+                        </div>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        
+                        <div class="tooltip s-icon-item "
+                             data-content="知乎"
+                             data-name="zhihu"
+                             
+                        >
+                            
+                                
+                                    <a target="_blank" href="https://www.zhihu.com/people/shui-cao-juan">
+                                        <i class="fab fa-zhihu"></i>
+                                    </a>
+                                
+                            
+                        </div>
+                    
+                
+                    
+                
+                    
+                
+                    
+                        
+                        <div class="tooltip s-icon-item "
+                             data-content="Email"
+                             data-name="email"
+                             
+                        >
+                            
+                                <a href="mailto:yi.fan.cn@outlook.com">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            
+                        </div>
+                    
+                
+            </div>
+        
+    </div>
+</div>
+
+    
+
+    <div class="page-main-content is-home">
+
+        <div class="page-main-content-top">
+            
+<style>
+@import url('https://fonts.font.im/css2?&family=Noto+Serif+TC:wght@500&display=swap');
+@font-face {
+    font-family: Futura-Medium;
+    src: url('/font/Futura-Medium.woff');
+}
+</style>
+<header class="header-wrapper transparent-1" >
+
+    <div class="header-content has-first-screen">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/logo.png">
+                </a>
+            
+            <a class="logo-title" href="/" style="font-family: 'Futura-Medium', sans-serif;"> 
+               y1-fan&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class="active"
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tagcloud"
+                            >
+                                标签云
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="active"
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tagcloud">标签云</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="home-content-container fade-in-down-animation">
+    <ul class="home-article-list">
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/06/25/ancient-music/ancient-music-5/">
+                        古乐5：Los Set Gotxs
+                    </a>
+                </h3>
+
+                <div class="home-article-content keep-markdown-body">
+                    
+                        这首歌来自公元 1399 年的《蒙特塞拉特红皮书》（Llibre Vermell de Montserrat），是其中的第 5 首。《红皮书》中一共有 10 首歌曲，它们分别是：
+
+Song: O Virgo Splendens (fol. 21−2...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Sun Jun 25 2023 20:01:47 GMT+0800">
+                2023-06-25
+            </span>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E5%8F%A4%E4%B9%90/">古乐</a>
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E5%8A%A0%E6%B3%B0%E7%BD%97%E5%B0%BC%E4%BA%9A%E8%AF%AD/">加泰罗尼亚语</a>
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a class="read-more" href="/2023/06/25/ancient-music/ancient-music-5/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/06/25/latin-language-learning/latin-6/">
+                        拉丁语第六课：介词和连词
+                    </a>
+                </h3>
+
+                <div class="home-article-content keep-markdown-body">
+                    
+                        如何让词与词之间的关系明晰？答案是运用介词。如何让语句之间连贯起来？如何让文章层次鲜明？答案是运用连词。连词和介词在语言中扮演了非常重要的角色。
+本篇致力于总结拉丁语中各种常用的介词和连词，在后文中将不再进行介词和连词的介绍。
+词汇si conj. ...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Sun Jun 25 2023 20:00:00 GMT+0800">
+                2023-06-25
+            </span>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%8B%89%E4%B8%81%E8%AF%AD/">拉丁语</a>
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/">语言基础</a>
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a class="read-more" href="/2023/06/25/latin-language-learning/latin-6/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/06/25/latin-language-learning/latin-5/">
+                        拉丁语第五课：初识形容词与词序
+                    </a>
+                </h3>
+
+                <div class="home-article-content keep-markdown-body">
+                    
+                        一门语言如果没有形容词，那就太平淡无味了。
+形容词是用来形容或者描述名词的。在拉丁语中，要求形容词必须与其修饰的名词在性、数、格上保持一致。原则上说，每个形容词都有阳性、阴性和中性三种词尾。
+正如名词有多种变格法，形容词的变格法也有分类。这里要介绍的...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Sun Jun 25 2023 16:04:07 GMT+0800">
+                2023-06-25
+            </span>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%8B%89%E4%B8%81%E8%AF%AD/">拉丁语</a>
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/">语言基础</a>
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a class="read-more" href="/2023/06/25/latin-language-learning/latin-5/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/06/25/latin-language-learning/latin-4/">
+                        拉丁语第四课：第二变格法
+                    </a>
+                </h3>
+
+                <div class="home-article-content keep-markdown-body">
+                    
+                        在第三课中提到，第二变格法的名词的共同特点就是，其单数属格都以 -i 结尾。第二变格法又分为阳性名词和中性名词，这里先给出第二变格法的阳性名词（单数主格结尾为 -us）的变格，如下表所示：
+
+单数
+主格：词根后添加 -us。
+属格：词根后添加 -i。...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Sun Jun 25 2023 20:02:41 GMT+0800">
+                2023-06-25
+            </span>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%8B%89%E4%B8%81%E8%AF%AD/">拉丁语</a>
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/">语言基础</a>
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a class="read-more" href="/2023/06/25/latin-language-learning/latin-4/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/06/25/ancient-music/ancient-music-4/">
+                        古乐4：O Fortuna
+                    </a>
+                </h3>
+
+                <div class="home-article-content keep-markdown-body">
+                    
+                        来自 13 世纪的手稿 Carmina Burana，1803 年在巴伐利亚的本尼迪克特修道院（Benedictine monastery）被发现。其中包含由 10 世纪至 13 世纪歌利亚人创作的歌曲和六部宗教戏剧。歌词主要是拉丁文，也有一些用高地...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Sun Jun 25 2023 00:52:31 GMT+0800">
+                2023-06-25
+            </span>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%8B%89%E4%B8%81%E8%AF%AD/">拉丁语</a>
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E5%8F%A4%E4%B9%90/">古乐</a>
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a class="read-more" href="/2023/06/25/ancient-music/ancient-music-4/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/06/23/latin-language-learning/latin-3/">
+                        拉丁语第三课：初识名词变格
+                    </a>
+                </h3>
+
+                <div class="home-article-content keep-markdown-body">
+                    
+                        只有动词的句子是枯燥的，也是暴躁的（谁会喜欢一个每天用命令式说话的人呢？）。因此，学一些名词很有必要。
+名词的变化称为变格。在拉丁语中有六个格：
+
+主格。也就是主语，施动的主体。
+属格。表示一种从属关系，一般来说，就是当一个名词修饰另一个名词的时候。...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Sun Jun 25 2023 15:52:24 GMT+0800">
+                2023-06-25
+            </span>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%8B%89%E4%B8%81%E8%AF%AD/">拉丁语</a>
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/">语言基础</a>
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a class="read-more" href="/2023/06/23/latin-language-learning/latin-3/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/06/23/ancient-music/ancient-music-3/">
+                        古乐3：Santa Maria, strela do dia
+                    </a>
+                </h3>
+
+                <div class="home-article-content keep-markdown-body">
+                    
+                        这首歌曲来自 Cantigas de Santa Maria，是其中的第 100 首，即 CSM 100。Cantigas de Santa Maria 是由卡斯蒂利亚王国的国王阿方索十世在大约 1265 年编纂完成的。这是一组给圣母玛丽亚的坎蒂加（...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Fri Jun 23 2023 12:21:36 GMT+0800">
+                2023-06-23
+            </span>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E5%8F%A4%E4%B9%90/">古乐</a>
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E5%8F%A4%E8%91%A1%E8%90%84%E7%89%99%E8%AF%AD/">古葡萄牙语</a>
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a class="read-more" href="/2023/06/23/ancient-music/ancient-music-3/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/06/22/ancient-music/ancient-music-2/">
+                        古乐2：Gaudete
+                    </a>
+                </h3>
+
+                <div class="home-article-content keep-markdown-body">
+                    
+                        一首圣诞颂歌。创作于 16 世纪，于 1582 年在芬兰和瑞典的圣歌合集 Piae Cantiones 中出版。另外还有说法指出，其来源是 1420 年的捷克手稿 Jistebnický kancionál，真实性未知。
+歌词Gaudete, gau...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Fri Jun 23 2023 11:14:31 GMT+0800">
+                2023-06-23
+            </span>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%8B%89%E4%B8%81%E8%AF%AD/">拉丁语</a>
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E5%8F%A4%E4%B9%90/">古乐</a>
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a class="read-more" href="/2023/06/22/ancient-music/ancient-music-2/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/06/22/ancient-music/ancient-music-1/">
+                        古乐1：Veni, veni, Emmanuel
+                    </a>
+                </h3>
+
+                <div class="home-article-content keep-markdown-body">
+                    
+                        这首歌的旋律最早见于 John Mason Neale 和 Thomas Helmore 合著的 The Hymnal Noted（1854），但是在书中又指出，旋律源于里斯本国家图书馆中的发现。1881 年，Helmore 在一篇文章中揭示，旋律实...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Sun Jun 25 2023 03:13:13 GMT+0800">
+                2023-06-25
+            </span>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%8B%89%E4%B8%81%E8%AF%AD/">拉丁语</a>
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E5%8F%A4%E4%B9%90/">古乐</a>
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a class="read-more" href="/2023/06/22/ancient-music/ancient-music-1/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/06/19/latin-language-learning/latin-2/">
+                        拉丁语第二课：初识变位
+                    </a>
+                </h3>
+
+                <div class="home-article-content keep-markdown-body">
+                    
+                        一个动词发生变位是指，这个动词所体现的特征发生变化。举例来说，在英语中，当我们想要表达现在时的“他预定”时，会说“He books...”而不说“He book...”，这里为 book 后添加的 -s，就是动词变位的体现。
+动词的变位蕴含了大量的信...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span>
+            <i class="fas fa-history"></i>&nbsp;
+            <span class="home-article-date" data-updated="Sun Jun 25 2023 14:24:41 GMT+0800">
+                2023-06-25
+            </span>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fas fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%8B%89%E4%B8%81%E8%AF%AD/">拉丁语</a>
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/">语言基础</a>
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a class="read-more" href="/2023/06/19/latin-language-learning/latin-2/">阅读全文&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+    </ul>
+
+    <div class="home-paginator">
+        <div class="paginator">
+    
+
+    
+        <a class="next btn"
+           href="/page/2/"
+        >下一页</a>
+    
+</div>
+
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+            2023
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">Yi Fan</a>
+            
+        </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.6.1</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+        
+    </div>
+
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/code-block.js"></script>
+
+
+
+
+<div class="post-scripts">
+    
+</div>
+
+
+
+</body>
+</html>
