@@ -31,7 +31,9 @@
     KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
   </script>
-<meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -234,10 +236,10 @@
             <div class="article-content keep-markdown-body">
                 
 
-                <h3 id="rand-和-srand"><a href="#rand-和-srand" class="headerlink" title="rand() 和 srand()"></a><code>rand()</code> 和 <code>srand()</code></h3><p><code>&lt;cstdlib&gt;</code> 中提供的 <code>rand()</code> 是比较常用的生成随机数的方法。它可以通过线性同余法提供一个 [0, RAND_MAX] 中的伪随机数，类型为 <code>int</code>。</p>
+                <h3 id="rand-和-srand"><a class="markdownIt-Anchor" href="#rand-和-srand"></a> <code>rand()</code> 和 <code>srand()</code></h3>
+<p><code>&lt;cstdlib&gt;</code> 中提供的 <code>rand()</code> 是比较常用的生成随机数的方法。它可以通过线性同余法提供一个 [0, RAND_MAX] 中的伪随机数，类型为 <code>int</code>。</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">RAND_MAX</span> <span class="token expression"><span class="token number">0x7fff</span></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>根据定义，RAND_MAX 大小为 $2^{16}-1$ ，也就是说 <code>rand()</code> 生成的数字将会落在  [0, $2^{16}-1$] 这个区间内。</p>
+<p>根据定义，RAND_MAX 大小为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>16</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^{16}-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">6</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> ，也就是说 <code>rand()</code> 生成的数字将会落在  [0, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>16</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^{16}-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">6</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>] 这个区间内。</p>
 <p><code>rand()</code> 本身规则是以 1 为种子，如果在同一个程序中多次运行 <code>rand()</code>，可以得到不同的结果。不过，下一次运行程序时将会重复一模一样的序列，某种程度上，这样的随机数失去了意义。</p>
 <p>解决方法一般是用 <code>srand()</code> 为 <code>rand()</code> 进行初始化。<code>srand()</code> 接受一个无符号整型作为输入，这个值将会作为种子供 <code>rand()</code> 进行迭代。<code>srand()</code> 可以多次使用，每次使用都会让 <code>rand()</code> 使用新种子开启新一轮迭代。</p>
 <p>显然，如果 <code>srand()</code> 每次都接收到一个相同的值，那么这个初始化也就没有意义了。因此，一般使用一些会流变的特殊值进行初始化，其中最为方便的就是时间。</p>
@@ -246,9 +248,10 @@
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 使用例</span>
 <span class="token function">srand</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span><span class="token punctuation">)</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token function">srand</span><span class="token punctuation">(</span><span class="token function">GetTickCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="lt-random-gt"><a href="#lt-random-gt" class="headerlink" title="&lt;random&gt;"></a><code>&lt;random&gt;</code></h3><p>从 C++11 开始，<code>&lt;random&gt;</code> 被引入。这个库允许定义随机数生成工具，并且允许对随机数的分布进行定义。</p>
-<h4 id="均匀随机数生成器"><a href="#均匀随机数生成器" class="headerlink" title="均匀随机数生成器"></a>均匀随机数生成器</h4><p><code>&lt;random&gt;</code> 库中定义了一些均匀随机数生成器（Uniform Random Number Generator, URNG），他们被称为引擎。这些引擎可以生成范围内的均匀随机数。比较常见的有以下几个：</p>
+<h3 id="random"><a class="markdownIt-Anchor" href="#random"></a> <code>&lt;random&gt;</code></h3>
+<p>从 C++11 开始，<code>&lt;random&gt;</code> 被引入。这个库允许定义随机数生成工具，并且允许对随机数的分布进行定义。</p>
+<h4 id="均匀随机数生成器"><a class="markdownIt-Anchor" href="#均匀随机数生成器"></a> 均匀随机数生成器</h4>
+<p><code>&lt;random&gt;</code> 库中定义了一些均匀随机数生成器（Uniform Random Number Generator, URNG），他们被称为引擎。这些引擎可以生成范围内的均匀随机数。比较常见的有以下几个：</p>
 <ul>
 <li><code>mt19937</code>：应用梅森旋转算法，32 位字长。</li>
 <li><code>mt19937_64</code>：同样是梅森旋转算法，不过字长为 64 位。</li>
@@ -256,29 +259,32 @@
 <li><code>minstd_rand</code>：应用线性同余法。</li>
 <li><code>ranlux24</code>：应用 Ranlux 算法，生成字长为 24 位的随机数。</li>
 <li><code>ranlux24_base</code>：ranlux24 的基础引擎。</li>
-<li><code>ranlux48</code>&#x2F;<code>ranlux48_base</code>：同上，但生成字长为 48 位的随机数。</li>
+<li><code>ranlux48</code>/<code>ranlux48_base</code>：同上，但生成字长为 48 位的随机数。</li>
 <li><code>default_random_engine</code>：默认引擎，实际上就是调用 mt19937。</li>
 </ul>
 <p>以上这些都可以在范围内生成均匀的随机数。在使用时可以按照以下方法：</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">mt19937 <span class="token function">E</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span><span class="token punctuation">)</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 定义引擎类型，此时可以传入种子</span>
 cout <span class="token operator">&lt;&lt;</span> <span class="token function">E</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span> <span class="token comment">// 调用引擎生成随机数</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h4 id="分布类型"><a href="#分布类型" class="headerlink" title="分布类型"></a>分布类型</h4><p><code>&lt;random&gt;</code> 还允许对分布类型进行定义。常见的分布类型有：</p>
+<h4 id="分布类型"><a class="markdownIt-Anchor" href="#分布类型"></a> 分布类型</h4>
+<p><code>&lt;random&gt;</code> 还允许对分布类型进行定义。常见的分布类型有：</p>
 <ol>
-<li>均匀分布<ul>
+<li>均匀分布
+<ul>
 <li><code>uniform_int_distribution</code>：给定闭区间内生成整数的均匀分布。</li>
 <li><code>uniform_real_distribution</code>：给定左闭右开区间内生成浮点数的均匀分布。</li>
 <li><code>generate_canonical</code>：生成 [0, 1) 内均匀的浮点数分布，可以指定精度。</li>
 </ul>
 </li>
-<li>伯努利分布<ul>
+<li>伯努利分布
+<ul>
 <li><code>bernoulli_distribution</code>：生成布尔值的伯努利分布。</li>
 <li><code>binomial_distribution</code>：生成整数值的二项式分布。</li>
 <li><code>geometric_distribution</code>：生成整数值的几何分布。</li>
 <li><code>negative_binomial_distribution</code>：生成整数值的负二项式分布。</li>
 </ul>
 </li>
-<li>正态分布<ul>
+<li>正态分布
+<ul>
 <li><code>cauchy_distribution</code>：生成浮点值的柯西分布。</li>
 <li><code>chi_squared_distribution</code>：生成浮点值的卡方分布。</li>
 <li><code>fisher_f_distribution</code>：生成浮点值的 F 分布（Fisher-Snedecor 分布）。</li>
@@ -287,7 +293,8 @@ cout <span class="token operator">&lt;&lt;</span> <span class="token function">E
 <li><code>student_t_distribution</code>：生成浮点值的学生 t 分布。</li>
 </ul>
 </li>
-<li>泊松分布<ul>
+<li>泊松分布
+<ul>
 <li><code>exponential_distribution</code>：生成浮点值的指数分布。</li>
 <li><code>extreme_value_distribution</code>：生成浮点值的极值分布。</li>
 <li><code>gamma_distribution</code>：生成浮点值的伽马分布。</li>
@@ -295,7 +302,8 @@ cout <span class="token operator">&lt;&lt;</span> <span class="token function">E
 <li><code>weibull_distribution</code>：生成浮点值的韦伯分布。</li>
 </ul>
 </li>
-<li>抽样分布<ul>
+<li>抽样分布
+<ul>
 <li><code>discrete_distribution</code>：生成离散整数分布。</li>
 <li><code>piecewise_constant_distribution</code>：生成浮点值的分段常数分布。</li>
 <li><code>piecewise_linear_distribution</code>：生成浮点值的分段线性分布。</li>
@@ -307,15 +315,15 @@ cout <span class="token operator">&lt;&lt;</span> <span class="token function">E
 <span class="token comment">// 期望为 0.0，标准差为 1.0 的正态分布</span>
 normal_distribution <span class="token operator">&lt;</span><span class="token keyword">double</span><span class="token operator">></span> <span class="token function">dis</span><span class="token punctuation">(</span><span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 cout <span class="token operator">&lt;&lt;</span> <span class="token function">dis</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span> <span class="token comment">// 获取随机数时把引擎传入</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>需要注意的是，尖括号内虽然允许传递模板参数，但不能传递不同的数据类型。举例来说，<code>uniform_int_distribution</code> 后允许传入 <code>short</code>、<code>int</code>、<code>long long</code> 等整型，但不允许传入 <code>float</code>、<code>double</code> 等浮点型。</p>
-<h4 id="random-device"><a href="#random-device" class="headerlink" title="random_device"></a><code>random_device</code></h4><p><code>random_device</code> 也是一种 URNG，但是不同之处是，<code>random_device</code> 可以获取真随机数。真随机数可能来源于 Linux 维护的熵池，在 Windows 上可能来源于微软的加密 API，在没有获取真随机数的途径时，它会生成伪随机数。</p>
+<h4 id="random_device"><a class="markdownIt-Anchor" href="#random_device"></a> <code>random_device</code></h4>
+<p><code>random_device</code> 也是一种 URNG，但是不同之处是，<code>random_device</code> 可以获取真随机数。真随机数可能来源于 Linux 维护的熵池，在 Windows 上可能来源于微软的加密 API，在没有获取真随机数的途径时，它会生成伪随机数。</p>
 <p>这种方法的优点就在于其真随机性，但是弊端也很明显：较慢的获取速度，同时熵池是有限的，在无法获取真随机数时，<code>random_device</code> 改为生成伪随机数。这表明 <code>random_device</code> 是不稳定的，并不适合直接作为随机数生成器调用多次。</p>
 <p>一般来说，<code>random_device</code> 的用法是代替时间函数作为种子。用 <code>random_device</code> 生成一个真随机数，然后把这个随机数作为种子传递给其他伪随机数生成器。</p>
 <pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">random_device seed<span class="token punctuation">;</span>
 mt19937 <span class="token function">e</span><span class="token punctuation">(</span><span class="token function">seed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>一般情况下，<code>rand()</code> 配合时间函数作为种子，可以生成比较令人满意的随机数。在有特殊的对于随机数分布的要求或者是对于随机浮点数的需求时，可以调用 <code>&lt;random&gt;</code> 来实现，</p>
+<h3 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h3>
+<p>一般情况下，<code>rand()</code> 配合时间函数作为种子，可以生成比较令人满意的随机数。在有特殊的对于随机数分布的要求或者是对于随机浮点数的需求时，可以调用 <code>&lt;random&gt;</code> 来实现，</p>
 
             </div>
 
@@ -364,7 +372,7 @@ mt19937 <span class="token function">e</span><span class="token punctuation">(</
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#rand-%E5%92%8C-srand"><span class="nav-text">rand() 和 srand()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-random-gt"><span class="nav-text">&lt;random&gt;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9D%87%E5%8C%80%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90%E5%99%A8"><span class="nav-text">均匀随机数生成器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E5%B8%83%E7%B1%BB%E5%9E%8B"><span class="nav-text">分布类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#random-device"><span class="nav-text">random_device</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#rand-%E5%92%8C-srand"><span class="nav-text"> rand() 和 srand()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#random"><span class="nav-text"> &lt;random&gt;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9D%87%E5%8C%80%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90%E5%99%A8"><span class="nav-text"> 均匀随机数生成器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E5%B8%83%E7%B1%BB%E5%9E%8B"><span class="nav-text"> 分布类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#random_device"><span class="nav-text"> random_device</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text"> 总结</span></a></li></ol>
     </div>
 </div>
 
