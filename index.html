@@ -78,8 +78,7 @@
                                         "Stat rosa pristina nomine, nomina nuda tenemus. (Bernardo di Cluny)",
                                         "We live, as we dream—alone. (Joseph Conrad)"];
                     let m = sentenceList.length;
-                    let randaverage = (Math.random()+Math.random()+Math.random())/3;
-                    let randnum = Math.floor(randaverage*(m-n)+n);
+                    let randnum = Math.floor(Math.random()*(m-n)+n);
                     console.log(randnum);
                     var hitokoto = sentenceList[randnum];
                     var dom=document.querySelector('.hitokoto');
