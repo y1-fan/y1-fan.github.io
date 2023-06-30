@@ -66,16 +66,20 @@
         
             <script async >
                 (function hitokoto(){
-                    let n = 0;
+                    let n=0;
                     let sentenceList = ["Was ist ein Bild? (Gottfried Boehm)",
                                         "Corazón malherido / por cinco espadas. (Federico García Lorca)",
                                         "Homo sum, humani nihil a me alienum puto. (Publius Terentius Afer)",
                                         "悠悠蒼天，此何人哉？（《王風·黍離》）",
                                         "Nous reconnaissons les choses, nous ne les connaissons pas. (Gilles Deleuze)",
                                         "Und jeder, wer sich vertieft in die verborgenen inneren Schätze seiner Kunst, ist ein beneidenswerter Mitarbeiter an der geistigen Pyramide, die bis zum Himmel reichen wird. (Wassily Kandinsky)",
-                                        "We are ordinary men, / Bred in the dark behind the skirting-board, / Crying with hungry voices in our nest. (Dylan Thomas)"];
-                    let m = sentenceList.length - 1;
-                    let randnum = parseInt(Math.random()*(m-n+1)+n);
+                                        "We are ordinary men, / Bred in the dark behind the skirting-board, / Crying with hungry voices in our nest. (Dylan Thomas)",
+                                        "Quis custodiet ipsos custodes? (Decimus Junius Juvenalis)",
+                                        "Stat rosa pristina nomine, nomina nuda tenemus. (Bernardo di Cluny)",
+                                        "We live, as we dream—alone. (Joseph Conrad)"];
+                    let m = sentenceList.length;
+                    let randnum = Math.floor(Math.random()*(m-n)+n);
+                    console.log(randnum);
                     var hitokoto = sentenceList[randnum];
                     var dom=document.querySelector('.hitokoto');
                     Array.isArray(dom)?dom[0].innerText=hitokoto:dom.innerText=hitokoto;
