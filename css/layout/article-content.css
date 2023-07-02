@@ -133,7 +133,7 @@ keep-tablet()
 .post-page-container .article-content-container .article-nav .article-prev,
 .post-page-container .article-content-container .article-nav .article-next {
   box-sizing: border-box;
-  max-width: 12rem;
+  max-width: 11rem;
   height: 100%;
 }
 .post-page-container .article-content-container .article-nav .article-prev a,
