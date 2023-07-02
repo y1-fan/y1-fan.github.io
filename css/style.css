@@ -3145,7 +3145,7 @@ pre .javascript .function {
 .post-page-container .article-content-container .article-nav .article-prev,
 .post-page-container .article-content-container .article-nav .article-next {
   box-sizing: border-box;
-  max-width: 14rem;
+  max-width: 12rem;
   height: 100%;
   box-sizing: border-box;
   padding: 0.8rem;
