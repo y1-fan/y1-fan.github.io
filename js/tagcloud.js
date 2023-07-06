@@ -16,7 +16,7 @@ addLoadEvent(function() {
     try {
         TagCanvas.textFont = 'Helvetica';
         TagCanvas.textColour = '#a09ea2';
-        TagCanvas.textHeight = 25;
+        TagCanvas.textHeight = 35;
         TagCanvas.outlineColour = '#a09ea2';
         TagCanvas.maxSpeed = 0.03;
         TagCanvas.freezeActive = true;
