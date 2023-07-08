@@ -198,7 +198,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-07-05 21:54:19</span>
+        <span class="pc">2023-07-08 18:37:31</span>
     </span>
     
     
@@ -266,7 +266,7 @@
 <li><code>ranlux24</code>：应用 Ranlux 算法，生成字长为 24 位的随机数。</li>
 <li><code>ranlux24_base</code>：ranlux24 的基础引擎。</li>
 <li><code>ranlux48</code>/<code>ranlux48_base</code>：同上，但生成字长为 48 位的随机数。</li>
-<li><code>default_random_engine</code>：默认引擎，实际上就是调用 mt19937。</li>
+<li><code>default_random_engine</code>：默认引擎，不过不清楚实际调用了哪个引擎。（不推荐使用）</li>
 </ul>
 <p>以上这些都可以在范围内生成均匀的随机数。在使用时可以按照以下方法：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">mt19937 <span class="title">E</span><span class="params">((<span class="type">unsigned</span>)time(<span class="literal">NULL</span>))</span></span>; <span class="comment">// 定义引擎类型，此时可以传入种子</span></span><br><span class="line">cout &lt;&lt; <span class="built_in">E</span>() &lt;&lt; endl; <span class="comment">// 调用引擎生成随机数</span></span><br></pre></td></tr></table></figure>
