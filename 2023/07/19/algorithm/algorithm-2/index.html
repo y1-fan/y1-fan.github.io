@@ -12,7 +12,7 @@
     
     <title>
         
-            船歌2：The Leaving of Liverpool |
+            C++ 中 for 与 for_each 的用法 |
         
         y1-fan&#39;s Blog
     </title>
@@ -172,7 +172,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span>船歌2：The Leaving of Liverpool</span>
+                <span>C++ 中 for 与 for_each 的用法</span>
             </div>
 
             
@@ -192,13 +192,13 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-07-13 00:52:07</span>
-        <span class="mobile">2023-07-13 00:52</span>
+        <span class="pc">2023-07-19 00:55:15</span>
+        <span class="mobile">2023-07-19 00:55</span>
     </span>
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-07-13 00:57:32</span>
+        <span class="pc">2023-07-19 00:56:09</span>
     </span>
     
     
@@ -207,7 +207,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E9%9F%B3%E4%B9%90/">音乐</a>
+                        <a href="/categories/C/">C++</a>
                     </li>
                 
             </ul>
@@ -219,7 +219,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/%E8%88%B9%E6%AD%8C/">船歌</a>
+                        <a href="/tags/C/">C++</a>
                     </li>
                 
             </ul>
@@ -240,39 +240,29 @@
             <div class="article-content keep-markdown-body">
                 
 
-                <h3 id="歌词"><a class="markdownIt-Anchor" href="#歌词"></a> 歌词</h3>
-<p>Farewell to you, my own true love<br />
-I am sailing far, far away<br />
-I am bound for Californ-i-ay<br />
-But I know that I'll return someday</p>
-<p><strong>So fare thee well, my own true love<br />
-When I return united we will be<br />
-It's not the leaving of Liverpool that grieves me<br />
-But me darling when I think of thee</strong></p>
-<p>Fare thee well to Prince's Landing Stage<br />
-River Mersey fare thee well<br />
-For I'm bound for California<br />
-It's a place I know right well</p>
-<p>Well, I'm off to California<br />
-By way of the stormy Cape Horn<br />
-And I know that I will curse the day<br />
-And the hour that I was born</p>
-<p>I have signed on a Yankee clipper ship<br />
-Davy Crockett is her name<br />
-And Burgess is her Captain<br />
-And they say she's a floating hell</p>
-<p>It's my second trip with Burgess in the Crockett<br />
-And I think that I know him well<br />
-If a man is a sailor then he'll get along<br />
-But if not, why he's sure in hell</p>
-<p>Fare thee well to Lower Frederick Street<br />
-Anson Terrace and Park Lane<br />
-For I think it will be a long, long time<br />
-Before I see you again</p>
-<p>Oh, I am bound away to leave you<br />
-Goodbye, my love, goodbye<br />
-And there's but one thing that grieves my mind<br />
-And it's leaving you behind</p>
+                <h3 id="for"><a class="markdownIt-Anchor" href="#for"></a> <code>for (;;)</code></h3>
+<p><code>for</code> 语句是非常常见的重复执行语句。观察以下示例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		std::cout &lt;&lt; i &lt;&lt; std::endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>for</code> 语句有三部分，中间用分号隔开：</p>
+<ol>
+<li>第一条语句是初始化表达式，只在重复执行开始的时候在所有语句之前执行一次。</li>
+<li>第二条语句是状态表达式，只有这个表达式返回真值才会继续重复执行。</li>
+<li>第三条语句是循环表达式，在内容执行一次完毕以后执行。执行该语句后将会评估状态表达式，判断是否继续重复执行。</li>
+</ol>
+<p>这三条语句都允许为空。其中，初始化表达式和循环表达式都可以包含多个用逗号分隔的语句，例如：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>,j=<span class="number">1</span>;;i++,j++)&#123;</span><br><span class="line">	std::cout &lt;&lt; i+j &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (;;) std::cout &lt;&lt; <span class="string">&quot;Hello World!&quot;</span> &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure>
+<h3 id="for_each"><a class="markdownIt-Anchor" href="#for_each"></a> <code>for_each (,,);</code></h3>
+<p>观察以下代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    std::vector&lt;<span class="type">int</span>&gt;num;</span><br><span class="line">    num.<span class="built_in">emplace_back</span>(<span class="number">1</span>);</span><br><span class="line">    num.<span class="built_in">emplace_back</span>(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">20</span>;i++) num.<span class="built_in">emplace_back</span>(num[i<span class="number">-1</span>]+num[i<span class="number">-2</span>]);</span><br><span class="line">    std::for_each(num.<span class="built_in">begin</span>(), num.<span class="built_in">end</span>(), [](<span class="type">int</span> cnt)&#123;</span><br><span class="line">        std::cout &lt;&lt; cnt &lt;&lt; std::endl;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个程序使用 <code>for_each</code> 来输出这个构造完毕的斐波那契数列。</p>
+<p><code>for_each</code> 是基于范围的，用逗号分隔的三个区域分别指示了开始、结尾和方法，<code>for_each</code> 将对范围内的每个元素执行方法。</p>
+<h3 id="for-2"><a class="markdownIt-Anchor" href="#for-2"></a> <code>for (:)</code></h3>
+<p>这是 C++11 中引入的内容。先看一个例子：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="type">int</span> num[<span class="number">5</span>]=&#123;<span class="number">123</span>,<span class="number">234</span>,<span class="number">345</span>,<span class="number">456</span>,<span class="number">567</span>&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i:num)&#123;</span><br><span class="line">		std::cout &lt;&lt; i &lt;&lt; std::endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其结果是遍历了数组中的每个元素并且输出。这种写法同样是基于范围的，此处 <code>i</code> 是数组（或者容器）中元素的一个副本。这种写法因其实用性更好，基本代替了 <code>for_each</code>。</p>
+<p>如果需要改变数组（或者容器）中的元素，可以采用如下方式：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> &amp;i:num)&#123;</span><br><span class="line">	std::cout &lt;&lt; i &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时的 <code>i</code> 是这个数组中的元素的引用，在修改 <code>i</code> 的同时也会修改数组中的元素。</p>
 
             </div>
 
@@ -282,7 +272,7 @@ And it's leaving you behind</p>
                 <ul class="post-tags-box">
                     
                         <li class="tag-item">
-                            <a href="/tags/%E8%88%B9%E6%AD%8C/">#船歌</a>&nbsp;
+                            <a href="/tags/C/">#C++</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -291,29 +281,14 @@ And it's leaving you behind</p>
             
                 <div class="article-nav">
                     
-                        <div class="article-prev">
-                            <a class="prev"
-                               rel="prev"
-                               href="/2023/07/19/algorithm/algorithm-2/"
-                            >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                                <span class="title flex-center">
-                                <span class="post-nav-title-item">C++ 中 for 与 for_each 的用法</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                            </a>
-                        </div>
-                    
                     
                         <div class="article-next">
                             <a class="next"
                                rel="next"
-                               href="/2023/07/11/sea-shanty/sea-shanty-1/"
+                               href="/2023/07/13/sea-shanty/sea-shanty-2/"
                             >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">船歌1：Randy Dandy-O</span>
+                                <span class="post-nav-title-item">船歌2：The Leaving of Liverpool</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                                 <span class="right arrow-icon flex-center">
@@ -332,7 +307,7 @@ And it's leaving you behind</p>
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%8C%E8%AF%8D"><span class="nav-text"> 歌词</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#for"><span class="nav-text"> for (;;)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for_each"><span class="nav-text"> for_each (,,);</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for-2"><span class="nav-text"> for (:)</span></a></li></ol>
     </div>
 </div>
 
