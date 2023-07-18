@@ -27,7 +27,7 @@
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {}
     KEEP.hexo_config = {"hostname":"y1-fan.github.io","root":"/","language":"zh-CN"}
-    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#BB2649","logo":null,"favicon":null,"avatar":"/images/avatar.jpg","font_size":null,"font_family":null,"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"header_transparent":true,"background_img":"/images/bg.svg","description":null,"font_color":null,"hitokoto":true},"scroll":{"progress_bar":false,"percent":false}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"obsidian"},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":false,"wordcount":false,"min2read":false},"img_align":"center","copyright_info":false},"version":"3.6.1"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#BB2649","logo":null,"favicon":null,"avatar":"/images/avatar.jpg","font_size":null,"font_family":null,"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"header_transparent":true,"background_img":"/images/bg.svg","description":null,"font_color":null,"hitokoto":true},"scroll":{"progress_bar":false,"percent":false}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":false,"wordcount":false,"min2read":false},"img_align":"center","copyright_info":false},"version":"3.6.1"}
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
     KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
@@ -198,7 +198,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-07-19 00:56:06</span>
+        <span class="pc">2023-07-19 04:01:19</span>
     </span>
     
     
@@ -246,14 +246,18 @@
 
                 <h3 id="rand-和-srand"><a class="markdownIt-Anchor" href="#rand-和-srand"></a> <code>rand()</code> 和 <code>srand()</code></h3>
 <p><code>&lt;cstdlib&gt;</code> 中提供的 <code>rand()</code> 是比较常用的生成随机数的方法。它可以通过线性同余法提供一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mi>R</mi><mi>A</mi><mi>N</mi><mi>D</mi><mi mathvariant="normal">_</mi><mi>M</mi><mi>A</mi><mi>X</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0, RAND\_MAX]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.06em;vertical-align:-0.31em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mclose">]</span></span></span></span> 中的伪随机数，类型为 <code>int</code>。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> RAND_MAX 0x7fff</span></span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> RAND_MAX 0x7fff</span>
+</code></pre>
 <p>根据定义，<code>RAND_MAX</code> 大小为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mn>16</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^{16}-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">6</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> ，也就是说 <code>rand()</code> 生成的数字将会落在  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><msup><mn>2</mn><mn>16</mn></msup><mo>−</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0, 2^{16}-1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">6</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span> 这个区间内。</p>
 <p><code>rand()</code> 本身规则是以 1 为种子，如果在同一个程序中多次运行 <code>rand()</code>，可以得到不同的结果。不过，下一次运行程序时将会重复一模一样的序列，某种程度上，这样的随机数失去了意义。</p>
 <p>解决方法一般是用 <code>srand()</code> 为 <code>rand()</code> 进行初始化。<code>srand()</code> 接受一个无符号整型作为输入，这个值将会作为种子供 <code>rand()</code> 进行迭代。<code>srand()</code> 可以多次使用，每次使用都会让 <code>rand()</code> 使用新种子开启新一轮迭代。</p>
 <p>显然，如果 <code>srand()</code> 每次都接收到一个相同的值，那么这个初始化也就没有意义了。因此，一般使用一些会流变的特殊值进行初始化，其中最为方便的就是时间。</p>
 <p><code>&lt;ctime&gt;</code> 中提供了 <code>time()</code>，它可以获取自 1970 年 1 月 1 日以来经过的秒数，类型为 <code>time_t</code>，是一个整型。这个函数可以返回一个值，允许直接把返回值赋给 <code>int</code> 类型。同时，函数也允许提供一个类型为 <code>time_t</code> 的指针作为参数，返回值会写入指针地址。这个参数允许空指针。需要注意的是，由于 <code>srand()</code> 接受的是一个无符号整型，所以在使用时应该进行类型转换。</p>
 <p>另一种方法借助于 <code>&lt;windows.h&gt;</code> 中提供的 <code>GetTickCount()</code> 函数，它返回自系统启动以来经过的毫秒数，类型为 <code>DWORD</code>。该类型本身就是一个无符号整型，可以直接传递给 <code>srand()</code>。这种方法的好处是精度更高（毫秒级），可以一定程度上避免并行时获取到相同种子。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用例</span></span><br><span class="line"><span class="built_in">srand</span>((<span class="type">unsigned</span>)<span class="built_in">time</span>(<span class="literal">NULL</span>));</span><br><span class="line"><span class="built_in">srand</span>(<span class="built_in">GetTickCount</span>());</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="c++"><span class="hljs-comment">// 使用例</span>
+srand((<span class="hljs-keyword">unsigned</span>)time(<span class="hljs-literal">NULL</span>));
+srand(GetTickCount());
+</code></pre>
 <h3 id="random"><a class="markdownIt-Anchor" href="#random"></a> <code>&lt;random&gt;</code></h3>
 <p>从 C++11 开始，<code>&lt;random&gt;</code> 被引入。这个库允许定义随机数生成工具，并且允许对随机数的分布进行定义。</p>
 <h4 id="均匀随机数生成器"><a class="markdownIt-Anchor" href="#均匀随机数生成器"></a> 均匀随机数生成器</h4>
@@ -269,7 +273,9 @@
 <li><code>default_random_engine</code>：默认引擎，不过不清楚实际调用了哪个引擎。（不推荐使用）</li>
 </ul>
 <p>以上这些都可以在范围内生成均匀的随机数。在使用时可以按照以下方法：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">mt19937 <span class="title">E</span><span class="params">((<span class="type">unsigned</span>)time(<span class="literal">NULL</span>))</span></span>; <span class="comment">// 定义引擎类型，此时可以传入种子</span></span><br><span class="line">cout &lt;&lt; <span class="built_in">E</span>() &lt;&lt; endl; <span class="comment">// 调用引擎生成随机数</span></span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="c++"><span class="hljs-function">mt19937 <span class="hljs-title">E</span><span class="hljs-params">((<span class="hljs-keyword">unsigned</span>)time(<span class="hljs-literal">NULL</span>))</span></span>; <span class="hljs-comment">// 定义引擎类型，此时可以传入种子</span>
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; E() &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 调用引擎生成随机数</span>
+</code></pre>
 <h4 id="分布类型"><a class="markdownIt-Anchor" href="#分布类型"></a> 分布类型</h4>
 <p><code>&lt;random&gt;</code> 还允许对分布类型进行定义。常见的分布类型有：</p>
 <ol>
@@ -316,13 +322,21 @@
 </li>
 </ol>
 <p>不同的分布方法允许不同的传入参数，举例来说，<code>normal_distribution</code> 允许传入两个参数，前者为期望，后者为标准差。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mt19937 e;</span><br><span class="line">normal_distribution &lt;<span class="type">double</span>&gt; <span class="built_in">dis</span>(<span class="number">0.0</span>, <span class="number">1.0</span>);<span class="comment">// 期望为 0.0，标准差为 1.0 的正态分布</span></span><br><span class="line">cout &lt;&lt; <span class="built_in">dis</span>(e) &lt;&lt; endl; <span class="comment">// 获取随机数时把引擎传入</span></span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="c++">mt19937 e;
+normal_distribution &lt;<span class="hljs-keyword">double</span>&gt; dis(<span class="hljs-number">0.0</span>, <span class="hljs-number">1.0</span>);<span class="hljs-comment">// 期望为 0.0，标准差为 1.0 的正态分布</span>
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; dis(e) &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 获取随机数时把引擎传入</span>
+</code></pre>
 <p>需要注意的是，尖括号内虽然允许传递模板参数，但不能传递不同的数据类型。举例来说，<code>uniform_int_distribution</code> 后允许传入 <code>short</code>、<code>int</code>、<code>long long</code> 等整型，但不允许传入 <code>float</code>、<code>double</code> 等浮点型。</p>
 <h4 id="random_device"><a class="markdownIt-Anchor" href="#random_device"></a> <code>random_device</code></h4>
 <p><code>random_device</code> 也是一种 URNG，但是不同之处是，<code>random_device</code> 可以获取真随机数。真随机数可能来源于 Linux 维护的熵池，在 Windows 上可能来源于微软的加密 API，在没有获取真随机数的途径时，它会生成伪随机数。</p>
 <p>这种方法的优点就在于其真随机性，但是弊端也很明显：较慢的获取速度，同时熵池是有限的，在无法获取真随机数时，<code>random_device</code> 改为生成伪随机数。这表明 <code>random_device</code> 是不稳定的，并不适合直接作为随机数生成器调用多次。</p>
 <p>一般来说，<code>random_device</code> 的用法是代替时间函数作为种子。用 <code>random_device</code> 生成一个真随机数，然后把这个随机数作为种子传递给其他伪随机数生成器。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用例</span></span><br><span class="line">random_device seed;</span><br><span class="line"><span class="function">mt19937 <span class="title">e</span><span class="params">(seed())</span></span>;</span><br><span class="line">uniform_int_distribution &lt;<span class="type">int</span>&gt; <span class="built_in">dis</span>(<span class="number">10</span>, <span class="number">20</span>);</span><br><span class="line">cout &lt;&lt; <span class="built_in">dis</span>(e) &lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="c++"><span class="hljs-comment">// 使用例</span>
+random_device seed;
+<span class="hljs-function">mt19937 <span class="hljs-title">e</span><span class="hljs-params">(seed())</span></span>;
+uniform_int_distribution &lt;<span class="hljs-keyword">int</span>&gt; dis(<span class="hljs-number">10</span>, <span class="hljs-number">20</span>);
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; dis(e) &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+</code></pre>
 <h3 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h3>
 <p>一般情况下，<code>rand()</code> 配合时间函数作为种子，可以生成比较令人满意的随机数。在有特殊的对于随机数分布的要求或者是对于随机浮点数的需求时，可以调用 <code>&lt;random&gt;</code> 来实现。</p>
 
@@ -494,7 +508,11 @@
     
 
 </main>
-
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/dark.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+<script>
+  hljs.highlightAll();
+</script>
 
 
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/dark-light-toggle.js"></script>
@@ -503,8 +521,6 @@
 
 
 
-
-    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/code-block.js"></script>
 
 
 

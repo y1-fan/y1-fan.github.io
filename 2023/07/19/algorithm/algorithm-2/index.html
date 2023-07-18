@@ -27,7 +27,7 @@
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {}
     KEEP.hexo_config = {"hostname":"y1-fan.github.io","root":"/","language":"zh-CN"}
-    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#BB2649","logo":null,"favicon":null,"avatar":"/images/avatar.jpg","font_size":null,"font_family":null,"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"header_transparent":true,"background_img":"/images/bg.svg","description":null,"font_color":null,"hitokoto":true},"scroll":{"progress_bar":false,"percent":false}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"obsidian"},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":false,"wordcount":false,"min2read":false},"img_align":"center","copyright_info":false},"version":"3.6.1"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#BB2649","logo":null,"favicon":null,"avatar":"/images/avatar.jpg","font_size":null,"font_family":null,"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"header_transparent":true,"background_img":"/images/bg.svg","description":null,"font_color":null,"hitokoto":true},"scroll":{"progress_bar":false,"percent":false}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block":{},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.8"},"waline":{"server_url":null,"reaction":false,"version":2}},"post":{"author_label":{"enable":false,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"enable":false,"wordcount":false,"min2read":false},"img_align":"center","copyright_info":false},"version":"3.6.1"}
     KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
     KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
     KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
@@ -198,7 +198,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-07-19 00:56:09</span>
+        <span class="pc">2023-07-19 02:13:50</span>
     </span>
     
     
@@ -242,7 +242,16 @@
 
                 <h3 id="for"><a class="markdownIt-Anchor" href="#for"></a> <code>for (;;)</code></h3>
 <p><code>for</code> 语句是非常常见的重复执行语句。观察以下示例：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		std::cout &lt;&lt; i &lt;&lt; std::endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">int</span> n;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;
+    <span class="hljs-built_in">cin</span> &gt;&gt; n;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++)&#123;
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+    &#125;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;
+</code></pre>
 <p><code>for</code> 语句有三部分，中间用分号隔开：</p>
 <ol>
 <li>第一条语句是初始化表达式，只在重复执行开始的时候在所有语句之前执行一次。</li>
@@ -250,18 +259,46 @@
 <li>第三条语句是循环表达式，在内容执行一次完毕以后执行。执行该语句后将会评估状态表达式，判断是否继续重复执行。</li>
 </ol>
 <p>这三条语句都允许为空。其中，初始化表达式和循环表达式都可以包含多个用逗号分隔的语句，例如：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>,j=<span class="number">1</span>;;i++,j++)&#123;</span><br><span class="line">	std::cout &lt;&lt; i+j &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (;;) std::cout &lt;&lt; <span class="string">&quot;Hello World!&quot;</span> &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure>
-<h3 id="for_each"><a class="markdownIt-Anchor" href="#for_each"></a> <code>for_each (,,);</code></h3>
+<pre class="highlight"><code class="c++"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>,j=<span class="hljs-number">1</span>;;i++,j++)&#123;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; i+j &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+&#125;
+<span class="hljs-keyword">for</span> (;;) <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Hello World!"</span> &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+</code></pre>
+<h3 id="for_each"><a class="markdownIt-Anchor" href="#for_each"></a> <code>for_each</code></h3>
 <p>观察以下代码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    std::vector&lt;<span class="type">int</span>&gt;num;</span><br><span class="line">    num.<span class="built_in">emplace_back</span>(<span class="number">1</span>);</span><br><span class="line">    num.<span class="built_in">emplace_back</span>(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">20</span>;i++) num.<span class="built_in">emplace_back</span>(num[i<span class="number">-1</span>]+num[i<span class="number">-2</span>]);</span><br><span class="line">    std::for_each(num.<span class="built_in">begin</span>(), num.<span class="built_in">end</span>(), [](<span class="type">int</span> cnt)&#123;</span><br><span class="line">        std::cout &lt;&lt; cnt &lt;&lt; std::endl;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;vector&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;algorithm&gt;</span></span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;num;
+    num.emplace_back(<span class="hljs-number">1</span>);
+    num.emplace_back(<span class="hljs-number">1</span>);
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>;i&lt;=<span class="hljs-number">20</span>;i++) num.emplace_back(num[i<span class="hljs-number">-1</span>]+num[i<span class="hljs-number">-2</span>]);
+    <span class="hljs-built_in">std</span>::for_each(num.<span class="hljs-built_in">begin</span>(), num.<span class="hljs-built_in">end</span>(), [](<span class="hljs-keyword">int</span> cnt)&#123;
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; cnt &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+    &#125;);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;
+</code></pre>
 <p>这个程序使用 <code>for_each</code> 来输出这个构造完毕的斐波那契数列。</p>
 <p><code>for_each</code> 是基于范围的，用逗号分隔的三个区域分别指示了开始、结尾和方法，<code>for_each</code> 将对范围内的每个元素执行方法。</p>
 <h3 id="for-2"><a class="markdownIt-Anchor" href="#for-2"></a> <code>for (:)</code></h3>
 <p>这是 C++11 中引入的内容。先看一个例子：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="type">int</span> num[<span class="number">5</span>]=&#123;<span class="number">123</span>,<span class="number">234</span>,<span class="number">345</span>,<span class="number">456</span>,<span class="number">567</span>&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i:num)&#123;</span><br><span class="line">		std::cout &lt;&lt; i &lt;&lt; std::endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">int</span> num[<span class="hljs-number">5</span>]=&#123;<span class="hljs-number">123</span>,<span class="hljs-number">234</span>,<span class="hljs-number">345</span>,<span class="hljs-number">456</span>,<span class="hljs-number">567</span>&#125;;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i:num)&#123;
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+    &#125;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;
+</code></pre>
 <p>其结果是遍历了数组中的每个元素并且输出。这种写法同样是基于范围的，此处 <code>i</code> 是数组（或者容器）中元素的一个副本。这种写法因其实用性更好，基本代替了 <code>for_each</code>。</p>
 <p>如果需要改变数组（或者容器）中的元素，可以采用如下方式：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> &amp;i:num)&#123;</span><br><span class="line">	std::cout &lt;&lt; i &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="highlight"><code class="c++"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> &amp;i:num)&#123;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+&#125;
+</code></pre>
 <p>此时的 <code>i</code> 是这个数组中的元素的引用，在修改 <code>i</code> 的同时也会修改数组中的元素。</p>
 
             </div>
@@ -307,7 +344,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#for"><span class="nav-text"> for (;;)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for_each"><span class="nav-text"> for_each (,,);</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for-2"><span class="nav-text"> for (:)</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#for"><span class="nav-text"> for (;;)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for_each"><span class="nav-text"> for_each</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for-2"><span class="nav-text"> for (:)</span></a></li></ol>
     </div>
 </div>
 
@@ -413,7 +450,11 @@
     
 
 </main>
-
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/dark.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+<script>
+  hljs.highlightAll();
+</script>
 
 
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/dark-light-toggle.js"></script>
@@ -422,8 +463,6 @@
 
 
 
-
-    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.6.1/source/js/code-block.js"></script>
 
 
 

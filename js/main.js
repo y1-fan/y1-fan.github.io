@@ -55,15 +55,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (local_search?.enable === true) {
       KEEP.initLocalSearch()
     }
-
-    if (
-      code_block?.tools?.enable === true ||
-      code_block?.enable === true ||
-      code_copy?.enable === true
-    ) {
-      KEEP.initCodeBlockTools()
-    }
-
+    
     if (lazyload?.enable === true) {
       KEEP.initLazyLoad()
     }
