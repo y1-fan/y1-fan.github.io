@@ -198,7 +198,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-07-19 18:51:54</span>
+        <span class="pc">2023-07-19 19:01:03</span>
     </span>
     
     
@@ -250,7 +250,7 @@
 <p>RMQ 问题，即区间最值问题（Range Minimum/Maximum Query），一般表现为多次询问一个区间中的最值。</p>
 <p>传统做法来说，是在每次询问的时候对这个区间进行扫描，复杂度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo>×</mo><mi>M</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N \times M)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mclose">)</span></span></span></span>，其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span></span> 为区间长度，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span></span></span></span> 为询问次数。显然，对于稍大一些的区间，这种算法是力不从心的。</p>
 <p>分析以后可以发现，在上面这个算法中，每次询问都做了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 次比较，但是这个结果并没有被记录，因而做了许多重复的工作，这说明存在优化空间。线段树就提供了一种节约比较次数的方式。</p>
-<p>线段树解决 RMQ 问题的原理可以简单阐述为”区间的最值是其任意一个划分中所有子集最值的最值“。在线段树算法中，一般把区间均分为两个。</p>
+<p>线段树解决 RMQ 问题的原理可以简单阐述为“区间的最值是其任意一个划分中所有子集最值的最值”。在线段树算法中，一般把区间均分为两个。</p>
 <p>简单起见，一般可以先找一个能够覆盖整个区间的 2 的幂，作为树的根节点，代表整个区间的最值。根节点有左右两个子节点，分别代表整个区间的左半和右半。如图所示层层划分，最终所有的叶节点均代表区间中的单个元素。</p>
 <p><img src="segment_tree.png" alt="segment_tree" /></p>
 <p>显而易见的，只需要在初始化遍历整个区间时不断向上维护这颗树，使得每个节点都保存对应区间的最大值，就可以用更快的方式搜索。</p>
