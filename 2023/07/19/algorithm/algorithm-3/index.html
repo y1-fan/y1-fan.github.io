@@ -12,7 +12,7 @@
     
     <title>
         
-            C++ 中 for 与 for_each 的用法 |
+            线段树与区间树算法详解（C++ 实现）（更新中） |
         
         y1-fan&#39;s Blog
     </title>
@@ -172,7 +172,7 @@
         <div class="article-content-container">
 
             <div class="article-title">
-                <span>C++ 中 for 与 for_each 的用法</span>
+                <span>线段树与区间树算法详解（C++ 实现）（更新中）</span>
             </div>
 
             
@@ -192,13 +192,13 @@
         
             <i class="fa-regular fa-calendar-plus"></i>&nbsp;
         
-        <span class="pc">2023-07-19 00:55:15</span>
-        <span class="mobile">2023-07-19 00:55</span>
+        <span class="pc">2023-07-19 17:19:21</span>
+        <span class="mobile">2023-07-19 17:19</span>
     </span>
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-07-19 14:20:20</span>
+        <span class="pc">2023-07-19 17:22:39</span>
     </span>
     
     
@@ -222,6 +222,10 @@
                         <a href="/tags/C/">C++</a>
                     </li>
                 
+                    <li>
+                        | <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+                    </li>
+                
             </ul>
         </span>
     
@@ -240,67 +244,65 @@
             <div class="article-content keep-markdown-body">
                 
 
-                <h3 id="for"><a class="markdownIt-Anchor" href="#for"></a> <code>for (;;)</code></h3>
-<p><code>for</code> 语句是非常常见的重复执行语句。观察以下示例：</p>
-<pre class="highlight"><code class="c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span>
-<span class="hljs-keyword">int</span> n;
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;
-    <span class="hljs-built_in">cin</span> &gt;&gt; n;
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++)&#123;
-        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
-    &#125;
-    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-&#125;
-</code></pre>
-<p><code>for</code> 语句有三部分，中间用分号隔开：</p>
+                <p>线段树（Segment Tree）和区间树（Interval Tree）是常常被搞混的两种算法，这里将对两种算法进行介绍。</p>
+<h3 id="线段树"><a class="markdownIt-Anchor" href="#线段树"></a> 线段树</h3>
+<h4 id="rmq-问题"><a class="markdownIt-Anchor" href="#rmq-问题"></a> RMQ 问题</h4>
+<p>RMQ 问题，即区间最值问题（Range Minimum/Maximum Query），一般表现为多次询问一个区间中的最值。</p>
+<p>传统做法来说，是在每次询问的时候对这个区间进行扫描，复杂度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo>×</mo><mi>M</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N \times M)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mclose">)</span></span></span></span>，其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span></span> 为区间长度，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span></span></span></span> 为询问次数。显然，对于稍大一些的区间，这种算法是力不从心的。</p>
+<p>分析以后可以发现，在上面这个算法中，每次询问都做了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 次比较，但是这个结果并没有被记录，因而做了许多重复的工作，这说明存在优化空间。线段树就提供了一种节约比较次数的方式。</p>
+<p>线段树解决 RMQ 问题的原理可以简单阐述为”区间的最值是其任意一个划分中所有子集最值的最值“，不过在线段树中一般把区间均分为两个。</p>
+<p>简单起见，一般可以先找一个能够覆盖整个区间的 2 的幂，作为树的根节点，代表整个区间的最值。根节点有左右两个子节点，分别代表整个区间的左半和右半。如图所示层层划分，最终所有的叶节点均代表区间中的单个元素。</p>
+<p><img src="segment_tree.png" alt="segment_tree" /></p>
+<p>显而易见的，只需要在初始化遍历整个区间时不断向上维护这颗树，使得每个节点都保存对应区间的最大值，就可以用更快的方式搜索。</p>
+<p>搜索的时候会有三种状况：</p>
 <ol>
-<li>第一条语句是初始化表达式，只在重复执行开始的时候在所有语句之前执行一次。</li>
-<li>第二条语句是状态表达式，只有这个表达式返回真值才会继续重复执行。</li>
-<li>第三条语句是循环表达式，在内容执行一次完毕以后执行。执行该语句后将会评估状态表达式，判断是否继续重复执行。</li>
+<li>节点对应区间全部洛在所询问区间内，那么直接返回节点对应的值。</li>
+<li>节点对应区间有一部分落在所询问区间内，那么就返回一个大值（或者小值）。</li>
+<li>节点对应区间只有一部分落在所询问区间内，那么继续搜索它的两个子节点，然后返回两个子节点的较大值（较小值）。</li>
 </ol>
-<p>这三条语句都允许为空。其中，初始化表达式和循环表达式都可以包含多个用逗号分隔的语句，例如：</p>
-<pre class="highlight"><code class="c++"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>,j=<span class="hljs-number">1</span>;;i++,j++)&#123;
-    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; i+j &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
-&#125;
-<span class="hljs-keyword">for</span> (;;) <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">"Hello World!"</span> &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
-<span class="hljs-comment">// 实现效果为不断循环输出 Hello World!</span>
-</code></pre>
-<h3 id="for_each"><a class="markdownIt-Anchor" href="#for_each"></a> <code>for_each</code></h3>
-<p>观察以下代码：</p>
+<p>由于算法本身的性质，每一层中选取的节点数至多不超过一个，因而每次查询的操作次数至多不超过 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>L</mi><mo stretchy="false">(</mo><mi>L</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac{L(L+1)}{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.355em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.01em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.485em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">L</span><span class="mopen mtight">(</span><span class="mord mathdefault mtight">L</span><span class="mbin mtight">+</span><span class="mord mtight">1</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>，其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">L</span></span></span></span> 为层数，因而这个算法的效率可以达到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>M</mi><mi>log</mi><mo>⁡</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(M\log{N})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span><span class="mclose">)</span></span></span></span>。</p>
+<p>下面是具体实现。因为使用数组很方便，所以这里用数组来实现线段树。</p>
 <pre class="highlight"><code class="c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;vector&gt;</span></span>
 <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;algorithm&gt;</span></span>
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;
-    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;num;
-    num.emplace_back(<span class="hljs-number">1</span>);
-    num.emplace_back(<span class="hljs-number">1</span>);
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>;i&lt;=<span class="hljs-number">20</span>;i++) num.emplace_back(num[i<span class="hljs-number">-1</span>]+num[i<span class="hljs-number">-2</span>]);
-    <span class="hljs-built_in">std</span>::for_each(num.<span class="hljs-built_in">begin</span>(), num.<span class="hljs-built_in">end</span>(), [](<span class="hljs-keyword">int</span> cnt)&#123;
-        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; cnt &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
-    &#125;);
-    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MAXN 1&lt;&lt;17</span>
+<span class="hljs-keyword">int</span> n, m, seg[<span class="hljs-number">2</span>*MAXN<span class="hljs-number">-1</span>];
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">int</span> node, <span class="hljs-keyword">int</span> val)</span></span>&#123;
+    node += n<span class="hljs-number">-1</span>;
+    seg[node] = val;
+    <span class="hljs-keyword">while</span> (node)&#123;
+        node = (node<span class="hljs-number">-1</span>)/<span class="hljs-number">2</span>;
+        seg[node]=<span class="hljs-built_in">std</span>::<span class="hljs-built_in">min</span>(seg[node*<span class="hljs-number">2</span>+<span class="hljs-number">1</span>],seg[node*<span class="hljs-number">2</span>+<span class="hljs-number">2</span>]);
+    &#125;
 &#125;
-</code></pre>
-<p>这个程序使用 <code>for_each</code> 来输出这个构造完毕的斐波那契数列。</p>
-<p><code>for_each</code> 是基于范围的，用逗号分隔的三个区域分别指示了开始、结尾和方法，<code>for_each</code> 将对范围内的每个元素执行方法。</p>
-<h3 id="for-2"><a class="markdownIt-Anchor" href="#for-2"></a> <code>for (:)</code></h3>
-<p>这是 C++11 中引入的内容。先看一个例子：</p>
-<pre class="highlight"><code class="c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span>
-<span class="hljs-keyword">int</span> num[<span class="hljs-number">5</span>]=&#123;<span class="hljs-number">123</span>,<span class="hljs-number">234</span>,<span class="hljs-number">345</span>,<span class="hljs-number">456</span>,<span class="hljs-number">567</span>&#125;;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">query</span><span class="hljs-params">(<span class="hljs-keyword">int</span> start, <span class="hljs-keyword">int</span> <span class="hljs-built_in">end</span>, <span class="hljs-keyword">int</span> node, <span class="hljs-keyword">int</span> L, <span class="hljs-keyword">int</span> R)</span></span>&#123;
+    <span class="hljs-keyword">if</span> (R &lt; start || <span class="hljs-built_in">end</span> &lt; L) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>&lt;&lt;<span class="hljs-number">30</span>;
+    <span class="hljs-keyword">if</span> (start &lt;= L &amp;&amp; R &lt;= <span class="hljs-built_in">end</span>) <span class="hljs-keyword">return</span> seg[node];
+    <span class="hljs-keyword">else</span> &#123;
+        <span class="hljs-keyword">int</span> valL = query(start, <span class="hljs-built_in">end</span>, node*<span class="hljs-number">2</span>+<span class="hljs-number">1</span>, L, (L+R)/<span class="hljs-number">2</span>);
+        <span class="hljs-keyword">int</span> valR = query(start, <span class="hljs-built_in">end</span>, node*<span class="hljs-number">2</span>+<span class="hljs-number">2</span>, (L+R)/<span class="hljs-number">2</span>+<span class="hljs-number">1</span>, R);
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">min</span>(valL,valR);
+    &#125;
+&#125;
 <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i:num)&#123;
-        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span> &gt;&gt; n;
+    <span class="hljs-keyword">int</span> num=<span class="hljs-number">1</span>;
+    <span class="hljs-keyword">while</span> (num &lt; n) num*=<span class="hljs-number">2</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;num*<span class="hljs-number">2</span><span class="hljs-number">-1</span>;i++) 
+        seg[i]=<span class="hljs-number">1</span>&lt;&lt;<span class="hljs-number">30</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;
+        <span class="hljs-keyword">int</span> value=<span class="hljs-number">0</span>;
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span> &gt;&gt; value;
+        add(i,value);
+    &#125;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span>&gt;&gt;m;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=m;i++)&#123;
+        <span class="hljs-keyword">int</span> L = <span class="hljs-number">0</span>, R = <span class="hljs-number">0</span>;
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cin</span> &gt;&gt; L &gt;&gt; R;
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; query(L, R, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, num<span class="hljs-number">-1</span>) &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
     &#125;
     <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
 &#125;
 </code></pre>
-<p>其结果是遍历了数组中的每个元素并且输出。这种写法同样是基于范围的，此处 <code>i</code> 是数组（或者容器）中元素的一个副本。这种写法因其实用性更好，基本代替了 <code>for_each</code>。</p>
-<p>如果需要改变数组（或者容器）中的元素，可以采用如下方式：</p>
-<pre class="highlight"><code class="c++"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> &amp;i:num)&#123;
-    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
-&#125;
-</code></pre>
-<p>此时的 <code>i</code> 是这个数组中的元素的引用，在修改 <code>i</code> 的同时也会修改数组中的元素。</p>
 
             </div>
 
@@ -313,35 +315,24 @@
                             <a href="/tags/C/">#C++</a>&nbsp;
                         </li>
                     
+                        <li class="tag-item">
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">#算法</a>&nbsp;
+                        </li>
+                    
                 </ul>
             
 
             
                 <div class="article-nav">
                     
-                        <div class="article-prev">
-                            <a class="prev"
-                               rel="prev"
-                               href="/2023/07/19/algorithm/algorithm-3/"
-                            >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                                <span class="title flex-center">
-                                <span class="post-nav-title-item">线段树与区间树算法详解（C++ 实现）（更新中）</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                            </a>
-                        </div>
-                    
                     
                         <div class="article-next">
                             <a class="next"
                                rel="next"
-                               href="/2023/07/13/sea-shanty/sea-shanty-2/"
+                               href="/2023/07/19/algorithm/algorithm-2/"
                             >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">船歌2：The Leaving of Liverpool</span>
+                                <span class="post-nav-title-item">C++ 中 for 与 for_each 的用法</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                                 <span class="right arrow-icon flex-center">
@@ -360,7 +351,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#for"><span class="nav-text"> for (;;)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for_each"><span class="nav-text"> for_each</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for-2"><span class="nav-text"> for (:)</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%AE%B5%E6%A0%91"><span class="nav-text"> 线段树</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#rmq-%E9%97%AE%E9%A2%98"><span class="nav-text"> RMQ 问题</span></a></li></ol></li></ol>
     </div>
 </div>
 
