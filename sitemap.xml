@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://y1-fan.github.io/2023/06/23/latin-language-learning/latin-3/</loc>
+    <loc>https://y1-fan.github.io/2023/06/19/latin-language-learning/latin-2/</loc>
     
     <lastmod>2023-07-20</lastmod>
     
@@ -47,7 +47,16 @@
   </url>
   
   <url>
-    <loc>https://y1-fan.github.io/2023/06/19/latin-language-learning/latin-2/</loc>
+    <loc>https://y1-fan.github.io/2023/06/23/latin-language-learning/latin-3/</loc>
+    
+    <lastmod>2023-07-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://y1-fan.github.io/2023/07/20/old-english-language-learning/old-english-1/</loc>
     
     <lastmod>2023-07-20</lastmod>
     
@@ -301,13 +310,6 @@
   </url>
   
   <url>
-    <loc>https://y1-fan.github.io/tags/%E5%8F%A4%E6%96%87%E5%AD%97%E5%AD%A6/</loc>
-    <lastmod>2023-07-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://y1-fan.github.io/tags/%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2023-07-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -343,6 +345,13 @@
   </url>
   
   <url>
+    <loc>https://y1-fan.github.io/tags/%E8%88%B9%E6%AD%8C/</loc>
+    <lastmod>2023-07-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://y1-fan.github.io/tags/%E7%BF%BB%E8%AF%91/</loc>
     <lastmod>2023-07-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -350,7 +359,7 @@
   </url>
   
   <url>
-    <loc>https://y1-fan.github.io/tags/%E8%88%B9%E6%AD%8C/</loc>
+    <loc>https://y1-fan.github.io/tags/%E5%8F%A4%E6%96%87%E5%AD%97%E5%AD%A6/</loc>
     <lastmod>2023-07-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -373,7 +382,7 @@
   </url>
   
   <url>
-    <loc>https://y1-fan.github.io/categories/%E5%8F%A4%E6%96%87%E5%AD%97%E5%AD%A6/</loc>
+    <loc>https://y1-fan.github.io/categories/%E8%AF%AD%E8%A8%80/</loc>
     <lastmod>2023-07-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -381,6 +390,13 @@
   
   <url>
     <loc>https://y1-fan.github.io/categories/%E7%BF%BB%E8%AF%91/</loc>
+    <lastmod>2023-07-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://y1-fan.github.io/categories/%E5%8F%A4%E6%96%87%E5%AD%97%E5%AD%A6/</loc>
     <lastmod>2023-07-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
