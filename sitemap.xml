@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://y1-fan.github.io/about/index.html</loc>
+    
+    <lastmod>2023-12-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://y1-fan.github.io/2023/12/20/mathematics/algebra/</loc>
     
     <lastmod>2023-12-20</lastmod>
@@ -174,15 +183,6 @@
   
   <url>
     <loc>https://y1-fan.github.io/2023/07/13/sea-shanty/sea-shanty-2/</loc>
-    
-    <lastmod>2023-07-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://y1-fan.github.io/about/index.html</loc>
     
     <lastmod>2023-07-18</lastmod>
     
@@ -441,14 +441,14 @@
   </url>
   
   <url>
-    <loc>https://y1-fan.github.io/tags/Steam/</loc>
+    <loc>https://y1-fan.github.io/tags/%E7%BF%BB%E8%AF%91/</loc>
     <lastmod>2023-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://y1-fan.github.io/tags/%E7%BF%BB%E8%AF%91/</loc>
+    <loc>https://y1-fan.github.io/tags/Steam/</loc>
     <lastmod>2023-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
