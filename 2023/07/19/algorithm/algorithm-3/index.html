@@ -198,7 +198,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2023-12-18 19:54:17</span>
+        <span class="pc">2023-12-21 09:16:03</span>
     </span>
     
     
@@ -292,7 +292,7 @@
     <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
 &#125;
 </code></pre>
-<h3 id="区间染色问题"><a class="markdownIt-Anchor" href="#区间染色问题"></a> 区间染色问题</h3>
+<h4 id="区间染色问题"><a class="markdownIt-Anchor" href="#区间染色问题"></a> 区间染色问题</h4>
 <p>区间染色问题通常具有这样一种形式，即每个元素都具有某个性质，而一次操作则是对某个区间内所有元素的性质进行一次改变。之后的询问一般是询问某个区间有多少种性质。</p>
 <p>显然经典的模拟方法时间复杂度还是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo>×</mo><mi>M</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N \times M)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mclose">)</span></span></span></span>，其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span></span></span></span> 是区间长度，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span></span></span></span> 是操作和询问次数。这时候可以思考，某一次操作的时候，我能不能直接标记一段区间，表示这段区间都有这个性质，而不用修改区间内每个元素呢？分析发现，在询问的时候，如果知道某个区间内都有某个性质，那么也就可以直接跳过这个区间，不必扫描每个元素了。这样一来，时间复杂度必定大大优化。</p>
 <p>于是自然而然就想到线段树或者是并查集。这两者都可以解决这个问题，不过这里主要讲线段树。</p>
@@ -403,7 +403,7 @@
             <div class="toc-content-container">
                 <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%AE%B5%E6%A0%91"><span class="nav-text"> 线段树</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#rmq-%E9%97%AE%E9%A2%98"><span class="nav-text"> RMQ 问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BA%E9%97%B4%E6%9F%93%E8%89%B2%E9%97%AE%E9%A2%98"><span class="nav-text"> 区间染色问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BA%E9%97%B4%E6%A0%91"><span class="nav-text"> 区间树</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%AE%B5%E6%A0%91"><span class="nav-text"> 线段树</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#rmq-%E9%97%AE%E9%A2%98"><span class="nav-text"> RMQ 问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8C%BA%E9%97%B4%E6%9F%93%E8%89%B2%E9%97%AE%E9%A2%98"><span class="nav-text"> 区间染色问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BA%E9%97%B4%E6%A0%91"><span class="nav-text"> 区间树</span></a></li></ol>
     </div>
 </div>
 
