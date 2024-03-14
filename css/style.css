@@ -3801,33 +3801,7 @@ figure.highlight .shrink-line:hover::before {
   box-sizing: border-box;
   max-width: 14rem;
   height: 100%;
-  box-sizing: border-box;
-  margin-bottom: 0;
-  padding: 0.8rem;
-  background: var(--content-background-color);
-  border-radius: var(--box-border-radius);
-  box-shadow: 0 0 8px var(--shadow-color);
   border-radius: 0.32rem;
-}
-.post-page-container .post-content-container .post-content-bottom .post-nav .prev-post:hover,
-.post-page-container .post-content-container .post-content-bottom .post-nav .next-post:hover {
-  box-shadow: 0 0 12px var(--shadow-hover-color);
-}
-@media (max-width: 800px) {
-  .post-page-container .post-content-container .post-content-bottom .post-nav .prev-post,
-  .post-page-container .post-content-container .post-content-bottom .post-nav .next-post {
-    margin-bottom: 0;
-    padding: 0.64rem;
-    border-radius: calc(var(--box-border-radius) * 0.8);
-  }
-}
-@media (max-width: 500px) {
-  .post-page-container .post-content-container .post-content-bottom .post-nav .prev-post,
-  .post-page-container .post-content-container .post-content-bottom .post-nav .next-post {
-    margin-bottom: 0;
-    padding: 0.48rem;
-    border-radius: calc(var(--box-border-radius) * 0.6);
-  }
 }
 .post-page-container .post-content-container .post-content-bottom .post-nav .prev-post a,
 .post-page-container .post-content-container .post-content-bottom .post-nav .next-post a {
