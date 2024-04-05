@@ -203,7 +203,7 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Fri Apr 05 2024 18:40:23 GMT+0800">2024-04-05 18:40:23</span>
+                <span class="datetime" data-updated="Fri Apr 05 2024 18:45:18 GMT+0800">2024-04-05 18:45:18</span>
             </span>
         
 
@@ -254,9 +254,8 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Position</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="type">double</span> x,y;</span><br><span class="line">&#125;pos;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">annealing</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="type">double</span> T = <span class="number">1000</span>; <span class="comment">// 初始温度</span></span><br><span class="line">	<span class="keyword">while</span> (T &gt; <span class="number">0.001</span>)&#123; <span class="comment">// 终止温度</span></span><br><span class="line">		Position nxt = <span class="built_in">next</span>(); <span class="comment">// 函数 next 随机获取一个位置</span></span><br><span class="line">		<span class="type">double</span> delta = <span class="built_in">abs</span>(nxt.y - pos.y) </span><br><span class="line">		<span class="keyword">if</span> (nxt.y &gt; pos.y) pos = nxt;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">if</span> (<span class="built_in">exp</span>(-delta / T) &gt; ((<span class="type">double</span>)<span class="built_in">rand</span>()/RAND_MAX) pos = nxt</span><br><span class="line">		&#125;</span><br><span class="line">		T *= <span class="number">0.97</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="小生境方法"><a class="markdownIt-Anchor" href="#小生境方法"></a> 小生境方法</h3>
 <p>并非一定要模拟退火才可以优化爬山算法，实际上，我们也可以找来一群人爬山。</p>
-<p>小生境方法通过构造一个种群，让位置均匀地散布于全局，最终结果是数百或是上千个初始位置通过爬山算法聚集于许多个峰顶，最终找到真正的全局最大值。</p>
-<p>这种方法的问题在于，当种群个体数目太多时，可能会导致运算速度的下降。因此，在采用这种方法时，如果在数次爬山算法之后采用聚类对攀登同座山峰的个体进行“组队”，将其看作一个个体，就可以大大节省计算时间。</p>
-<p>当然，在模拟退火算法中也可以同时采用小生境方法。</p>
+<p>小生境方法通过构造一个种群，让位置均匀地散布于全局，最终结果是大量初始位置通过爬山算法聚集于少数个峰顶，最终找到真正的全局最大值。不过这种方法的问题在于，当种群个体数目太多时，可能会导致运算速度的下降，因此，种群的大小的选择是需要考虑的问题。</p>
+<p>在模拟退火算法中也可以同时采用小生境方法。</p>
 
                 </div>
 
