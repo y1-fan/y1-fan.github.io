@@ -6,7 +6,7 @@
   <link href="https://y1-fan.github.io/atom.xml" rel="self"/>
   
   <link href="https://y1-fan.github.io/"/>
-  <updated>2024-04-08T03:09:51.408Z</updated>
+  <updated>2024-04-18T12:21:23.132Z</updated>
   <id>https://y1-fan.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>lean-0</title>
+    <link href="https://y1-fan.github.io/2024/04/14/lean/lean-0/"/>
+    <id>https://y1-fan.github.io/2024/04/14/lean/lean-0/</id>
+    <published>2024-04-14T14:42:08.000Z</published>
+    <updated>2024-04-18T12:21:23.132Z</updated>
+    
+    <content type="html"><![CDATA[<div id="paper"></div><script>    abcjs.renderAbc("paper", "X:1\nK:D\nDD AA|BBA2|\n");</script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;div id=&quot;paper&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+    abcjs.renderAbc(&quot;paper&quot;, &quot;X:1&#92;nK:D&#92;nDD AA|BBA2|&#92;n&quot;);
+&lt;/script&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>从爬山算法到模拟退火（C++）</title>
@@ -194,9 +218,9 @@
     
     
     
-    <category term="古乐" scheme="https://y1-fan.github.io/tags/%E5%8F%A4%E4%B9%90/"/>
-    
     <category term="拉丁语" scheme="https://y1-fan.github.io/tags/%E6%8B%89%E4%B8%81%E8%AF%AD/"/>
+    
+    <category term="古乐" scheme="https://y1-fan.github.io/tags/%E5%8F%A4%E4%B9%90/"/>
     
   </entry>
   
@@ -342,9 +366,9 @@
     
     
     
-    <category term="古乐" scheme="https://y1-fan.github.io/tags/%E5%8F%A4%E4%B9%90/"/>
-    
     <category term="拉丁语" scheme="https://y1-fan.github.io/tags/%E6%8B%89%E4%B8%81%E8%AF%AD/"/>
+    
+    <category term="古乐" scheme="https://y1-fan.github.io/tags/%E5%8F%A4%E4%B9%90/"/>
     
   </entry>
   
@@ -399,9 +423,9 @@
     
     
     
-    <category term="古乐" scheme="https://y1-fan.github.io/tags/%E5%8F%A4%E4%B9%90/"/>
-    
     <category term="拉丁语" scheme="https://y1-fan.github.io/tags/%E6%8B%89%E4%B8%81%E8%AF%AD/"/>
+    
+    <category term="古乐" scheme="https://y1-fan.github.io/tags/%E5%8F%A4%E4%B9%90/"/>
     
   </entry>
   
@@ -505,31 +529,6 @@
     <category term="C++" scheme="https://y1-fan.github.io/tags/C/"/>
     
     <category term="算法" scheme="https://y1-fan.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>古乐5：Los Set Gotxs</title>
-    <link href="https://y1-fan.github.io/2023/06/25/ancient-music/ancient-music-5/"/>
-    <id>https://y1-fan.github.io/2023/06/25/ancient-music/ancient-music-5/</id>
-    <published>2023-06-25T11:40:32.000Z</published>
-    <updated>2024-02-17T15:57:00.838Z</updated>
-    
-    <content type="html"><![CDATA[<p>公元 880 年，人们在蒙特塞拉特山上的一个洞穴里发现了圣母木像。据说这雕像是圣路加雕刻而成，由圣彼得带到西班牙，并在摩尔人占领的时候隐藏在了洞穴中。这个雕像一经发现就受到了许多朝圣者的崇敬。公元 945 年，已经有文件证明此时有修道院在蒙特塞拉特成立。</p><p>公元 1025 年，里波尔（Ripoll）修道院院长奥利巴（Oliba）创立了蒙特塞拉特修道院，而后渐渐名气越来越大。<a href="https://y1-fan.github.io/2023/06/23/ancient-music/ancient-music-3/">《圣母玛丽亚坎蒂加》</a>等歌集的流传，更是让这所修道院声名远播。</p><p>公元 1811-12 年，在拿破仑战争期间，蒙特塞拉特修道院遭到严重破坏，大量的典籍和抄本被付之一炬。幸运的是，有一部抄本因为出借给一位巴塞罗那学者研究而幸运地保存了下来，也就是这本《红皮书》。</p><p>这部完成于 1399 年的具有重大历史意义的抄本《红皮书》最初共有 172 张对开羊皮纸，其中 35 张后来丢失了。它的主要内容包括布道、神学论著、修道院的特权、修道院所依赖的兄弟会的章程，以及蒙特塞拉特圣母代祷时所发生的奇迹的记述集。然而，最重要的是记录在第 21 到第 27 张对开纸上的 10 首献给圣母的歌曲，以供前来修道院朝拜圣母的朝圣者唱歌跳舞时使用。据说原来记录的歌曲总数更多（可能有 14 首），一部分已经丢失了。这 10 首歌曲的作者没有署名，现在也无法考证出来。</p><p>在第一和第二首歌曲中间，《红皮书》的抄写者给出了一段描述歌曲功用的详细明晰的指示：</p><blockquote><p>因为朝圣者，在教堂中为蒙特塞拉特的圣母守夜时，有时会有唱歌跳舞的欲望，甚至白天也想在教堂广场上（这里只能唱高尚和虔诚的歌曲）做这些事，所以写作出来一些合适的歌曲以供这种需求。应当以崇敬和谦逊的方式使用它们，以防打扰那些希望继续祈祷和进行宗教沉思的人们，顺便提及一下，在晚祷中每个人都应当虔诚地将自己奉献给祈祷和沉思。</p></blockquote><p>几页之后，他还建议：“蒙特塞拉特的朝圣者应以拘谨的方式说话，在去圣龛的路上、在圣龛前和回家的路上应避免轻浮的歌曲和猥亵的舞蹈。”</p><p>修道院要接待大量前来朝拜的人。为了禁止人们在院子里甚至在圣龛前进行各种无关宗教的歌舞活动，又不用驱离他们或在别处建造新的修道院，蒙特塞拉特的修士们组织歌舞活动来赞美圣母。他们保留了一定的流行曲调和节奏，提供卡农、叠句和应答部分，既容易唱，也容易记，还可以随之起舞。这些歌曲原先的世俗歌词被替换成赞美圣母玛利亚的诗文，即所谓的换词歌（contrafacta）。他们还增加了新的诗歌和音乐形式供礼拜仪式和准礼拜仪式使用。</p><p>Los Set Gotxs 是其中的第 5 首。《红皮书》中一共有 10 首歌曲，它们分别是：</p><ol><li>Song: O Virgo Splendens (fol. 21−22v) (&quot;O Splendid Virgin&quot;) 童贞女灿烂地照耀</li><li>Virelai/danse: Stella Splendens (fol. 22r) (&quot;Splendid Star&quot;) 闪亮的星星照耀</li><li>Song: Laudemus Virginem (fol. 23) (&quot;Let us praise the Virgin&quot;) 让我们赞美童贞女</li><li>Song: Splendens Ceptigera (fol. 23) (&quot;Splendid ruler&quot;) 闪耀的君主</li><li>Ballad/danse: Los Set Gotxs (fol. 23v) (&quot;The seven joys&quot;) 七喜乐</li><li>Virelai: Cuncti Simus Concanentes (fol. 24) (&quot;Let us sing together&quot;) 让我们一起歌唱</li><li>Virelai/danse: Polorum Regina (fol. 24v) (&quot;Queen of the Poles&quot;) 女王围绕</li><li>Virelai: Mariam, Matrem Virginem, Attolite (fol. 25r) (&quot;Praise Mary, the virgin mother&quot;) 玛丽亚，童贞女母亲</li><li>Motet: Imperayritz de la ciutat joyosa / Verges ses par misericordiosa (fol. 25v) (&quot;Empress of the happy city&quot; / &quot;Virgin, out of mercy&quot;) 欢乐之城的女皇/出于怜悯的童贞女</li><li>Virelai: Ad Mortem Festinamus (fol. 26v) (&quot;We hasten towards death&quot;) 我们奔向死亡</li></ol><p>这首 Los Set Gotxs 是用加泰罗尼亚语写就的，是一首舞蹈歌曲，也是现存最早的加泰罗尼亚语歌曲。歌词来自一首关于“圣母七喜乐”的流行的叙事诗。叙事者在第一段介绍自己，然后讲述耶稣诞生、三王来拜、耶稣复活、圣灵降临、圣母升天，最后为一段对圣母的祷告，请求她接受我们的赎罪，从今起帮助我们过上更好的生活。</p><p>2021 年 12 月 3 日，西班牙巴塞罗那圣家族大教堂圣母塔封顶亮星，大教堂官方 Youtube 账号发布视频 <a class="link"   href="https://www.youtube.com/watch?v=gMgi94iOqhY" >Un nou estel està a punt de brillar a la ciutat de Barcelona<i class="fas fa-external-link-alt"></i></a>，音乐家们演奏这曲 Los Set Gotxs 献给圣母玛丽亚。</p><p><img   src="Los_Set_Gotxs.png"  alt="Los Set Gotxs" ></p><h3 id="歌词"><a class="markdownIt-Anchor" href="#歌词"></a> 歌词</h3><p>Los set gotxs recomptarem et devotament xantant<br />humilment saludarem la dolça verge Maria.</p><p>Ave Maria gracia plena Dominus tecum Virgo serena.</p><p>Verge fos anans del part pura e sans falliment<br />en lo part e prés lo part sens negun corrumpiment.<br />Lo Fill de Déus Verge pia de vós nasque verament.</p><p>Verge tres reys d'Orient cavalcant amb gran corage<br />al l'estrella precedent vengren al vostré bitage.<br />Offerint vos de gradatge Aur et mirre et encenç.</p><p>Verge estant dolorosa per la mort del Fill molt car<br />romangues tota joyosa can lo vis resuscitar.<br />A vos madre piadosa prima se volch demostrar.</p><p>Verge lo quint alegratge que'n agues del fill molt car<br />estant al munt d'olivatge Al cell l'on vehes puyar.<br />On aurem tots alegratge Si per nos vos plau pregar.</p><p>Verge quan foren complitz los dies de pentecosta<br />Ab vos eren aunits los apostols et de costa.<br />Sobre tots sens nuylla costa devallà l'espirit sant.</p><p>Verge'l derrer alegratge que'n agues en aquest mon<br />vostre Fill ab coratge vos munta al cel pregon.</p><p>On sots tots temps coronada regina perpetual.</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;公元 880 年，人们在蒙特塞拉特山上的一个洞穴里发现了圣母木像。据说这雕像是圣路加雕刻而成，由圣彼得带到西班牙，并在摩尔人占领的时候隐藏在了洞穴中。这个雕像一经发现就受到了许多朝圣者的崇敬。公元 945 年，已经有文件证明此时有修道院在蒙特塞拉特成立。&lt;/p&gt;
-&lt;p&gt;公元</summary>
-      
-    
-    
-    
-    
-    <category term="古乐" scheme="https://y1-fan.github.io/tags/%E5%8F%A4%E4%B9%90/"/>
-    
-    <category term="加泰罗尼亚语" scheme="https://y1-fan.github.io/tags/%E5%8A%A0%E6%B3%B0%E7%BD%97%E5%B0%BC%E4%BA%9A%E8%AF%AD/"/>
     
   </entry>
   
