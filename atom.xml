@@ -6,7 +6,7 @@
   <link href="https://y1-fan.github.io/atom.xml" rel="self"/>
   
   <link href="https://y1-fan.github.io/"/>
-  <updated>2024-04-08T03:09:51.408Z</updated>
+  <updated>2024-05-13T13:11:04.832Z</updated>
   <id>https://y1-fan.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>古乐11：Ai vist lo lop</title>
+    <link href="https://y1-fan.github.io/2024/05/13/ancient-music/ancient-music-11/"/>
+    <id>https://y1-fan.github.io/2024/05/13/ancient-music/ancient-music-11/</id>
+    <published>2024-05-13T12:45:10.000Z</published>
+    <updated>2024-05-13T13:11:04.832Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是流行于南法地区的一首民歌，语言为奥克语（准确地说是奥克语普罗旺斯方言）。其历史可以追溯到 13 世纪。</p><h3 id="歌词"><a class="markdownIt-Anchor" href="#歌词"></a> 歌词</h3><p>Ai vist lo lop, lo rainard, la lèbre<br />我看到了那狼、那狐、那野兔<br />Ai vist lo lop, lo rainard dançar<br />我看到了那狼、那狐在舞蹈<br />Totei tres fasián lo torn de l'aubre<br />那三者全都在围着树跳舞<br />Ai vist lo lop, lo rainard, la lèbre<br />我看到了那狼、那狐、那野兔<br />Totei tres fasián lo torn de l'aubre<br />那三者全都在围着树跳舞<br />Fasián lo torn dau boisson folhat<br />围绕着新绿的灌丛</p><p>Aquí trimam tota l'annada<br />这里的一年满是工作<br />per se ganhar quauquei sòus<br />只是为了赚一点钱<br />Rèn que dins una mesada<br />整整一月无所见……<br />Ai vist lo lop, lo rainard, la lèbre<br />我看到了那狼、那狐、那野兔<br />Nos i fotèm tot pel cuol<br />钱成了他妈的“屁股债”<br />Ai vist la lèbre, lo rainard, lo lop<br />我看到了那野兔、那狐、那狼</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;这是流行于南法地区的一首民歌，语言为奥克语（准确地说是奥克语普罗旺斯方言）。其历史可以追溯到 13 世纪。&lt;/p&gt;
+&lt;h3 id=&quot;歌词&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#歌词&quot;&gt;&lt;/a&gt; 歌词&lt;/h3&gt;
+&lt;p&gt;Ai vist lo </summary>
+      
+    
+    
+    
+    
+    <category term="古乐" scheme="https://y1-fan.github.io/tags/%E5%8F%A4%E4%B9%90/"/>
+    
+    <category term="奥克语" scheme="https://y1-fan.github.io/tags/%E5%A5%A5%E5%85%8B%E8%AF%AD/"/>
+    
+  </entry>
   
   <entry>
     <title>从爬山算法到模拟退火（C++）</title>
@@ -504,30 +530,6 @@
     <category term="古乐" scheme="https://y1-fan.github.io/tags/%E5%8F%A4%E4%B9%90/"/>
     
     <category term="加泰罗尼亚语" scheme="https://y1-fan.github.io/tags/%E5%8A%A0%E6%B3%B0%E7%BD%97%E5%B0%BC%E4%BA%9A%E8%AF%AD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>古乐4：O Fortuna</title>
-    <link href="https://y1-fan.github.io/2023/06/25/ancient-music/ancient-music-4/"/>
-    <id>https://y1-fan.github.io/2023/06/25/ancient-music/ancient-music-4/</id>
-    <published>2023-06-24T16:33:43.000Z</published>
-    <updated>2024-02-17T15:57:04.164Z</updated>
-    
-    <content type="html"><![CDATA[<p>来自 13 世纪的手稿 Carmina Burana，1803 年在巴伐利亚的本尼迪克特修道院（Benedictine monastery）被发现。其中包含由 10 世纪至 13 世纪歌利亚人创作的歌曲和六部宗教戏剧。歌词主要是拉丁文，也有一些用高地德语或古法语写就。Carl Orff 为 Carmina Burana 中一些诗歌谱写了旋律，O Fortuna 作为其中的第一首，与开头脍炙人口的旋律段落一起，被人们所熟知。</p><p>这首歌曲的主题是“命运”。诗歌中感叹了命运无常和世事变幻。</p><h3 id="歌词"><a class="markdownIt-Anchor" href="#歌词"></a> 歌词</h3><p>O Fortuna,<br />velut Luna<br />statu variabilis,<br />semper crescis<br />aut decrescis;<br />vita detestabilis<br />nunc obdurat<br />et tunc curat<br />ludo mentis aciem,<br />egestatem,<br />potestatem<br />dissolvit ut glaciem.</p><p>Sors immanis<br />et inanis,<br />rota tu volubilis,<br />status malus,<br />vana salus<br />semper dissolubilis,<br />obumbrata<br />et velata<br />michi quoque niteris;<br />nunc per ludum<br />dorsum nudum<br />fero tui sceleris.</p><p>Sors salutis<br />et virtutis<br />michi nunc contraria<br />est affectus<br />et defectus<br />semper in angaria.<br />Hac in hora<br />sine mora<br />corde pulsum tangite;<br />quod per sortem<br />sternit fortem,<br />mecum omnes plangite!</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;来自 13 世纪的手稿 Carmina Burana，1803 年在巴伐利亚的本尼迪克特修道院（Benedictine monastery）被发现。其中包含由 10 世纪至 13 世纪歌利亚人创作的歌曲和六部宗教戏剧。歌词主要是拉丁文，也有一些用高地德语或古法语写就。Car</summary>
-      
-    
-    
-    
-    
-    <category term="拉丁语" scheme="https://y1-fan.github.io/tags/%E6%8B%89%E4%B8%81%E8%AF%AD/"/>
-    
-    <category term="古乐" scheme="https://y1-fan.github.io/tags/%E5%8F%A4%E4%B9%90/"/>
     
   </entry>
   
