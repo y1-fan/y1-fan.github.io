@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://y1-fan.github.io/2024/05/20/bci/bci-2/</loc>
+    <loc>https://y1-fan.github.io/2024/05/20/bci/bci-1/</loc>
     
     <lastmod>2024-05-21</lastmod>
     
@@ -11,9 +11,9 @@
   </url>
   
   <url>
-    <loc>https://y1-fan.github.io/2024/05/20/bci/bci-1/</loc>
+    <loc>https://y1-fan.github.io/2024/05/20/bci/bci-2/</loc>
     
-    <lastmod>2024-05-20</lastmod>
+    <lastmod>2024-05-21</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -323,14 +323,14 @@
   </url>
   
   <url>
-    <loc>https://y1-fan.github.io/tags/%E5%8A%A0%E6%B3%B0%E7%BD%97%E5%B0%BC%E4%BA%9A%E8%AF%AD/</loc>
+    <loc>https://y1-fan.github.io/tags/%E5%8F%A4%E8%8B%B1%E8%AF%AD/</loc>
     <lastmod>2024-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://y1-fan.github.io/tags/%E5%8F%A4%E8%8B%B1%E8%AF%AD/</loc>
+    <loc>https://y1-fan.github.io/tags/%E5%8A%A0%E6%B3%B0%E7%BD%97%E5%B0%BC%E4%BA%9A%E8%AF%AD/</loc>
     <lastmod>2024-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -372,7 +372,7 @@
   </url>
   
   <url>
-    <loc>https://y1-fan.github.io/tags/%E8%88%B9%E6%AD%8C/</loc>
+    <loc>https://y1-fan.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</loc>
     <lastmod>2024-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -400,7 +400,7 @@
   </url>
   
   <url>
-    <loc>https://y1-fan.github.io/tags/%E6%B8%B8%E6%88%8F/</loc>
+    <loc>https://y1-fan.github.io/tags/%E8%88%B9%E6%AD%8C/</loc>
     <lastmod>2024-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -414,7 +414,7 @@
   </url>
   
   <url>
-    <loc>https://y1-fan.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</loc>
+    <loc>https://y1-fan.github.io/tags/%E6%B8%B8%E6%88%8F/</loc>
     <lastmod>2024-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
