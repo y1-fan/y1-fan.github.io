@@ -326,13 +326,6 @@
 
   
   <url>
-    <loc>https://y1-fan.github.io/tags/%E5%8F%A4%E6%B1%89%E8%AF%AD/</loc>
-    <lastmod>2024-08-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://y1-fan.github.io/tags/C/</loc>
     <lastmod>2024-08-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -389,6 +382,13 @@
   </url>
   
   <url>
+    <loc>https://y1-fan.github.io/tags/%E5%8F%A4%E6%B1%89%E8%AF%AD/</loc>
+    <lastmod>2024-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://y1-fan.github.io/tags/%E8%84%91%E6%9C%BA%E6%8E%A5%E5%8F%A3/</loc>
     <lastmod>2024-08-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -403,13 +403,6 @@
   </url>
   
   <url>
-    <loc>https://y1-fan.github.io/tags/%E5%8F%A4%E6%96%87%E5%AD%97%E5%AD%A6/</loc>
-    <lastmod>2024-08-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://y1-fan.github.io/tags/%E6%95%B0%E5%AD%A6/</loc>
     <lastmod>2024-08-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -417,14 +410,21 @@
   </url>
   
   <url>
-    <loc>https://y1-fan.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</loc>
+    <loc>https://y1-fan.github.io/tags/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/</loc>
     <lastmod>2024-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://y1-fan.github.io/tags/%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/</loc>
+    <loc>https://y1-fan.github.io/tags/%E5%8F%A4%E6%96%87%E5%AD%97%E5%AD%A6/</loc>
+    <lastmod>2024-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://y1-fan.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</loc>
     <lastmod>2024-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
