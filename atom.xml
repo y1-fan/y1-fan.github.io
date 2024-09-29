@@ -6,7 +6,7 @@
   <link href="https://y1-fan.github.io/atom.xml" rel="self"/>
   
   <link href="https://y1-fan.github.io/"/>
-  <updated>2024-09-29T11:06:33.387Z</updated>
+  <updated>2024-09-29T11:16:00.703Z</updated>
   <id>https://y1-fan.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://y1-fan.github.io/2024/09/28/latin-paleography/latin-paleography-practice-1/"/>
     <id>https://y1-fan.github.io/2024/09/28/latin-paleography/latin-paleography-practice-1/</id>
     <published>2024-09-28T13:50:07.000Z</published>
-    <updated>2024-09-29T11:06:33.387Z</updated>
+    <updated>2024-09-29T11:16:00.703Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="square-capitals"><a class="markdownIt-Anchor" href="#square-capitals"></a> Square Capitals</h3><p>尽管以 Square Capitals 书写的字母相当容易辨认，但在开始之前还是必须先阅读经过总结的 Square Capitals 的字母表：</p><p><img   src="square-capitals-standard.jpg"  alt="Square Capitals" ></p><p>如我们所见，这份字母表没有 J、K、U、W，这是因为直到 11 世纪才出现了 J、U、W，同时 C 经常替代 K，所以这份字母表只需要图中这些字母就足够了。可以看到，它的边缘通常比较平直，带有衬线，没有非常特殊的写法。总体来说，Square Capitals 非常易于辨认，因此转录这些字母不是难事。</p><p>对于这些早期文本来说，难处在于 scriptio continua，即连写字，这意味着单词与单词之间没有空格或者标点，这意味着将 Square Capitals 转录为可以阅读的手稿，需要在掌握拉丁语之后才可进行。即便如此，我依然保留一个转录 Square Capitals 的实例。</p><p>原始手稿：<a class="link"   href="https://www.e-codices.unifr.ch/de/csg/1394/12" >St. Gallen, Stiftsbibliothek, Cod. Sang. 1394, p. 12.<i class="fas fa-external-link-alt"></i></a></p><p><img   src="square-capitals-practice.jpg"  alt="St. Gallen, Stiftsbibliothek, Cod. Sang. 1394, p. 12." ></p><p>借此说明一下转录手稿的基本规则：</p><ol><li>对于 scriptio continua，转录时要按照单词添加空格。</li><li>抄写员如果在行尾使用连字符，要保留；如果单词断开但没有连字符，需要在行末添加 (-)。</li><li>将手稿的每一行转录为单独的一行。</li><li>不要纠正抄写员的拼写、用词、文法。</li><li>无论抄写员使用什么书体，都不要使用大写。大写仅在抄写员有意突出某个单词（比如圣名等）时使用。</li><li>不要使用现代标点。使用可用的符号尽可能复制抄写员的标点符号。</li><li>在抄写员使用缩写时，比如上面例子中，抄写员在 Q 后标了一个点，这意味着这是 -que 的缩写，在转录时要将其展开，其中没有出现的字符要用小括号，例如此处这个词转录为 tetidemq(ue)。</li><li>如果抄写员进行了删改，那么就需要用中括号包括所有与删改有关的字符。中括号中还有一个斜杠，斜杠左侧为修改前的字符，斜杠右侧为修改后的字符，修改前字符如果无法辨认可以留空。例如，单词 domini 首字母被修改，但无法辨认修改前的字母，则可以转录为 [/d]omini。</li><li>抄写员在行内插入内容，用 / \。</li><li>抄写员在行间插入内容，用 \ /。</li><li>抄写员在页面空白处插入内容，用 \\ //。</li><li>难以辨认的字母用 [[]]。如上面的例子中，首行的 E 之前隐约有一个字母的痕迹但是无法辨认，所以就转录为 [[*]]。注意星号个数必须和你所看到的无法辨认的字母个数一致。如果你觉得可以辨认只是不太确定，那么可以在 [[]] 中间写上你所认为的字母。</li></ol><h3 id="rustic-capitals"><a class="markdownIt-Anchor" href="#rustic-capitals"></a> Rustic Capitals</h3><p><img   src="rustic-capitals-standard.jpg"  alt="Rustic Capitals" ></p><p>很容易发现 Rustic Capitals 呈现出一种书写的质感而不是铭刻的质感。图中的 S 从原来的一气呵成变成了三笔写成，E 和 F 的最上面的横有了一些弧度，A、M 和 N 向右下方的一笔也不是那么平直了。横向宽度遭到了压缩，总体来说，字体不那么僵硬。</p><p><a class="link"   href="https://www.e-codices.unifr.ch/en/searchresult/list/one/csg/0112" >St. Gallen, Stiftsbibliothek, Cod. Sang. 112<i class="fas fa-external-link-alt"></i></a></p><p><img   src="rustic-capitals-practice.jpg"  alt="St. Gallen, Stiftsbibliothek, Cod. Sang. 112" ></p><p>注意到这里抄写员用了点作为标点，因此在转录时也需要加上点。另外一个需要注意的就是，对于 U 和 V，由于一直到中世纪晚期的拉丁字母中都是同一个字母的变体，所以当将所有内容转录为小写时，都用 u。</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="square-capitals"><a class="markdownIt-Anchor" href="#square-capitals"></a> Square Capitals</h3><p>尽管以 Square Capitals 书写的字母相当容易辨认，但在开始之前还是必须先阅读经过总结的 Square Capitals 的字母表：</p><p><img   src="square-capitals-standard.jpg"  alt="Square Capitals" ></p><p>如我们所见，这份字母表没有 J、K、U、W，这是因为直到 11 世纪才出现了 J、U、W，同时 C 经常替代 K，所以这份字母表只需要图中这些字母就足够了。可以看到，它的边缘通常比较平直，带有衬线，没有非常特殊的写法。总体来说，Square Capitals 非常易于辨认，因此转录这些字母不是难事。</p><p>对于这些早期文本来说，难处在于 scriptio continua，即连写字，这意味着单词与单词之间没有空格或者标点，这意味着将 Square Capitals 转录为可以阅读的手稿，需要在掌握拉丁语之后才可进行。即便如此，我依然保留一个转录 Square Capitals 的实例。</p><p>原始手稿：<a class="link"   href="https://www.e-codices.unifr.ch/de/csg/1394/12" >St. Gallen, Stiftsbibliothek, Cod. Sang. 1394, p. 12.<i class="fas fa-external-link-alt"></i></a></p><p><img   src="square-capitals-practice.jpg"  alt="St. Gallen, Stiftsbibliothek, Cod. Sang. 1394, p. 12." ></p><p>借此说明一下转录手稿的基本规则：</p><ol><li>对于 scriptio continua，转录时要按照单词添加空格。</li><li>抄写员如果在行尾使用连字符，要保留；如果单词断开但没有连字符，需要在行末添加 (-)。</li><li>将手稿的每一行转录为单独的一行。</li><li>不要纠正抄写员的拼写、用词、文法。</li><li>无论抄写员使用什么书体，都不要使用大写。大写仅在抄写员有意突出某个单词（比如圣名等）时使用。</li><li>不要使用现代标点。使用可用的符号尽可能复制抄写员的标点符号。</li><li>在抄写员使用缩写时，比如上面例子中，抄写员在 Q 后标了一个点，这意味着这是 -que 的缩写，在转录时要将其展开，其中没有出现的字符要用小括号，例如此处这个词转录为 tetidemq(ue)。</li><li>如果抄写员进行了删改，那么就需要用中括号包括所有与删改有关的字符。中括号中还有一个斜杠，斜杠左侧为修改前的字符，斜杠右侧为修改后的字符，修改前字符如果无法辨认可以留空。例如，单词 domini 首字母被修改，但无法辨认修改前的字母，则可以转录为 [/d]omini。</li><li>抄写员在行内插入内容，用 / \。</li><li>抄写员在行间插入内容，用 \ /。</li><li>抄写员在页面空白处插入内容，用 \\ //。</li><li>难以辨认的字母用 [[]]。如上面的例子中，首行的 E 之前隐约有一个字母的痕迹但是无法辨认，所以就转录为 [[*]]。注意星号个数必须和你所看到的无法辨认的字母个数一致。如果你觉得可以辨认只是不太确定，那么可以在 [[]] 中间写上你所认为的字母。</li></ol><p>另外需要提醒的是，如果你熟悉维吉尔，你会发现上面这份手稿正是维吉尔的《埃涅阿斯纪》，但你不应该动用你记忆中的篇章或者去查阅这份作品的原文，以此来求得那些无法辨认的字母的完整。首先，你无法假设现有的维吉尔就是正确的，研究抄本的一大功用就是补充原有文本的错误与缺失；其次，转录的主要目的在于使抄本可阅读，因此一切都应该以眼前的抄本为准。</p><h3 id="rustic-capitals"><a class="markdownIt-Anchor" href="#rustic-capitals"></a> Rustic Capitals</h3><p><img   src="rustic-capitals-standard.jpg"  alt="Rustic Capitals" ></p><p>很容易发现 Rustic Capitals 呈现出一种书写的质感而不是铭刻的质感。图中的 S 从原来的一气呵成变成了三笔写成，E 和 F 的最上面的横有了一些弧度，A、M 和 N 向右下方的一笔也不是那么平直了。横向宽度遭到了压缩，总体来说，字体不那么僵硬。</p><p><a class="link"   href="https://www.e-codices.unifr.ch/en/searchresult/list/one/csg/0112" >St. Gallen, Stiftsbibliothek, Cod. Sang. 112<i class="fas fa-external-link-alt"></i></a></p><p><img   src="rustic-capitals-practice.jpg"  alt="St. Gallen, Stiftsbibliothek, Cod. Sang. 112" ></p><p>注意到这里抄写员用了点作为标点，因此在转录时也需要加上点。另外一个需要注意的就是，对于 U 和 V，由于一直到中世纪晚期的拉丁字母中都是同一个字母的变体，所以当将所有内容转录为小写时，都用 u。</p>]]></content>
     
     
       
@@ -239,9 +239,9 @@
     
     
     
-    <category term="拉丁语" scheme="https://y1-fan.github.io/tags/%E6%8B%89%E4%B8%81%E8%AF%AD/"/>
-    
     <category term="古乐" scheme="https://y1-fan.github.io/tags/%E5%8F%A4%E4%B9%90/"/>
+    
+    <category term="拉丁语" scheme="https://y1-fan.github.io/tags/%E6%8B%89%E4%B8%81%E8%AF%AD/"/>
     
   </entry>
   
@@ -522,9 +522,9 @@
     
     
     
-    <category term="拉丁语" scheme="https://y1-fan.github.io/tags/%E6%8B%89%E4%B8%81%E8%AF%AD/"/>
-    
     <category term="古乐" scheme="https://y1-fan.github.io/tags/%E5%8F%A4%E4%B9%90/"/>
+    
+    <category term="拉丁语" scheme="https://y1-fan.github.io/tags/%E6%8B%89%E4%B8%81%E8%AF%AD/"/>
     
   </entry>
   
