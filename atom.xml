@@ -6,7 +6,7 @@
   <link href="https://y1-fan.github.io/atom.xml" rel="self"/>
   
   <link href="https://y1-fan.github.io/"/>
-  <updated>2024-09-29T11:16:00.703Z</updated>
+  <updated>2024-10-02T05:28:03.932Z</updated>
   <id>https://y1-fan.github.io/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>拉丁古文字学第零课：如何与古文字资源交互</title>
+    <link href="https://y1-fan.github.io/2024/10/02/latin-paleography/latin-paleography-0/"/>
+    <id>https://y1-fan.github.io/2024/10/02/latin-paleography/latin-paleography-0/</id>
+    <published>2024-10-01T16:17:11.000Z</published>
+    <updated>2024-10-02T05:28:03.932Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天我们很少能够接触到真正的古代抄本的原件，因为它们往往太过脆弱。不过好在，很多机构都免费提供了他们扫描的古代抄本的扫描图片。但是，对于一个使用汉语的古文字学的初学者（包括我）来说，研究古文字学往往是踽踽独行：你会发现你身边绝少有人对此有兴趣，无论是你的同学还是老师，而当你好不容易找到一个对古典学有所涉猎的前辈，却惊讶地发现他也只是一个懂拉丁语的现代人，一点也看不懂古代的书本。到头来在钻研古文字的路上你还是独自一人。</p><p>所以，我非常理解那种对于获得一些权威建议的渴望，毕竟如果只是看我这种半吊子写出来的古文字学笔记，说不定到头来是以讹传讹、错上加错。幸运的是，那些能够直接接触到古代抄本的机构在将扫描图片加入他们的数据库中时，往往会同时添加一些关于抄本的基本信息（用艺术史的术语说应该叫“物质性鉴定”），这可以成为学习古文字学的绝佳指导。因此，看懂数据库对抄本标注的信息就相当必要了。本文将分为三个部分：第一部分将帮助你熟悉网络数据库对抄本标注的信息有哪些，第二部分则将说明如何以准确的方式引用抄本，第三部分将推荐一些提供抄本扫描图片的网络数据库以及网站。</p><h3 id="抄本信息的识读"><a class="markdownIt-Anchor" href="#抄本信息的识读"></a> 抄本信息的识读</h3><p>阅读以下内容时候将以某抄本为例，请打开以下链接：<a class="link"   href="https://www.e-codices.unifr.ch/en/list/one/csg/0001" >St. Gallen, Stiftsbibliothek, Cod. Sang. 1<i class="fas fa-external-link-alt"></i></a></p><h4 id="country-of-location"><a class="markdownIt-Anchor" href="#country-of-location"></a> Country of Location</h4><p>现在收藏该抄本的的国家或地区。注意这并不一定是抄本被发现的位置。例中这个国家是瑞士。</p><h4 id="location"><a class="markdownIt-Anchor" href="#location"></a> Location</h4><p>收藏该抄本的城镇。这里是 St. Gallen，也就是圣加仑，瑞士东北部圣加仑州的首府。</p><h4 id="library-collection"><a class="markdownIt-Anchor" href="#library-collection"></a> Library / Collection</h4><p>收藏该抄本的图书馆或者收藏集。这里是 Stiftsbibliothek，即圣加仑修道院图书馆。由于抄本很多都在欧陆，因此这种不使用英语的信息标注是比较普遍的。对此没有什么特别好的办法，只能是善用搜索以及熟悉一些著名图书馆的名字。</p><h4 id="shelfmark"><a class="markdownIt-Anchor" href="#shelfmark"></a> Shelfmark</h4><p>架号。和去一般图书馆找书需要通过架号来找书类似，如果你实地前往收藏有抄本的图书馆并经允许查阅抄本，就需要通过架号来寻找抄本。对于利用网络数据库的人来说，架号的意义在于，依据现有的引用古代抄本的规范，引用必须标注架号，从而确保所引的抄本有据可查。古代抄本的 Shelfmark 实际上并不容易理解，它总是会用很多简写记号。以例子中的 Cod. Sang. 1 为例，Cod. 是指抄本，Sang. 是指圣加仑（瑞士德语中圣加仑叫做 Sanggale），编号为 1。其他图书馆还有各种各样稀奇古怪的标记，比如有些抄本不多的图书馆索性不分类，统一放在 Ms.（就是 manuscript 的缩写），有些抄本所用语言比较繁多的，可能会单独列出 Lat.（latin 的缩写，表示这些抄本是用拉丁语书写的）……个人建议是，在实在无法识别其含义时，就不要费心思在其上了，把它当作是编号的一部分就好，要引用的时候直接整条复制过来就可以了。（具体操作在下一部分详述）</p><h4 id="manuscript-title"><a class="markdownIt-Anchor" href="#manuscript-title"></a> Manuscript Title</h4><p>手稿标题。就和书本标题一样。这里是 Bible (OT)，也就是圣经旧约。OT 是旧约 Old Testament 的缩写，同理 NT 是新约 New Testament 的缩写，这个可以记忆一下。注意这里的标题经过翻译了，原文并非英语。</p><h4 id="caption"><a class="markdownIt-Anchor" href="#caption"></a> Caption</h4><p>说明文字。主要是说明抄本的一些背景信息。比方说这里 Parchment · 760 + II pp. · 17 x 12–12.5 cm · Paris (?) · 13th century 的意思是：抄本是书写在羊皮纸上的；页数是 760 页加两页，加两页的意思是，有两页被粘在封面和封底的内侧；长 17 厘米，宽度在 12–12.5 厘米范围内；可能制作于巴黎；制作时间是 13 世纪。</p><h4 id="language"><a class="markdownIt-Anchor" href="#language"></a> Language</h4><p>抄本所用的语言。这份抄本用的是拉丁语。</p><h4 id="manuscript-summary"><a class="markdownIt-Anchor" href="#manuscript-summary"></a> Manuscript Summary</h4><p>对手稿的总体介绍。类似于博物馆里面对于藏品的简介，像这种抄本一般会介绍下来源、内容和看点之类的，比方说这里先说了可能是在巴黎制作的，里面有一些具象化的插图什么的。有时候按照这种介绍的指引去看抄本会不那么枯燥。</p><h4 id="standard-description"><a class="markdownIt-Anchor" href="#standard-description"></a> Standard description</h4><p>标准描述。博物馆或者图书馆入藏的时候会对藏品进行鉴定，然后由馆方给出一个标准描述以后入藏。如果你发现你在之前理解 Shelfmark 的时候已经足够吃力了，那么标准描述会让你更加头疼。可以点进链接查看详细的标准描述，你会发现那里充斥着各种专业术语，几乎要让人，几乎要让人崩溃。此处的标准描述中有如下几行：</p><ul><li><strong>Manuscript title</strong> 和前述的 Manuscript Title 是一样的，只不过标准描述用图书馆当地的语言写就，不经过翻译。这里名字是 Biblia latina Veteris Testamenti.</li><li><strong>Date of origin</strong> 抄本制作的时期。前面我们已经知道抄本制作于 13 世纪，但是专业的古文字学者不会这样表达。学者往往会用拉丁语 saeculo 一词的缩写 s. 或者 saec. 来表示“在……世纪”，其后接上一个罗马数字，比如这里的 XIII 就是罗马数字的 13。有时候，如果需要更为精确地定位时期，可以再在其后加上后缀：1-25 年称为早期，用 incip.（拉丁语 incipit 的缩写）表示；26-74 年为中期，用 med.（拉丁语 medio 的缩写）表示；75-99 年为后期，用 expl.（拉丁语 explicit 的缩写）表示。</li><li><strong>Support</strong> 书写所用的材质。我们知道这份抄本是书写在羊皮纸上的，这里的 Pgm. 就是羊皮纸的缩写，只不过缩写自德语 Pergament。</li><li><strong>Extent</strong> 抄本的页数。这里他再一次用了德语缩写：Bl.，缩写自德语 Blatt，意思是“张”。377 Bl. 的意思是这份抄本有 377 张纸。不过，使用这种缩写并不正规，一般会使用拉丁语 folio 以及其复数缩写 ff. 来表述张数，对于正常双面书写的部分，就用数字后接 ff. 来标记数量。当有些页面比较特殊时，你需要用 1 f. 后接说明来描述特殊情况。这里的 f. 是 folio 的单数形式。</li><li><strong>Format</strong> 抄本尺寸。现在一般都用公制单位标注，比如厘米，我还没理解此处标记的含义，已用邮件询问馆方。</li><li><strong>Page layout</strong> 页面布局。比方说页边距、行数之类的信息。如果你看过一些中文古籍相关的内容，诸如“宋刊本半叶十一行行二十字”之类的表述，这种就是页面布局了。这里就标注了每页有 50 行。</li><li><strong>Writing and hands</strong> 书写特征相关。比如说用的什么书体，是否有不同的抄写员参与书写等等。这里就写了个用了小号字体。</li><li><strong>Decoration</strong> 装饰。书写文本之外的特殊装饰。比方说这里，第 9 页存在装饰，页面中间画上巨大插画实际上只是为了写一个首字母 J，这个 J 上画着创世六日（Hexaemeron）的故事。</li><li><strong>Contents</strong> 内容。这份抄本里面写了什么。</li></ul><h4 id="doi-digital-object-identifier"><a class="markdownIt-Anchor" href="#doi-digital-object-identifier"></a> DOI (Digital Object Identifier)</h4><p>这就是做学术都非常熟悉的 DOI 了，有利于精准定位文献。有些抄本可能不一定有 DOI，所以还是需要熟悉一般的引用规范。</p><h4 id="permanent-link"><a class="markdownIt-Anchor" href="#permanent-link"></a> Permanent link</h4><p>永久链接。在博客中插入永久链接引用，只要资源还在，就不用担心链接失效。</p><h4 id="iiif-manifest-url"><a class="markdownIt-Anchor" href="#iiif-manifest-url"></a> IIIF Manifest URL</h4><p>国际图像互操作性框架（IIIF）的清单链接。IIIF 是一组实现图像资源互操作的技术标准，有一种东西叫做 IIIF 查看器，它可以利用 IIIF 提供的 API 来实现在网页上提供图像以及相关数据的功能。有时候手稿被拆散，或者某一系列手稿分散在各地，那么借助 IIIF 提供的清单，就可以构建一个完整连贯的整体。</p><h4 id="how-to-quote"><a class="markdownIt-Anchor" href="#how-to-quote"></a> How to quote</h4><p>引用方式。这个在下一部分详述。</p><h3 id="抄本的引用"><a class="markdownIt-Anchor" href="#抄本的引用"></a> 抄本的引用</h3><p>承接上一部分的内容，当我们要引用一份抄本时应该如何引用？</p><blockquote><p>St. Gallen, Stiftsbibliothek, Cod. Sang. 1: Bible (OT) (<a class="link"   href="https://www.e-codices.unifr.ch/en/list/one/csg/0001" >https://www.e-codices.unifr.ch/en/list/one/csg/0001<i class="fas fa-external-link-alt"></i></a>).</p></blockquote><ol><li><strong>位置</strong> 一般来说没必要写国家，如此处一样写具体城市以及图书馆即可。</li><li><strong>架号</strong> 位置后按照网站给出的信息填写架号。</li><li><strong>标题</strong> 一样按照网站给出的信息填写标题。和前面的部分用冒号连接。</li><li><strong>链接</strong> 最后用括号标注链接，可以是网站的永久链接也可以是 DOI。</li></ol><p>当你想要引述某张抄本的纸张的时候，用单数形式的 f.，在其后接数字即可。而如果你想更为精确地定位某页，由于抄本的每张纸都分为正面（verso）和反面（recto），分别缩写为 v. 和 r.，通常在引述的时候接在数字的后面。例如 f. 32 r. 意思就是抄本第 32 张的反面。</p><h3 id="常用网站与数据库"><a class="markdownIt-Anchor" href="#常用网站与数据库"></a> 常用网站与数据库</h3><h4 id="e-codices-virtual-manuscript-library-of-switzerland"><a class="markdownIt-Anchor" href="#e-codices-virtual-manuscript-library-of-switzerland"></a> <a class="link"   href="https://www.e-codices.unifr.ch" >e-codices - Virtual Manuscript Library of Switzerland<i class="fas fa-external-link-alt"></i></a></h4><p>瑞士的虚拟手稿图书馆，集合了瑞士的众多抄本与手稿。</p><h4 id="earlier-latin-manuscripts"><a class="markdownIt-Anchor" href="#earlier-latin-manuscripts"></a> <a href="%5Bhttps://elmss.nuigalway.ie/">Earlier Latin Manuscripts</a></h4><p>以 E. A. Lowe 的著作 <em>Codices Latini Antiquiores</em> 为基础建立的数据库，重点关注公元 8 世纪以及之前的早期拉丁手稿。</p><h4 id="digital-scriptorium"><a class="markdownIt-Anchor" href="#digital-scriptorium"></a> <a class="link"   href="https://digital-scriptorium.org/" >Digital Scriptorium<i class="fas fa-external-link-alt"></i></a></h4><p>北美收藏有前现代手稿的机构联盟。</p><h4 id="medieval-manuscripts-blog-british-library"><a class="markdownIt-Anchor" href="#medieval-manuscripts-blog-british-library"></a> <a class="link"   href="https://blogs.bl.uk/digitisedmanuscripts/index.html" >Medieval manuscripts blog - British Library<i class="fas fa-external-link-alt"></i></a></h4><p>大英图书馆的中世纪手稿博客，有各种各样关于手稿的信息。</p><h4 id="yale-library"><a class="markdownIt-Anchor" href="#yale-library"></a> <a class="link"   href="https://library.yale.edu/" >Yale Library<i class="fas fa-external-link-alt"></i></a></h4><p>耶鲁大学图书馆。</p><h4 id="turning-the-pages-university-of-nottingham"><a class="markdownIt-Anchor" href="#turning-the-pages-university-of-nottingham"></a> <a class="link"   href="http://turningthepages.nottingham.ac.uk/" >Turning the Pages - University of Nottingham<i class="fas fa-external-link-alt"></i></a></h4><p>Turning the Pages 系统可以以虚拟翻页的模式查阅抄本，包括诺丁汉馆藏的《沃拉顿对歌》（The Wollaton Antiphonal）。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;今天我们很少能够接触到真正的古代抄本的原件，因为它们往往太过脆弱。不过好在，很多机构都免费提供了他们扫描的古代抄本的扫描图片。但是，对于一个使用汉语的古文字学的初学者（包括我）来说，研究古文字学往往是踽踽独行：你会发现你身边绝少有人对此有兴趣，无论是你的同学还是老师，而当你</summary>
+      
+    
+    
+    
+    
+    <category term="古文字学" scheme="https://y1-fan.github.io/tags/%E5%8F%A4%E6%96%87%E5%AD%97%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>拉丁古文字学第三课：古典时代晚期基督教的拉丁古文字</title>
+    <link href="https://y1-fan.github.io/2024/10/02/latin-paleography/latin-paleography-3/"/>
+    <id>https://y1-fan.github.io/2024/10/02/latin-paleography/latin-paleography-3/</id>
+    <published>2024-10-01T16:14:33.000Z</published>
+    <updated>2024-10-01T16:30:24.662Z</updated>
+    
+    <content type="html"><![CDATA[<p>公元 4 世纪，基督教成为罗马帝国的官方宗教，此时已是罗马帝国的暮年。公元 476 年，西罗马帝国灭亡。但是，政权的倾覆不代表文化的灭亡，旧时罗马帝国境内以及临国的不少罗马帝国后人聚居的地方开始建立起有自己本土化特征的书籍文化，从中诞生出两种重要书体：Uncial 和 Half-Uncial。</p><p>这两种书体之所以重要，是因为藉由这两种书体，后罗马世界及其邻国接受了来自基督教的文本，也就是《圣经》、礼拜文本以及天主教教会的教父的一些作品。这两种书体的影响一直要持续到公元 8 世纪。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;公元 4 世纪，基督教成为罗马帝国的官方宗教，此时已是罗马帝国的暮年。公元 476 年，西罗马帝国灭亡。但是，政权的倾覆不代表文化的灭亡，旧时罗马帝国境内以及临国的不少罗马帝国后人聚居的地方开始建立起有自己本土化特征的书籍文化，从中诞生出两种重要书体：Uncial 和 Ha</summary>
+      
+    
+    
+    
+    
+    <category term="古文字学" scheme="https://y1-fan.github.io/tags/%E5%8F%A4%E6%96%87%E5%AD%97%E5%AD%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>拉丁古文字学实践课一：Square Capitals 与 Rustic Capitals 的识读</title>
@@ -239,9 +283,9 @@
     
     
     
-    <category term="古乐" scheme="https://y1-fan.github.io/tags/%E5%8F%A4%E4%B9%90/"/>
-    
     <category term="拉丁语" scheme="https://y1-fan.github.io/tags/%E6%8B%89%E4%B8%81%E8%AF%AD/"/>
+    
+    <category term="古乐" scheme="https://y1-fan.github.io/tags/%E5%8F%A4%E4%B9%90/"/>
     
   </entry>
   
@@ -475,56 +519,6 @@
     <category term="数学" scheme="https://y1-fan.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
     <category term="线性代数" scheme="https://y1-fan.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在《无人深空》的无垠世界和自演原声中</title>
-    <link href="https://y1-fan.github.io/2023/12/18/trans/no-mans-sky-65daysofstatic-interview/"/>
-    <id>https://y1-fan.github.io/2023/12/18/trans/no-mans-sky-65daysofstatic-interview/</id>
-    <published>2023-12-18T11:45:41.000Z</published>
-    <updated>2024-08-22T02:59:11.329Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>原作者：Matt Kamen<br />原文链接：<a class="link"   href="https://www.wired.co.uk/article/no-mans-sky-65daysofstatic-interview" >Inside the infinite world of No Man's Sky and its evolving soundtrack<i class="fas fa-external-link-alt"></i></a></p></blockquote><p>欲领悟《无人深空》的真正大小几乎是不可能的。这个通过算法生成宇宙一切万有的游戏大约有 18 万兆颗星球，而每一颗都有一条独一无二的前往宇宙中心的路线。由于外星生命、自然环境和遭遇的敌对势力均由随机化产生，每个玩家的体验都将截然不同。</p><p>堪称奇迹的是，开发者 Hello Games 将这整个宇宙打包成一个只有 6 GB 的数据包——并且工作室创始人 Sean Murray 说“里面大部分是音频”。</p><p>音频，或者严格一点说，音乐，是制作娱乐产品过程中非常重要的要素。但是要如何为千变万化且难以构想的广袤宇宙创作音乐？这对于诸如《我的世界》一类的沙盒游戏中玩家不受既定路线和剧情限制的情况来说颇具挑战，而当情况变为玩家甚至可能都看不见同一条地平线时又该如何？</p><p>在 Hello Games 这里，你与谢菲尔德的数学摇滚乐队 65daysofstatic 合作，创造一个颇具进步性和实验性的游戏音轨，它的每个比特都具有与《无人深空》一样的自适应和不可预测的特质。本文通过 WIRED 与乐队的 Paul Wolinski 对谈来揭示他们如何做到这一点。</p><p><strong>WIRED：65daysofstatic 是怎么接触 Hello Games，参与到《无人深空》这个项目的？</strong></p><p><strong>Paul Wolinski：</strong> 几年前，就在游戏的预告片发布前不久，他们找到我们，询问能不能用我们 2010 年录制的音乐 Débutante。他们告诉我们一些关于游戏项目的情况然后我们回复他们说“嗯，或许可以，你们能不能告诉我们更多的游戏相关信息？”——只是为了关注下用了我们音乐的地方。</p><p>他们回复了更多信息，附带了几张截屏。那个时候游戏还叫“Project Skyscraper”。我们当即明白这游戏将会多么惊人，并且他们已经完成了游戏世界的美术建构。所以我们回复说：“酷，你们可以用那首音乐。你们已经有人为游戏配乐了吗？如果没有，或许我们可以谈谈！”</p><p><strong>所以是你们先提出给《无人深空》配乐的？</strong></p><p>没错。发生这些事情的时候，我们正在旅游，大概一个多月之后我们回国然后和 Sean Murray 见了一面。果不其然，见面的我们意趣相投。我记得我特别紧张，因为我很想参与这个项目。我们已经想要做令人激动的配乐太久，想要推销说我们是配乐最完美的选择，这是为了打动他，让他觉得绝对得是我们来做这个配乐。但是他几乎是抱着同样的想法来和我见面！他已是我们乐队的老粉，这是世界上最轻松的会面。很棒。</p><p><strong>这个游戏用算法生成了 18 万兆颗星球， 65daysofstatic 则是“数学摇滚乐队“。它们和听起来一样相匹配吗？</strong></p><p>这说起来有点复杂。过程生成和生成音乐是我们最近的兴趣点。某种程度上说，这不是什么特别新的东西。在电脑游戏领域追溯至 90 年代 LucasArt 的冒险游戏 Maniac Mansion 等，都有基础的音乐生成技术的运用。所以这其实不是那种前无古人的概念。</p><p>但是这种方法演出的音乐倾向于舒缓风格，比较粒子化、柔和且有合成器味道，和给电影配乐不同，给电脑游戏配乐意味着音乐不能确定接下来的行动。由于玩家掌控着游戏，因此任何事都有可能。一曲柔和且舒缓，能进行快速反应的音乐表现最佳，但显然，在这个方向走得越远，音乐就越无法让人印象深刻，音乐的旋律也弱化了。</p><p>我们非常想要尝试创作一些能打动人的东西，既有大型科幻配乐中的所有激动人心的时刻，又能拥有无限的长度来配合游戏本就无垠的宇宙。我们希望人们可以长时间玩这个游戏，所以音乐不能只是简单地几个重复的循环。我们决计两头兼顾。</p><p>我们知道这将会是 65 的下一张唱片，为之录制了线性的独立作品。我们非常希望录音可以有自己的价值，不只是一曲离开游戏就变得无意义的配乐。或许可以说，我们写作“正统”音乐，而不是那种仅供搭售的曲目。</p><p>同时我们建立了一个巨大的“声音图书馆”——收集所有单独的声音和乐器，旋律和节奏。我们用这许多的素材来分解音乐，然后把碎片加入游戏，再让它们在游戏中重新构建出它们自己。</p><p><strong>这是你自己持续努力建构的东西，还是说只是和 Hello Games 合作的一次性“声音炸弹”？</strong></p><p>这取决于游戏如何。这是个非常令人激动的项目，其本质意味着我们可以永远致力其上。他们可以邀请其他乐队，也可通过更新游戏后台对系统做任何他们想做的事。这就是当今电子游戏的存在方式——它们总是在不断被重新激发活力。</p><p>我觉得利用这些素材再创作一次挺好，不过我不知道他们想拿这些素材怎么样。</p><p><strong>为《无人深空》录音和为你们之前的专辑录音有什么不一样吗？随便说说。</strong></p><p>很棒。我们录音和旅游很长时间了，对这两件事的心痒一直未消，但这次我们试图止痒。我们感到还有，或者说应该有那么多音乐的新种类，有的可实验至癫狂，有的则平易近人。</p><p>过去几年我们做了一些有趣且令人激动的可以生成音乐内容的声音工程——包含给宇宙写音乐的想法，而不仅仅是录音中以线性的时间为基础的作曲。这很棒——我们十分享受成为那种出乎人们意料的乐队。这个游戏和给音乐带来的可能性让人心潮澎湃。</p><p>音频总监 Paul Weir 和 Hello Games 为音乐打造的技术固然令人兴奋，但也让人感觉像我们这样的乐队面临着某种门槛。我们都很极客，非常享受用技术来制造噪音，但是未达到真正编程和构建软件的专业水平，那种事情的准入门槛正在下降。能够以一个音乐的而且更是程序的视角在《无人深空》的后台看到星球不断逼近，让人感觉那里生发出越来越多的可能性。</p><p><strong>Sean 曾说《无人深空》数据包内大部分都是音频……</strong></p><p>我认为我们能够参与《无人深空》非常幸运，因为其生成性的本质意味着它占用的光盘或者硬盘的空间相对上比较小，这也给我们更多的空间。有一些事情我不太懂但确实存在，比方说这个游戏不断生成需要显示的内容同时又抛弃那些不需要的部分。这释放了部分“带宽”所以就可以有更多音乐。给音乐的空间和资源可能比《使命召唤》还要多。</p><p>学习过程固然艰辛，但这像是一段伟大旅途的开端。通常，我们只是苟活于音乐产业中，那方世界在不断缓慢坍塌。音乐产业的狂欢已经结束很久，大部分时候只是坚持并且用某种方式存活。看到这另一个世界有新事物在发展，有新事物等待探索是很棒的事情。</p><p><strong>你会怎么描述你为《无人深空》创造的音乐或者声音景观的种类？</strong></p><p>我们竭力去紧扣游戏的脉搏，实现快速反应玩家行为的需求。下一步是找到一个可以把这些主题置入的点。即使只是旋律，比方说一段华美旋律，也可能有五到十秒时间，而对于玩家来说，你必须找到一种方法，既能让游戏能播放这段旋律，又不会与玩家最终的实际操作不协调。</p><p>比如决定在空间站停泊，或许你会希望能听到宏大的主题——但是之后玩家改变主意起飞离开了，或者陷入了战斗，但是主题音乐却已经启动且正在播放了。这样效果就会大打折扣。其实这实际上不是真正的矛盾，但是我们还是把音乐拆分开，以此保证我们总是让音乐按照希望的方式进行——并非随机化，这比随机化要聪明不少。但它更像爵士乐，是一种即兴。我想这是一种平衡。</p><p><strong>你期待看到最终组合在一起的成果吗？</strong></p><p>我们现在都没有能玩《无人深空》的游戏机！我不知道以后会是如何。乐队有些队员是自少年起的超级游戏爱好者，但是在乐队中至而立没有给游戏留下太多时间和闲钱。我不会认为我们是硬核玩家，但我过去几年对游戏世界关注颇多——原因显而易见——这是个非常让人激动的媒介。看《无人深空》成长很有趣，它是个有意思的探索游戏，不需要你射击或者击杀任何事物，甚至没有严格意义上的情节。它只是让你放空，然后做你想做的事。</p><p>我认为像这样的事情很健康，并且看到这样一个有远见的事物在如此大的范围内实现成功，我感觉很高兴。如果你看好莱坞什么的，那些想法完全相反且毫无探索的世界——那种漫画书改编的电影一个接着一个。我觉得游戏世界是那种值得关注的东西，如果我有钱买一个PS4，人生就完满了。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;原作者：Matt Kamen&lt;br /&gt;
-原文链接：&lt;a class=&quot;link&quot;   href=&quot;https://www.wired.co.uk/article/no-mans-sky-65daysofstatic-interview&quot; &gt;Ins</summary>
-      
-    
-    
-    
-    
-    <category term="翻译" scheme="https://y1-fan.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
-    
-    <category term="游戏" scheme="https://y1-fan.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>古乐10：Victimae paschali laudes</title>
-    <link href="https://y1-fan.github.io/2023/08/19/ancient-music/ancient-music-10/"/>
-    <id>https://y1-fan.github.io/2023/08/19/ancient-music/ancient-music-10/</id>
-    <published>2023-08-19T03:06:32.000Z</published>
-    <updated>2024-02-17T15:57:12.384Z</updated>
-    
-    <content type="html"><![CDATA[<p>2022 年 11 月 15 日，黑曜石发布了他们新作 <em>Pentiment</em> 的<a class="link"   href="https://youtu.be/OfYryKWkNfw" >发售预告片<i class="fas fa-external-link-alt"></i></a>。预告片以一曲圣乐作为开场，一下子就把我们拉回到那个神秘的中世纪。黑曜石选用的圣乐，正是这首 Victimae paschali laudes。</p><p>这是在复活节弥撒中规定的随歌（Sequence）<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，在宣讲福音之前演唱。最早的时候由于总是在《哈利路亚》之后演唱，据拉丁语 sequi（意为“跟随”）而得名。不过，在 2002 年的《罗马弥撒书总则》（Institutio Generalis Missalis Romani）中，这两者的顺序被颠倒过来了。</p><p>Victimae paschali laudes 是一首中世纪随歌，一般认为由 11 世纪勃艮第的威玻（Wipo of Burgundy），也就是神圣罗马帝国皇帝康拉德二世（Conrad II）的牧师创作，也有认为是其他人创作的观点。</p><h3 id="歌词"><a class="markdownIt-Anchor" href="#歌词"></a> 歌词</h3><p>Victimae paschali laudes immolent Christiani</p><p>Agnus redemit oves: Christus innocens Patri reconciliavit peccatores.<br />Mors et vita duello conflixere mirando, Dux vitae mortuus, regnat vivus.</p><p>Dic nobis Maria, quid vidisti in via?<br />Sepulcrum Christi viventis, et gloriam vidi resurgentis:</p><p>Angelicos testes, sudarium et vestes.<br />Surrexit Christus spes mea: praecedet suos in Galilaeam.</p><p>Credendum est magis soli Mariae veraci quam Judaeorum turbae fallaci.<br />Scimus Christum surrexisse a mortuis vere: Tu nobis, victor Rex, miserere.</p><p>Amen. Alleluia.</p><hr class="footnotes-sep" /><section class="footnotes"><ol class="footnotes-list"><li id="fn1" class="footnote-item"><p>没有看到可用的翻译，所以擅自按照意义翻译为“随歌” <a href="#fnref1" class="footnote-backref">↩︎</a></p></li></ol></section>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;2022 年 11 月 15 日，黑曜石发布了他们新作 &lt;em&gt;Pentiment&lt;/em&gt; 的&lt;a class=&quot;link&quot;   href=&quot;https://youtu.be/OfYryKWkNfw&quot; &gt;发售预告片&lt;i class=&quot;fas fa-external-lin</summary>
-      
-    
-    
-    
-    
-    <category term="古乐" scheme="https://y1-fan.github.io/tags/%E5%8F%A4%E4%B9%90/"/>
-    
-    <category term="拉丁语" scheme="https://y1-fan.github.io/tags/%E6%8B%89%E4%B8%81%E8%AF%AD/"/>
     
   </entry>
   
