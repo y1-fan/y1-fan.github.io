@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://y1-fan.github.io/2024/10/02/latin-paleography/latin-paleography-3/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://y1-fan.github.io/2024/05/25/latin-paleography/latin-paleography-2/</loc>
+    
+    <lastmod>2024-10-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://y1-fan.github.io/2024/10/02/latin-paleography/latin-paleography-0/</loc>
     
     <lastmod>2024-10-06</lastmod>
@@ -11,25 +29,7 @@
   </url>
   
   <url>
-    <loc>https://y1-fan.github.io/2024/10/02/latin-paleography/latin-paleography-3/</loc>
-    
-    <lastmod>2024-10-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://y1-fan.github.io/2024/10/04/latin-paleography/latin-paleography-practice-2/</loc>
-    
-    <lastmod>2024-10-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://y1-fan.github.io/2024/05/25/latin-paleography/latin-paleography-2/</loc>
     
     <lastmod>2024-10-03</lastmod>
     
@@ -517,20 +517,6 @@
   </url>
   
   <url>
-    <loc>https://y1-fan.github.io/tags/%E9%80%BB%E8%BE%91/</loc>
-    <lastmod>2024-10-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://y1-fan.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</loc>
-    <lastmod>2024-10-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://y1-fan.github.io/tags/%E8%88%B9%E6%AD%8C/</loc>
     <lastmod>2024-10-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -545,13 +531,6 @@
   </url>
   
   <url>
-    <loc>https://y1-fan.github.io/tags/%E6%B8%B8%E6%88%8F/</loc>
-    <lastmod>2024-10-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://y1-fan.github.io/tags/%E8%89%BA%E6%9C%AF/</loc>
     <lastmod>2024-10-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -560,6 +539,27 @@
   
   <url>
     <loc>https://y1-fan.github.io/tags/%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2024-10-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://y1-fan.github.io/tags/%E6%B8%B8%E6%88%8F/</loc>
+    <lastmod>2024-10-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://y1-fan.github.io/tags/%E9%80%BB%E8%BE%91/</loc>
+    <lastmod>2024-10-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://y1-fan.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</loc>
     <lastmod>2024-10-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
