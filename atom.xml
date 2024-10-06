@@ -6,7 +6,7 @@
   <link href="https://y1-fan.github.io/atom.xml" rel="self"/>
   
   <link href="https://y1-fan.github.io/"/>
-  <updated>2024-10-03T17:25:50.452Z</updated>
+  <updated>2024-10-06T18:14:55.272Z</updated>
   <id>https://y1-fan.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://y1-fan.github.io/2024/10/04/latin-paleography/latin-paleography-practice-2/"/>
     <id>https://y1-fan.github.io/2024/10/04/latin-paleography/latin-paleography-practice-2/</id>
     <published>2024-10-03T17:18:50.000Z</published>
-    <updated>2024-10-03T17:25:50.452Z</updated>
+    <updated>2024-10-06T18:14:55.272Z</updated>
     
-    <content type="html"><![CDATA[<p>我其实一直在考虑要不要写这一篇关于 Old Roman Cursive 与 Later Roman Cursive 的识读的实践笔记，因为这两个字体实在是过于扭曲，其中 Old Roman Cursive 尤其扭曲。思考再三还是决定写，毕竟古罗马人可不会考虑今天的古文字研究者读不读得懂他们写的字。</p><p>我的计划是，用庞贝古城墙上的书写来作为熟悉和引入 Old Roman Cursive 的例子，因为那个相对简单一些，然后再配上一个手稿的例子作为实战。Later Roman Cursive 相对简单，可以直接进入实战。</p>]]></content>
+    <content type="html"><![CDATA[<p>我其实一直在考虑要不要写这一篇关于 Old Roman Cursive 与 Later Roman Cursive 的识读的实践笔记，因为这两个字体实在是过于扭曲，其中 Old Roman Cursive 尤其扭曲。思考再三还是决定写，毕竟古罗马人可不会考虑今天的古文字研究者读不读得懂他们写的字。</p><p>我的计划是，用庞贝古城墙上的书写来作为熟悉和引入 Old Roman Cursive 的例子，因为那个相对简单一些，然后再配上一个手稿的例子作为实战。Later Roman Cursive 相对简单，可以直接进入实战。</p><h3 id="old-roman-cursive"><a class="markdownIt-Anchor" href="#old-roman-cursive"></a> Old Roman Cursive</h3><p>首先我们来看下 Old Roman Cursive 的字型，这里我就直接连同 Later Roman Cursive 一起展示了：</p><p><img   src="roman-cursive-standard.jpg"  alt="Roman Cursive" ></p><p>可以说是乱七八糟。那么先看下面这个案例：</p><p><img   src="roman-cursive-practice-1.jpg"  alt="Pompeii" ></p><p>这是来自《韦洛克拉丁语教程》的“墙上的书写”栏目的一个例子。庞贝古城于公元 79 年被埋葬，应该说它是展示 Old Roman Cursive 的绝佳例子，尽管这还是学童的书写。</p><p>图中，最上方是书本截图，由于不太清晰，下方我又描写了一遍，然后将字符一个个拆分出来。</p><p>A 和 R 很像，它们的区别主要在于，A 允许左斜线段末端上卷，而 R 则允许右斜线段末端上卷。与之相对，A 的右斜线段和 R 的左斜线段末端往往向下。E 似乎是这些文本中最容易辨认的，一个弓形的弧线被中间的横线贯穿，至少在这个例子中，最后一个 E 是确认无疑的。倒数第四个字符左侧斜线末端上卷，这是 A 的特征，而倒数第二个字符右侧斜线末端整体上凸，这也是 A 的特征，那么移除这两个字符后，中间字符 N 的特点就很明显了。B 和 D 也是如此，B 的斜线末端上扬，一般不一笔写就，而 D 则类似于 δ 的写法，一般都一笔写成，即使不是一笔写成，也不会突出第二笔的独立性。案例中的字符是两笔写成的，但是第二笔基本接着第一笔继续写了，也没有上扬，所以判断这是 D。</p><p>开头的两个字符无法判断是 AV 还是 AN，主要问题出在 A 右侧斜线上多出的一笔，无法判断属于 A 还是属于它后面的那个字符。但是考虑到书写者一般会用类似的习惯书写，那么依据倒数第三个字符 N，此处的字符和已经读解出来的 N 不符合，因此这里更有可能是 AV。后面一个字符，如前所说，右侧斜线上扬，说明这是 R，然后是一个很典型的 E 和一个余下的 V。接下来的三个字符比较简单，首先是一个比较典型的 E，然后是一个 S 和一个 T。Old Roman Cursive 中 S 会写成这种拉长的样子，T 写起来如同希腊文的 τ。对拉丁语敏感就会意识到，这是 est，拉丁语的常用单词。</p><p>如此一来，我们就有了这些铭文的转录：aureus est danae。之前的转录中有几处举棋不定的地方，拿着所有可能的结果去查阅拉丁语词典，如果无法查到那个单词，说明大概率转录错了。当然，古罗马人也会写错单词，但如果那个单词完全不符合拉丁语的构词习惯，那么基本可以确认是转录错字母了。学者认为这句话来自《变形记》中的 aureus ut Danaen（Met 6:113），也就是达那厄因朱庇特化作的金雨而受孕的故事。单词拼写正确，句法也不错，句意也通，这表明转录基本是正确的了。</p>]]></content>
     
     
       
@@ -61,11 +61,11 @@
   </entry>
   
   <entry>
-    <title>拉丁古文字学第三课：古典时代晚期基督教的拉丁古文字【施工中】</title>
+    <title>拉丁古文字学第三课：古典时代晚期基督教的拉丁古文字</title>
     <link href="https://y1-fan.github.io/2024/10/02/latin-paleography/latin-paleography-3/"/>
     <id>https://y1-fan.github.io/2024/10/02/latin-paleography/latin-paleography-3/</id>
     <published>2024-10-01T16:14:33.000Z</published>
-    <updated>2024-10-06T16:19:27.354Z</updated>
+    <updated>2024-10-06T16:24:38.872Z</updated>
     
     <content type="html"><![CDATA[<p>公元 4 世纪，基督教成为罗马帝国的官方宗教，此时已是罗马帝国的暮年。公元 476 年，西罗马帝国灭亡。但是，政权的倾覆不代表文化的灭亡，旧时罗马帝国境内以及临国的不少原罗马帝国公民聚居的地方开始建立起有自己本土化特征的书籍文化，从中诞生出两种重要书体：Uncial 和 Half-Uncial。</p><p>这两种书体之所以重要，是因为藉由这两种书体，后罗马世界及其邻国接受了来自基督教的文本，也就是圣经、礼拜文本以及天主教教会的教父的一些作品。这两种书体的影响一直要持续到公元 8 世纪。</p><p>Uncial 是一种 majuscule，在公元 5 世纪到 8 世纪期间用作超高级书籍的主要文本文字，在其后的整个中世纪用作展示文字（display script），也就是用于书写文章标题、小节标题的与正文相区分的文字。上一课中我们看到 Square Capitals 和 Rustic Capitals 被用于书写维吉尔的文本，Uncial 则被用于书写古代晚期以及中世纪早期的圣经，它在基督教中的地位和两种 Capitals 在古代文化中的地位类似，不过现存的 Uncial 书写的手稿要多许多。</p><p>Uncial 非常宽大、圆润。我们知道 Rustic Capitals 比 Square Capitals 要更加紧凑，高度一般大于宽度，Square Capitals 是高度与宽度基本一致，但 Uncial 则是宽度大于高度，有点类似于我们对于汉语隶书的印象。Uncial 是 majuscule，但并不像 Square Capitals 一样都用了今天的大写字母，而是大写字母和小写字母的混合，例如 B、N、R、S 采用了今天的大写字母，但 d、e、h、m、u 又用了今天的小写字母。Uncial 的字母 a 非常特别，在 Square Capitals 那里，字母 a 是人字形互相支撑的两根线段或者在中间加上一条横杠，就和我们今天的 A 类似，而到了 Roman Cursive 那里，左侧的斜线段与中间的横杠融合为一笔，写出来就像是右下角带有尾巴的三角形。Uncial 的字母 a 则将左侧的一笔写成了圆环，并且右侧的斜线段开头不再和左侧相接，而是远远高出左侧，就像是一个左腿变成圆环的 λ。这个特别的字母，就是今天印刷体小写字母 a 的滥觞。</p><p>Half-Uncial 则是一种 minuscule，用于公元 2 世纪到 5 世纪的各种书籍中。Half-Uncial 源自 Roman Cursive，显然从起源来看就是一种日常书写使用的文字，实际上也的确如此，它是后罗马世界的常见书写文字。Half-Uncial 是中世纪的几种早期文字 Insular Minuscule 以及 Caroline Minuscule 的直接祖先，也是我们今天现代小写字母的祖先。Half-Uncial 虽然使用更广泛，但因为珍贵程度不高，所以现存的 Half-Uncial 书写的手稿实际上要少很多。</p><p>作为今天小写字母的祖先，Half-Uncial 很多地方都和今天的小写字母类似。值得一提的是，尽管可能源于 Roman Cursive，但是考虑到 Roman Cursive 惨不忍睹的一致性，无法确定他们是否意识到自己创造了新字体。应该说，还是 Half-Uncial 第一次创造了拉长的 s，也就是 ſ，我们所熟悉的积分符号就是这个。之所以说 Half-Uncial 是第一次，因为出现了 s 和 ſ 的明显的区分。在随后的几个世纪里的数种书体中都有 ſ 的身影。关于这些字母的具体识读，在实践课中将会详述。</p><p>依据先前所说的从卷轴到抄本的转变时期，实际上最早的 Uncial 和 Half-Uncial 书体出现的时候，抄本已经是主导形式了。所以，现存的古代晚期基督教书籍中 80% 都是抄本。当然过渡时期有一些特殊情况，比如出现羊皮纸和纸莎草混合抄本。这里需要一个术语，书叶（quire），如果熟悉古籍的蝴蝶装、包背装应该会比较熟悉。书籍一般都是一张纸折叠后装订起来的，那么一张书叶最终就变成书中的两张纸，共四页 <sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>。以书脊那侧为外侧，自己这侧为内侧，羊皮纸和纸莎草混合抄本就是在外侧用羊皮纸，内侧用莎草纸组合而成的抄本，是一种过渡时期才有的比较罕见的情况。中世纪末期造纸技术发展也出现了羊皮纸和纸张的混合抄本。</p><p>页面上，最早的抄本往往是单栏的，书写区域外侧留空许多。这些留空可能是用于校勘或者指示和其他文本对应关系之类，不过在本文所覆盖的时期，抄本的留空似乎没有起到什么作用，没有中世纪那种大量的注释和旁注。也发现了双栏布局，不过相对比较少。scriptio continua 在这一时期被沿用了，但是出现了一些新情况。per cola et commata，即一种按照分句和短语来分段的书写方式，古罗马人就已经有所使用了，圣杰罗姆（St. Jerome）将其引入他的圣经通俗译本。这种方式就像是诗句，在不使用标点的情况下也做到了对意义进行一定的分划。另外一种方式是单词之间不空格，而在句子之间进行空格。在这两种方式的基础上，对一些字母进行字号加大或者用特别的颜色也有助于标点页面。</p><hr class="footnotes-sep" /><section class="footnotes"><ol class="footnotes-list"><li id="fn1" class="footnote-item"><p>中国古籍一般单面印刷，所以实际上是两页，但既然本文语境在欧洲，就不考虑中国古籍的情况了。 <a href="#fnref1" class="footnote-backref">↩︎</a></p></li></ol></section>]]></content>
     
@@ -280,9 +280,9 @@
     
     
     
-    <category term="翻译" scheme="https://y1-fan.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
-    
     <category term="游戏" scheme="https://y1-fan.github.io/tags/%E6%B8%B8%E6%88%8F/"/>
+    
+    <category term="翻译" scheme="https://y1-fan.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
     
   </entry>
   
