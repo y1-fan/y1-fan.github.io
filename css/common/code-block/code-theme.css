@@ -2,8 +2,8 @@
   --toolbar-foreground: #b5b5b5;
   --toolbar-background: #3a3f40;
   --code-foreground: #585865;
-  --code-background: rgba(255,190,152,0.15);
-  --code-border-color: #ffd2b7;
+  --code-background: rgba(164,123,103,0.15);
+  --code-border-color: #bfa395;
   --highlight-background: #273036;
   --highlight-foreground: #faf5d6;
   --highlight-comment: #76888e;
@@ -26,8 +26,8 @@
     --toolbar-foreground: #b5b5b5;
     --toolbar-background: #3a3f40;
     --code-foreground: #585865;
-    --code-background: rgba(255,190,152,0.15);
-    --code-border-color: #ffd2b7;
+    --code-background: rgba(164,123,103,0.15);
+    --code-border-color: #bfa395;
     --highlight-background: #273036;
     --highlight-foreground: #faf5d6;
     --highlight-comment: #76888e;
@@ -51,8 +51,8 @@
     --toolbar-foreground: #b1b1b1;
     --toolbar-background: #393e3f;
     --code-foreground: #b5c1cb;
-    --code-background: rgba(255,190,152,0.15);
-    --code-border-color: #f45a00;
+    --code-background: rgba(164,123,103,0.15);
+    --code-border-color: #64493c;
     --highlight-background: #262f35;
     --highlight-foreground: #f5ebad;
     --highlight-comment: #76888e;
@@ -75,8 +75,8 @@
   --toolbar-foreground: #b5b5b5;
   --toolbar-background: #3a3f40;
   --code-foreground: #585865;
-  --code-background: rgba(255,190,152,0.15);
-  --code-border-color: #ffd2b7;
+  --code-background: rgba(164,123,103,0.15);
+  --code-border-color: #bfa395;
   --highlight-background: #273036;
   --highlight-foreground: #faf5d6;
   --highlight-comment: #76888e;
@@ -98,8 +98,8 @@
   --toolbar-foreground: #b1b1b1;
   --toolbar-background: #393e3f;
   --code-foreground: #b5c1cb;
-  --code-background: rgba(255,190,152,0.15);
-  --code-border-color: #f45a00;
+  --code-background: rgba(164,123,103,0.15);
+  --code-border-color: #64493c;
   --highlight-background: #262f35;
   --highlight-foreground: #f5ebad;
   --highlight-comment: #76888e;
