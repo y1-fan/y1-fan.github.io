@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Yi Fan">
+    <meta name="msvalidate.01" content="9007710388DA7C23790FC73B316C2B1D" />
+    <meta name="google-site-verification" content="O0fQKhDwSjGzeBg6fUCS3GrIVLbt3Qb7uCHMIKkRGKg" />
+    <link rel="stylesheet" href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.11.1/katex.min.css">
+    
+    <title>
+        
+            拉丁古文字学第零课：如何与古文字资源交互 |
+        
+        y1-fan&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"y1-fan.github.io","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#A47B67","title":"y1-fan's Blog","author":"Yi Fan","avatar":"/images/avatar.jpg","logo":null,"favicon":null},"menu":{"Archives":"/archives","Tag":"/tag","Categories":"/categories","Photos":"/photos","About":"/about"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":null,"hitokoto":true},"social_contact":{"enable":true,"links":{"github":"https://github.com/y1-fan","weixin":null,"qq":null,"weibo":null,"steam":"https://steamcommunity.com/profiles/76561198849229745/","twitter":null,"facebook":null,"email":"yi.fan.cn@outlook.com"}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"category":false,"tag":true,"announcement":null},"post":{"author_badge":{"enable":false,"level_badge":false,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"obsidian"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":true},"lazyload":{"enable":false},"cdn":{"enable":true,"provider":"jsdelivr"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":false,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","photos":[{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/the_weather_project.2ob9na14he.webp","name":"Olafur Eliasson. 《气象计划》（The Weather Project）. 2003/2019."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/la_vierge.1ov6a3ydb4.webp","name":"Max Ernst. 《在三个目击者面前掴打幼年耶稣的圣母：安德烈·布列塔尼、保罗·艾吕雅和画家》（La vierge corrigeant l'enfant Jésus devant trois témoins: André Breton, Paul Eluard et le peintre）. 1926."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/two_shakes_a_tick_and_a_jiffy.9gwb9qrbw4.webp","name":"Julieta Aranda. Two shakes, a tick and a jiffy. 2009."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/R.S.V.P.I.3go550hq7b.webp","name":"Senga Nengudi. 《敬请回复》（R.S.V.P.I.）. 1977/2003."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/valley_curtain.8s3274z1uk.webp","name":"Christo Vladimirov Javacheff. 《山谷窗帘》（Valley Curtain）. 1970-1972. Rifle, Colorado."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/ebb_and_flow.67x7uhz38a.webp","name":"Lawrence Weiner. 《浪奔浪流》（Attached by Ebb & Flow）. 2019. 上海, 中国."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/The-Triumph-of-Death.pf48ysn67.webp","name":"Pieter Bruegel the Elder. 《死亡的胜利》（The Triumph of Death）. 1562."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/528px-The_Vision_of_Saint_John_MET_DT1052.luoy5457.webp","name":"El Greco. 《圣约翰的异象》（The Vision of Saint John）. 1608-1614."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/Caspar_David_Friedrich_-_Das_Eismeer_-_Hamburger_Kunsthalle_-_02.361cnvzj21.webp","name":"Caspar David Friedrich. 《冰海》（Das Eismeer）. 1823-1824."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/Caspar_David_Friedrich's_Chalk_Cliffs_on_Rügen.4xubisivxy.webp","name":"Caspar David Friedrich. 《吕根岛上的白垩岩》（Chalk Cliffs on Rügen）. 1818."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/JEAN_LOUIS_THÉODORE_GÉRICAULT_-_La_Balsa_de_la_Medusa_(Museo_del_Louvre,_1818-19).6f0gkjn0ok.webp","name":"Théodore Géricault. 《美杜莎之筏》（La Balsa de la Medusa）. 1818-1819."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/joseph_albers_fuge.1aos341s12.webp","name":"Josef Albers. Fugue. 1926."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/Robert-Rauschenberg.-Untitled.-1951..6wqtfuajkq.webp","name":"Robert Rauschenberg. Untitled. 1951."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/Robert-Motherwell.-Iberia.-1958.5mnw9isk98.webp","name":"Robert Motherwell. Iberia. 1958."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/Ellsworth-Kelly.-Black.-1951..3gohnr0wi3.webp","name":"Ellsworth Kelly. Black. 1951."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/Caravaggio.-St.-Jerome-Writing.-1605-06.7zqiqq6dig.webp","name":"Caravaggio. St. Jerome Writing. 1605-06."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/Metallica-lunare-2006.3d4vq1jjjz.webp","name":"Sandro Sanna. Metallica lunare. 2006."}],"version":"4.0.6"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Sans+TC:wght@100..900&display=swap');
+    </style>
+<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="y1-fan's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container border-box">
+
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<style>
+@import url('https://fonts.font.im/css2?&family=Noto+Serif+TC:wght@500&display=swap');
+@font-face {
+    font-family: Futura-Medium;
+    src: url('/font/Futura-Medium.woff');
+}
+</style>
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+            <a class="site-name border-box" href="/" style="font-family: 'Futura-Medium', sans-serif;">
+               y1-fan&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >首页</a>
+                    </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >归档</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tag"
+                            >标签</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >合集</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/photos"
+                            >图像</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >关于</a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            <li class="drawer-menu-item flex-center">
+                <a class=""
+                   href="/"
+                >首页</a>
+            </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"
+                    >归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tag"
+                    >标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"
+                    >合集</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/photos"
+                    >图像</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about"
+                    >关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        拉丁古文字学第零课：如何与古文字资源交互
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Yi Fan</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-10-02 00:17:11</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Sat Oct 19 2024 21:17:32 GMT+0800">2024-10-19 21:17:32</span>
+            </span>
+        
+
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%8F%A4%E6%96%87%E5%AD%97%E5%AD%A6/">古文字学</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body">
+                    
+
+                    <p>今天我们很少能够接触到真正的古代抄本的原件，因为它们往往太过脆弱。不过好在，很多机构都免费提供了他们馆藏的古代抄本的扫描图片。对于一个使用汉语的古文字学的初学者（包括我）来说，研究古文字学往往是踽踽独行：你会发现你身边绝少有人对此有兴趣，无论是你的同学还是老师，而当你好不容易找到一个对古典学有所涉猎的前辈，却惊讶地发现他也只是一个懂拉丁语的现代人，一点也看不懂古代的书本。到头来在钻研古文字的路上你还是独自一人。</p>
+<p>所以，我非常理解那种对于获得一些权威建议的渴望，毕竟如果只是看我这种半吊子写出来的古文字学笔记，说不定到头来是以讹传讹、错上加错。幸运的是，那些能够直接接触到古代抄本的机构在将扫描图片加入他们的数据库中时，往往会同时添加一些关于抄本的基本信息（用艺术史的术语说应该叫“物质性鉴定”），这可以成为学习古文字学的绝佳指导。因此，看懂数据库对抄本标注的信息就相当必要了。本文将分为三个部分：第一部分将帮助你熟悉网络数据库对抄本标注的信息有哪些，第二部分则将说明如何以准确的方式引用抄本，第三部分将推荐一些提供古代抄本信息的网络数据库以及网站。</p>
+<h3 id="抄本信息的识读"><a class="markdownIt-Anchor" href="#抄本信息的识读"></a> 抄本信息的识读</h3>
+<p>阅读以下内容时候将以某抄本为例，请打开以下链接：<a class="link"   target="_blank" rel="noopener" href="https://www.e-codices.unifr.ch/en/list/one/csg/0001" >St. Gallen, Stiftsbibliothek, Cod. Sang. 1<i class="fas fa-external-link-alt"></i></a></p>
+<h4 id="country-of-location"><a class="markdownIt-Anchor" href="#country-of-location"></a> Country of Location</h4>
+<p>现在收藏该抄本的的国家或地区。注意这并不一定是抄本被发现的位置。例中这个国家是瑞士。</p>
+<h4 id="location"><a class="markdownIt-Anchor" href="#location"></a> Location</h4>
+<p>收藏该抄本的城镇。这里是 St. Gallen，也就是圣加仑，瑞士东北部圣加仑州的首府。</p>
+<h4 id="library-collection"><a class="markdownIt-Anchor" href="#library-collection"></a> Library / Collection</h4>
+<p>收藏该抄本的图书馆或者收藏集。这里是 Stiftsbibliothek，即圣加仑修道院图书馆。由于抄本很多都在欧陆，因此这种不使用英语的信息标注是比较普遍的。对此没有什么特别好的办法，只能是善用搜索以及熟悉一些著名图书馆的名字。</p>
+<h4 id="shelfmark"><a class="markdownIt-Anchor" href="#shelfmark"></a> Shelfmark</h4>
+<p>架号。和去一般图书馆找书需要通过架号来找书类似，如果你实地前往收藏有抄本的图书馆并经允许查阅抄本，就需要通过架号来寻找抄本。对于利用网络数据库的人来说，架号的意义在于，依据现有的引用古代抄本的规范，引用必须标注架号，从而确保所引的抄本有据可查。古代抄本的 Shelfmark 实际上并不容易理解，它总是会用很多简写记号。以例子中的 Cod. Sang. 1 为例，Cod. 是指抄本，Sang. 是指圣加仑（瑞士德语中圣加仑叫做 Sanggale），编号为 1。其他图书馆还有各种各样稀奇古怪的标记，比如有些图书馆手稿分类叫 Ms.（就是 manuscript 的缩写），有些地方又叫 Mss.；有些抄本所用语言比较繁多的，可能会单独列出 Lat.（latin 的缩写，表示这些抄本是用拉丁语书写的）……个人建议是，在实在无法识别其含义时，就不要费心思在其上了，把它当作是编号的一部分就好，要引用的时候直接整条复制过来就可以了。（具体操作在下一部分详述）</p>
+<h4 id="manuscript-title"><a class="markdownIt-Anchor" href="#manuscript-title"></a> Manuscript Title</h4>
+<p>手稿标题。就和书本标题一样。这里是 Bible (OT)，也就是圣经旧约。OT 是旧约 Old Testament 的缩写，同理 NT 是新约 New Testament 的缩写，这个可以记忆一下。注意这里的标题经过翻译了，原文并非英语。</p>
+<h4 id="caption"><a class="markdownIt-Anchor" href="#caption"></a> Caption</h4>
+<p>说明文字。主要是说明抄本的一些背景信息。比方说这里 Parchment · 760 + II pp. · 17 x 12–12.5 cm · Paris (?) · 13th century 的意思是：抄本是书写在羊皮纸上的；页数是 760 页加两页，加两页的意思是，有两页被粘在封面和封底的内侧；长 17 厘米，宽度在 12–12.5 厘米范围内；可能制作于巴黎；制作时间是 13 世纪。</p>
+<h4 id="language"><a class="markdownIt-Anchor" href="#language"></a> Language</h4>
+<p>抄本所用的语言。这份抄本用的是拉丁语。</p>
+<h4 id="manuscript-summary"><a class="markdownIt-Anchor" href="#manuscript-summary"></a> Manuscript Summary</h4>
+<p>对手稿的总体介绍。类似于博物馆里面对于藏品的简介，像这种抄本一般会介绍下来源、内容和看点之类的，比方说这里先说了可能是在巴黎制作的，里面有一些具象化的插图什么的。有时候按照这种介绍的指引去看抄本会不那么枯燥。</p>
+<h4 id="standard-description"><a class="markdownIt-Anchor" href="#standard-description"></a> Standard description</h4>
+<p>标准描述。博物馆或者图书馆入藏的时候会对藏品进行鉴定，然后由馆方给出一个标准描述以后入藏。如果你发现你在之前理解 Shelfmark 的时候已经足够吃力了，那么标准描述会让你更加头疼。可以点进链接查看详细的标准描述，你会发现那里充斥着各种专业术语，几乎要让人崩溃。此处的标准描述中有如下几行：</p>
+<ul>
+<li><strong>Manuscript title</strong> 和前述的 Manuscript Title 是一样的，只不过标准描述用图书馆当地的语言写就，不经过翻译。这里名字是 Biblia latina Veteris Testamenti.</li>
+<li><strong>Date of origin</strong> 抄本制作的时期。前面我们已经知道抄本制作于 13 世纪，但是专业的古文字学者不会这样表达。学者往往会用拉丁语 saeculo 一词的缩写 s. 或者 saec. 来表示“在……世纪”，其后接上一个罗马数字，比如这里的 XIII 就是罗马数字的 13。有时候，如果需要更为精确地定位时期，可以再在其后加上后缀：1-25 年称为早期，用 incip.（拉丁语 incipit 的缩写）表示；26-74 年为中期，用 med.（拉丁语 medio 的缩写）表示；75-99 年为后期，用 expl.（拉丁语 explicit 的缩写）表示。</li>
+<li><strong>Support</strong> 书写所用的材质。我们知道这份抄本是书写在羊皮纸上的，这里的 Pgm. 就是羊皮纸的缩写，只不过缩写自德语 Pergament。</li>
+<li><strong>Extent</strong> 抄本的页数。这里他再一次用了德语缩写：Bl.，缩写自德语 Blatt，意思是“张”。377 Bl. 的意思是这份抄本有 377 张纸。不过，使用这种缩写并不正规，一般会使用拉丁语 folio 以及其复数缩写 ff. 来表述张数，对于正常双面书写的部分，就用数字后接 ff. 来标记数量。当有些页面比较特殊时，你需要用 1 f. 后接说明来描述特殊情况。这里的 f. 是 folio 的单数形式。</li>
+<li><strong>Format</strong> 抄本尺寸。现在一般都用公制单位标注，比如厘米。我不知道此处标记的含义，用邮件询问馆方后，他们指出这是一种传统书籍格式，详见<a class="link"   target="_blank" rel="noopener" href="https://de.wikipedia.org/wiki/Buchformat" >德语维基百科<i class="fas fa-external-link-alt"></i></a>，实际上就是我们日常所说的几开。8° 也就是日常所说的八开。但由于整张纸也就是所谓正度纸的大小因时代和地区而异，对于这份标准信息写作的年代，大约是 33 x 42 cm，因此三次折叠后大小为 16.5 x 10.5 cm，和实际大小类似。显然这太不精确了，在今天请尽量避免使用这种描述。</li>
+<li><strong>Page layout</strong> 页面布局。比方说页边距、行数之类的信息。如果你看过一些中文古籍相关的内容，诸如“宋刊本半叶十一行行二十字”之类的表述，这种就是页面布局了。这里就标注了每页有 50 行。</li>
+<li><strong>Writing and hands</strong> 书写特征相关。比如说用的什么书体，是否有不同的抄写员参与书写等等。这里就写了个用了小号字体。</li>
+<li><strong>Decoration</strong> 装饰。书写文本之外的特殊装饰。比方说这里，第 9 页存在装饰，页面中间画上巨大插画实际上只是为了写一个首字母 J，这个 J 上画着创世六日（Hexaemeron）的故事。</li>
+<li><strong>Contents</strong> 内容。这份抄本里面写了什么。</li>
+</ul>
+<h4 id="doi-digital-object-identifier"><a class="markdownIt-Anchor" href="#doi-digital-object-identifier"></a> DOI (Digital Object Identifier)</h4>
+<p>这就是做学术都非常熟悉的 DOI 了，有利于精准定位文献。有些抄本可能不一定有 DOI，所以还是需要熟悉一般的引用规范。</p>
+<h4 id="permanent-link"><a class="markdownIt-Anchor" href="#permanent-link"></a> Permanent link</h4>
+<p>永久链接。在博客中插入永久链接引用，只要资源还在，就不用担心链接失效。</p>
+<h4 id="iiif-manifest-url"><a class="markdownIt-Anchor" href="#iiif-manifest-url"></a> IIIF Manifest URL</h4>
+<p>国际图像互操作性框架（IIIF）的清单链接。IIIF 是一组实现图像资源互操作的技术标准，有一种东西叫做 IIIF 查看器，它可以利用 IIIF 提供的 API 来实现在网页上提供图像以及相关数据的功能。有时候手稿被拆散，或者某一系列手稿分散在各地，那么借助 IIIF 提供的清单，就可以构建一个完整连贯的整体。</p>
+<h4 id="how-to-quote"><a class="markdownIt-Anchor" href="#how-to-quote"></a> How to quote</h4>
+<p>引用方式。这个在下一部分详述。</p>
+<h3 id="抄本的引用"><a class="markdownIt-Anchor" href="#抄本的引用"></a> 抄本的引用</h3>
+<p>承接上一部分的内容，当我们要引用一份抄本时应该如何引用？</p>
+<blockquote>
+<p>St. Gallen, Stiftsbibliothek, Cod. Sang. 1: Bible (OT) (<a class="link"   target="_blank" rel="noopener" href="https://www.e-codices.unifr.ch/en/list/one/csg/0001" >https://www.e-codices.unifr.ch/en/list/one/csg/0001<i class="fas fa-external-link-alt"></i></a>).</p>
+</blockquote>
+<ol>
+<li><strong>位置</strong> 一般来说没必要写国家，如此处一样写具体城市以及图书馆即可。</li>
+<li><strong>架号</strong> 位置后按照网站给出的信息填写架号。</li>
+<li><strong>标题</strong> 一样按照网站给出的信息填写标题。和前面的部分用冒号连接。</li>
+<li><strong>链接</strong> 最后用括号标注链接，可以是网站的永久链接也可以是 DOI。</li>
+</ol>
+<p>当你想要引述某张抄本的纸张的时候，用单数形式的 folio 的缩写 f.，在其后接数字即可。而如果你想更为精确地定位某页，由于抄本的每张纸都分为正面（verso）和反面（recto），分别缩写为 v. 和 r.，通常在引述的时候接在数字的后面。例如 f. 32 r. 意思就是抄本第 32 张的反面。</p>
+<h3 id="常用网站与数据库"><a class="markdownIt-Anchor" href="#常用网站与数据库"></a> 常用网站与数据库</h3>
+<h4 id="e-codices-virtual-manuscript-library-of-switzerland"><a class="markdownIt-Anchor" href="#e-codices-virtual-manuscript-library-of-switzerland"></a> <a class="link"   target="_blank" rel="noopener" href="https://www.e-codices.unifr.ch" >e-codices - Virtual Manuscript Library of Switzerland<i class="fas fa-external-link-alt"></i></a></h4>
+<p>瑞士的虚拟手稿图书馆，集合了瑞士的众多抄本与手稿。</p>
+<h4 id="earlier-latin-manuscripts"><a class="markdownIt-Anchor" href="#earlier-latin-manuscripts"></a> <a href="%5Bhttps://elmss.nuigalway.ie/">Earlier Latin Manuscripts</a></h4>
+<p>以 E. A. Lowe 主编的拉丁文手稿目录 <em>Codices Latini Antiquiores</em>（通常缩写为 CLA）为基础建立的数据库，重点关注公元 8 世纪以及之前的早期拉丁手稿。</p>
+<h4 id="digital-scriptorium"><a class="markdownIt-Anchor" href="#digital-scriptorium"></a> <a class="link"   target="_blank" rel="noopener" href="https://digital-scriptorium.org/" >Digital Scriptorium<i class="fas fa-external-link-alt"></i></a></h4>
+<p>北美收藏有前现代手稿的机构联盟。与很多美国大学合作拥有为数颇丰的数字馆藏。众所周知，美国很少有本土手稿，大部分都是从欧洲流传过来的，因此该数据库还提供了额外的有关前任拥有者的信息，相当有趣。</p>
+<h4 id="medieval-manuscripts-blog-british-library"><a class="markdownIt-Anchor" href="#medieval-manuscripts-blog-british-library"></a> <a class="link"   target="_blank" rel="noopener" href="https://blogs.bl.uk/digitisedmanuscripts/index.html" >Medieval manuscripts blog - British Library<i class="fas fa-external-link-alt"></i></a></h4>
+<p>大英图书馆的中世纪手稿博客，有各种各样关于手稿的信息。</p>
+<h4 id="turning-the-pages-university-of-nottingham"><a class="markdownIt-Anchor" href="#turning-the-pages-university-of-nottingham"></a> <a class="link"   target="_blank" rel="noopener" href="http://turningthepages.nottingham.ac.uk/" >Turning the Pages - University of Nottingham<i class="fas fa-external-link-alt"></i></a></h4>
+<p>Turning the Pages 系统可以以虚拟翻页的模式查阅抄本。这其中就包括诺丁汉大学馆藏的著名的《沃莱顿对歌》（The Wollaton Antiphonal）。</p>
+<h4 id="hill-museum-manuscript-library"><a class="markdownIt-Anchor" href="#hill-museum-manuscript-library"></a> <a class="link"   target="_blank" rel="noopener" href="https://hmml.org/" >Hill Museum &amp; Manuscript Library<i class="fas fa-external-link-alt"></i></a></h4>
+<p>希尔博物馆和手稿图书馆，专门做手稿的数字化。他们还有一个非常好的课程网站 <a class="link"   target="_blank" rel="noopener" href="https://hmmlschool.org/" >HMML School<i class="fas fa-external-link-alt"></i></a>，我的拉丁古文字的笔记就是以他们制作的古文字课程为基础，再适当进行扩展而成的。如果你好奇 IIIF 的实际使用是什么效果，你可以去看看 HMML School 是如何处理的，他们的页面上就用了 IIIF 提供的 API。</p>
+<h4 id="cantus-a-database-for-latin-ecclesiastical-chant"><a class="markdownIt-Anchor" href="#cantus-a-database-for-latin-ecclesiastical-chant"></a> <a class="link"   target="_blank" rel="noopener" href="https://cantusdatabase.org/" >Cantus: A Database for Latin Ecclesiastical Chant<i class="fas fa-external-link-alt"></i></a></h4>
+<p>Cantus 是一个收录了主要来自中世纪欧洲的手稿和早期印刷书籍中的拉丁圣歌的数据库。正如你在我博客看到的，我很喜欢古乐，因此这个数据库对我来说非常好用。一头扎在古文字学里当然是好的，但有些时候，在掌握了一定的技术之后，选择一些古文字之外的主题，然后利用古文字学的方法，把那些没人仔细读过的古代抄本作为你研究的参考文献，这才是把古文字学的价值最大化了。学术界总是充满喧嚣，然而好的研究总在寂寥处。</p>
+
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%8F%A4%E6%96%87%E5%AD%97%E5%AD%A6/">古文字学</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2024/10/04/latin-paleography/latin-paleography-practice-2/"
+                                   title="拉丁古文字学实践课二：Old Roman Cursive 与 Later Roman Cursive 的识读【施工中】"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2024/10/02/latin-paleography/latin-paleography-3/"
+                                   title="拉丁古文字学第三课：古典时代晚期基督教的拉丁古文字"
+                                >
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%84%E6%9C%AC%E4%BF%A1%E6%81%AF%E7%9A%84%E8%AF%86%E8%AF%BB"><span class="nav-text"> 抄本信息的识读</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#country-of-location"><span class="nav-text"> Country of Location</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#location"><span class="nav-text"> Location</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#library-collection"><span class="nav-text"> Library &#x2F; Collection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#shelfmark"><span class="nav-text"> Shelfmark</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#manuscript-title"><span class="nav-text"> Manuscript Title</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#caption"><span class="nav-text"> Caption</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#language"><span class="nav-text"> Language</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#manuscript-summary"><span class="nav-text"> Manuscript Summary</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#standard-description"><span class="nav-text"> Standard description</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#doi-digital-object-identifier"><span class="nav-text"> DOI (Digital Object Identifier)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#permanent-link"><span class="nav-text"> Permanent link</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#iiif-manifest-url"><span class="nav-text"> IIIF Manifest URL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#how-to-quote"><span class="nav-text"> How to quote</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%84%E6%9C%AC%E7%9A%84%E5%BC%95%E7%94%A8"><span class="nav-text"> 抄本的引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%BD%91%E7%AB%99%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-text"> 常用网站与数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#e-codices-virtual-manuscript-library-of-switzerland"><span class="nav-text"> e-codices - Virtual Manuscript Library of Switzerland</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#earlier-latin-manuscripts"><span class="nav-text"> Earlier Latin Manuscripts</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#digital-scriptorium"><span class="nav-text"> Digital Scriptorium</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#medieval-manuscripts-blog-british-library"><span class="nav-text"> Medieval manuscripts blog - British Library</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#turning-the-pages-university-of-nottingham"><span class="nav-text"> Turning the Pages - University of Nottingham</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hill-museum-manuscript-library"><span class="nav-text"> Hill Museum &amp; Manuscript Library</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cantus-a-database-for-latin-ecclesiastical-chant"><span class="nav-text"> Cantus: A Database for Latin Ecclesiastical Chant</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2025
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Yi Fan</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;|&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%84%E6%9C%AC%E4%BF%A1%E6%81%AF%E7%9A%84%E8%AF%86%E8%AF%BB"><span class="nav-text"> 抄本信息的识读</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#country-of-location"><span class="nav-text"> Country of Location</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#location"><span class="nav-text"> Location</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#library-collection"><span class="nav-text"> Library &#x2F; Collection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#shelfmark"><span class="nav-text"> Shelfmark</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#manuscript-title"><span class="nav-text"> Manuscript Title</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#caption"><span class="nav-text"> Caption</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#language"><span class="nav-text"> Language</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#manuscript-summary"><span class="nav-text"> Manuscript Summary</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#standard-description"><span class="nav-text"> Standard description</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#doi-digital-object-identifier"><span class="nav-text"> DOI (Digital Object Identifier)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#permanent-link"><span class="nav-text"> Permanent link</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#iiif-manifest-url"><span class="nav-text"> IIIF Manifest URL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#how-to-quote"><span class="nav-text"> How to quote</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%84%E6%9C%AC%E7%9A%84%E5%BC%95%E7%94%A8"><span class="nav-text"> 抄本的引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%BD%91%E7%AB%99%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-text"> 常用网站与数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#e-codices-virtual-manuscript-library-of-switzerland"><span class="nav-text"> e-codices - Virtual Manuscript Library of Switzerland</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#earlier-latin-manuscripts"><span class="nav-text"> Earlier Latin Manuscripts</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#digital-scriptorium"><span class="nav-text"> Digital Scriptorium</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#medieval-manuscripts-blog-british-library"><span class="nav-text"> Medieval manuscripts blog - British Library</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#turning-the-pages-university-of-nottingham"><span class="nav-text"> Turning the Pages - University of Nottingham</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hill-museum-manuscript-library"><span class="nav-text"> Hill Museum &amp; Manuscript Library</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cantus-a-database-for-latin-ecclesiastical-chant"><span class="nav-text"> Cantus: A Database for Latin Ecclesiastical Chant</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/toggle-theme.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/code-block.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    
+        <!-- post-helper -->
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/post/post-helper.js"></script>
+
+        <!-- toc -->
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/post/toc.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- category-page -->
+    
+
+    <!-- links-page -->
+    
+
+    <!-- photos-page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>

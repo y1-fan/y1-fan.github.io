@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Yi Fan">
+    <meta name="msvalidate.01" content="9007710388DA7C23790FC73B316C2B1D" />
+    <meta name="google-site-verification" content="O0fQKhDwSjGzeBg6fUCS3GrIVLbt3Qb7uCHMIKkRGKg" />
+    <link rel="stylesheet" href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.11.1/katex.min.css">
+    
+    <title>
+        
+            在 C++ 中生成随机数字 |
+        
+        y1-fan&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"y1-fan.github.io","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#A47B67","title":"y1-fan's Blog","author":"Yi Fan","avatar":"/images/avatar.jpg","logo":null,"favicon":null},"menu":{"Archives":"/archives","Tag":"/tag","Categories":"/categories","Photos":"/photos","About":"/about"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":null,"hitokoto":true},"social_contact":{"enable":true,"links":{"github":"https://github.com/y1-fan","weixin":null,"qq":null,"weibo":null,"steam":"https://steamcommunity.com/profiles/76561198849229745/","twitter":null,"facebook":null,"email":"yi.fan.cn@outlook.com"}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"category":false,"tag":true,"announcement":null},"post":{"author_badge":{"enable":false,"level_badge":false,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"obsidian"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":true},"lazyload":{"enable":false},"cdn":{"enable":true,"provider":"jsdelivr"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":false,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","photos":[{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/the_weather_project.2ob9na14he.webp","name":"Olafur Eliasson. 《气象计划》（The Weather Project）. 2003/2019."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/la_vierge.1ov6a3ydb4.webp","name":"Max Ernst. 《在三个目击者面前掴打幼年耶稣的圣母：安德烈·布列塔尼、保罗·艾吕雅和画家》（La vierge corrigeant l'enfant Jésus devant trois témoins: André Breton, Paul Eluard et le peintre）. 1926."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/two_shakes_a_tick_and_a_jiffy.9gwb9qrbw4.webp","name":"Julieta Aranda. Two shakes, a tick and a jiffy. 2009."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/R.S.V.P.I.3go550hq7b.webp","name":"Senga Nengudi. 《敬请回复》（R.S.V.P.I.）. 1977/2003."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/valley_curtain.8s3274z1uk.webp","name":"Christo Vladimirov Javacheff. 《山谷窗帘》（Valley Curtain）. 1970-1972. Rifle, Colorado."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/ebb_and_flow.67x7uhz38a.webp","name":"Lawrence Weiner. 《浪奔浪流》（Attached by Ebb & Flow）. 2019. 上海, 中国."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/The-Triumph-of-Death.pf48ysn67.webp","name":"Pieter Bruegel the Elder. 《死亡的胜利》（The Triumph of Death）. 1562."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/528px-The_Vision_of_Saint_John_MET_DT1052.luoy5457.webp","name":"El Greco. 《圣约翰的异象》（The Vision of Saint John）. 1608-1614."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/Caspar_David_Friedrich_-_Das_Eismeer_-_Hamburger_Kunsthalle_-_02.361cnvzj21.webp","name":"Caspar David Friedrich. 《冰海》（Das Eismeer）. 1823-1824."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/Caspar_David_Friedrich's_Chalk_Cliffs_on_Rügen.4xubisivxy.webp","name":"Caspar David Friedrich. 《吕根岛上的白垩岩》（Chalk Cliffs on Rügen）. 1818."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/JEAN_LOUIS_THÉODORE_GÉRICAULT_-_La_Balsa_de_la_Medusa_(Museo_del_Louvre,_1818-19).6f0gkjn0ok.webp","name":"Théodore Géricault. 《美杜莎之筏》（La Balsa de la Medusa）. 1818-1819."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/joseph_albers_fuge.1aos341s12.webp","name":"Josef Albers. Fugue. 1926."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/Robert-Rauschenberg.-Untitled.-1951..6wqtfuajkq.webp","name":"Robert Rauschenberg. Untitled. 1951."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/Robert-Motherwell.-Iberia.-1958.5mnw9isk98.webp","name":"Robert Motherwell. Iberia. 1958."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/Ellsworth-Kelly.-Black.-1951..3gohnr0wi3.webp","name":"Ellsworth Kelly. Black. 1951."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/Caravaggio.-St.-Jerome-Writing.-1605-06.7zqiqq6dig.webp","name":"Caravaggio. St. Jerome Writing. 1605-06."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/Metallica-lunare-2006.3d4vq1jjjz.webp","name":"Sandro Sanna. Metallica lunare. 2006."}],"version":"4.0.6"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Sans+TC:wght@100..900&display=swap');
+    </style>
+<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="y1-fan's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container border-box">
+
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<style>
+@import url('https://fonts.font.im/css2?&family=Noto+Serif+TC:wght@500&display=swap');
+@font-face {
+    font-family: Futura-Medium;
+    src: url('/font/Futura-Medium.woff');
+}
+</style>
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+            <a class="site-name border-box" href="/" style="font-family: 'Futura-Medium', sans-serif;">
+               y1-fan&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >首页</a>
+                    </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >归档</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tag"
+                            >标签</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >合集</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/photos"
+                            >图像</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >关于</a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            <li class="drawer-menu-item flex-center">
+                <a class=""
+                   href="/"
+                >首页</a>
+            </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"
+                    >归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tag"
+                    >标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"
+                    >合集</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/photos"
+                    >图像</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about"
+                    >关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        在 C++ 中生成随机数字
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Yi Fan</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2023-06-30 13:38:09</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Mon Dec 18 2023 19:54:15 GMT+0800">2023-12-18 19:54:15</span>
+            </span>
+        
+
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/C/">C++</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E7%AE%97%E6%B3%95/">算法</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body">
+                    
+
+                    <h3 id="rand-和-srand"><a class="markdownIt-Anchor" href="#rand-和-srand"></a> <code>rand()</code> 和 <code>srand()</code></h3>
+<p><code>&lt;cstdlib&gt;</code> 中提供的 <code>rand()</code> 是比较常用的生成随机数的方法。它可以通过线性同余法提供一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mi>R</mi><mi>A</mi><mi>N</mi><mi>D</mi><mi mathvariant="normal">_</mi><mi>M</mi><mi>A</mi><mi>X</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0, RAND\_MAX]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.06em;vertical-align:-0.31em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mclose">]</span></span></span></span> 中的伪随机数，类型为 <code>int</code>。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> RAND_MAX 0x7fff</span></span><br></pre></td></tr></table></figure>
+<p>根据定义，<code>RAND_MAX</code> 大小为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mn>16</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^{16}-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">6</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> ，也就是说 <code>rand()</code> 生成的数字将会落在  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><msup><mn>2</mn><mn>16</mn></msup><mo>−</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0, 2^{16}-1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">6</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span> 这个区间内。</p>
+<p><code>rand()</code> 本身规则是以 1 为种子，如果在同一个程序中多次运行 <code>rand()</code>，可以得到不同的结果。不过，下一次运行程序时将会重复一模一样的序列，某种程度上，这样的随机数失去了意义。</p>
+<p>解决方法一般是用 <code>srand()</code> 为 <code>rand()</code> 进行初始化。<code>srand()</code> 接受一个无符号整型作为输入，这个值将会作为种子供 <code>rand()</code> 进行迭代。<code>srand()</code> 可以多次使用，每次使用都会让 <code>rand()</code> 使用新种子开启新一轮迭代。</p>
+<p>显然，如果 <code>srand()</code> 每次都接收到一个相同的值，那么这个初始化也就没有意义了。因此，一般使用一些会流变的特殊值进行初始化，其中最为方便的就是时间。</p>
+<p><code>&lt;ctime&gt;</code> 中提供了 <code>time()</code>，它可以获取自 1970 年 1 月 1 日以来经过的秒数，类型为 <code>time_t</code>，是一个整型。这个函数可以返回一个值，允许直接把返回值赋给 <code>int</code> 类型。同时，函数也允许提供一个类型为 <code>time_t</code> 的指针作为参数，返回值会写入指针地址。这个参数允许空指针。需要注意的是，由于 <code>srand()</code> 接受的是一个无符号整型，所以在使用时应该进行类型转换。</p>
+<p>另一种方法借助于 <code>&lt;windows.h&gt;</code> 中提供的 <code>GetTickCount()</code> 函数，它返回自系统启动以来经过的毫秒数，类型为 <code>DWORD</code>。该类型本身就是一个无符号整型，可以直接传递给 <code>srand()</code>。这种方法的好处是精度更高（毫秒级），可以一定程度上避免并行时获取到相同种子。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用例</span></span><br><span class="line"><span class="built_in">srand</span>((<span class="type">unsigned</span>)<span class="built_in">time</span>(<span class="literal">NULL</span>));</span><br><span class="line"><span class="built_in">srand</span>(<span class="built_in">GetTickCount</span>());</span><br></pre></td></tr></table></figure>
+<h3 id="random"><a class="markdownIt-Anchor" href="#random"></a> <code>&lt;random&gt;</code></h3>
+<p>从 C++11 开始，<code>&lt;random&gt;</code> 被引入。这个库允许定义随机数生成工具，并且允许对随机数的分布进行定义。</p>
+<h4 id="均匀随机数生成器"><a class="markdownIt-Anchor" href="#均匀随机数生成器"></a> 均匀随机数生成器</h4>
+<p><code>&lt;random&gt;</code> 库中定义了一些均匀随机数生成器（Uniform Random Number Generator, URNG），他们被称为引擎。这些引擎可以生成范围内的均匀随机数。比较常见的有以下几个：</p>
+<ul>
+<li><code>mt19937</code>：应用梅森旋转算法，32 位字长。</li>
+<li><code>mt19937_64</code>：同样是梅森旋转算法，不过字长为 64 位。</li>
+<li><code>knuth_b</code>：应用高德纳随机算法。</li>
+<li><code>minstd_rand</code>：应用线性同余法。</li>
+<li><code>ranlux24</code>：应用 Ranlux 算法，生成字长为 24 位的随机数。</li>
+<li><code>ranlux24_base</code>：<code>ranlux24</code> 的基础引擎。</li>
+<li><code>ranlux48</code>/<code>ranlux48_base</code>：同上，但生成字长为 48 位的随机数。</li>
+<li><code>default_random_engine</code>：默认引擎，不过不清楚实际调用了哪个引擎。（不推荐使用）</li>
+</ul>
+<p>以上这些都可以在范围内生成均匀的随机数。在使用时可以按照以下方法：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">mt19937 <span class="title">E</span><span class="params">((<span class="type">unsigned</span>)time(<span class="literal">NULL</span>))</span></span>; <span class="comment">// 定义引擎类型，此时可以传入种子</span></span><br><span class="line">std::cout &lt;&lt; <span class="built_in">E</span>() &lt;&lt; std::endl; <span class="comment">// 调用引擎生成随机数</span></span><br></pre></td></tr></table></figure>
+<h4 id="分布类型"><a class="markdownIt-Anchor" href="#分布类型"></a> 分布类型</h4>
+<p><code>&lt;random&gt;</code> 还允许对分布类型进行定义。常见的分布类型有：</p>
+<ol>
+<li>均匀分布
+<ul>
+<li><code>uniform_int_distribution</code>：给定闭区间内生成整数的均匀分布。</li>
+<li><code>uniform_real_distribution</code>：给定左闭右开区间内生成浮点数的均匀分布。</li>
+<li><code>generate_canonical</code>：生成 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">[</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">[0, 1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span> 内均匀的浮点数分布，可以指定精度。</li>
+</ul>
+</li>
+<li>伯努利分布
+<ul>
+<li><code>bernoulli_distribution</code>：生成布尔值的伯努利分布。</li>
+<li><code>binomial_distribution</code>：生成整数值的二项式分布。</li>
+<li><code>geometric_distribution</code>：生成整数值的几何分布。</li>
+<li><code>negative_binomial_distribution</code>：生成整数值的负二项式分布。</li>
+</ul>
+</li>
+<li>正态分布
+<ul>
+<li><code>cauchy_distribution</code>：生成浮点值的柯西分布。</li>
+<li><code>chi_squared_distribution</code>：生成浮点值的卡方分布。</li>
+<li><code>fisher_f_distribution</code>：生成浮点值的 F 分布（Fisher-Snedecor 分布）。</li>
+<li><code>lognormal_distribution</code>：生成浮点值的对数正态分布。</li>
+<li><code>normal_distribution</code>：生成浮点值的正态分布（高斯分布）。</li>
+<li><code>student_t_distribution</code>：生成浮点值的学生 t 分布。</li>
+</ul>
+</li>
+<li>泊松分布
+<ul>
+<li><code>exponential_distribution</code>：生成浮点值的指数分布。</li>
+<li><code>extreme_value_distribution</code>：生成浮点值的极值分布。</li>
+<li><code>gamma_distribution</code>：生成浮点值的伽马分布。</li>
+<li><code>poisson_distribution</code>：生成整数值的泊松分布。</li>
+<li><code>weibull_distribution</code>：生成浮点值的韦伯分布。</li>
+</ul>
+</li>
+<li>抽样分布
+<ul>
+<li><code>discrete_distribution</code>：生成离散整数分布。</li>
+<li><code>piecewise_constant_distribution</code>：生成浮点值的分段常数分布。</li>
+<li><code>piecewise_linear_distribution</code>：生成浮点值的分段线性分布。</li>
+</ul>
+</li>
+</ol>
+<p>不同的分布方法允许不同的传入参数，举例来说，<code>normal_distribution</code> 允许传入两个参数，前者为期望，后者为标准差。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mt19937 e;</span><br><span class="line">normal_distribution &lt;<span class="type">double</span>&gt; <span class="built_in">dis</span>(<span class="number">0.0</span>, <span class="number">1.0</span>);<span class="comment">// 期望为 0.0，标准差为 1.0 的正态分布</span></span><br><span class="line">std::cout &lt;&lt; <span class="built_in">dis</span>(e) &lt;&lt; std::endl; <span class="comment">// 获取随机数时把引擎传入</span></span><br></pre></td></tr></table></figure>
+<p>需要注意的是，尖括号内虽然允许传递模板参数，但不能传递不同的数据类型。举例来说，<code>uniform_int_distribution</code> 后允许传入 <code>short</code>、<code>int</code>、<code>long long</code> 等整型，但不允许传入 <code>float</code>、<code>double</code> 等浮点型。</p>
+<h4 id="random_device"><a class="markdownIt-Anchor" href="#random_device"></a> <code>random_device</code></h4>
+<p><code>random_device</code> 也是一种 URNG，但是不同之处是，<code>random_device</code> 可以获取真随机数。真随机数可能来源于 Linux 维护的熵池，在 Windows 上可能来源于微软的加密 API，在没有获取真随机数的途径时，它会生成伪随机数。</p>
+<p>这种方法的优点就在于其真随机性，但是弊端也很明显：较慢的获取速度，同时熵池是有限的，在无法获取真随机数时，<code>random_device</code> 改为生成伪随机数。这表明 <code>random_device</code> 是不稳定的，并不适合直接作为随机数生成器调用多次。</p>
+<p>一般来说，<code>random_device</code> 的用法是代替时间函数作为种子。用 <code>random_device</code> 生成一个真随机数，然后把这个随机数作为种子传递给其他伪随机数生成器。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用例</span></span><br><span class="line">random_device seed;</span><br><span class="line"><span class="function">mt19937 <span class="title">e</span><span class="params">(seed())</span></span>;</span><br><span class="line">uniform_int_distribution &lt;<span class="type">int</span>&gt; <span class="built_in">dis</span>(<span class="number">10</span>, <span class="number">20</span>);</span><br><span class="line">std::cout &lt;&lt; <span class="built_in">dis</span>(e) &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure>
+<h3 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h3>
+<p>一般情况下，<code>rand()</code> 配合时间函数作为种子，可以生成比较令人满意的随机数。在有特殊的对于随机数分布的要求或者是对于随机浮点数的需求时，可以调用 <code>&lt;random&gt;</code> 来实现。</p>
+
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/C/">C++</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2023/07/01/trans/Life-As-Simulacrum/"
+                                   title="作为拟像的生活：斯坦尼斯拉夫·莱姆的科幻小说"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2023/06/25/ancient-music/ancient-music-5/"
+                                   title="古乐5：Los Set Gotxs"
+                                >
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#rand-%E5%92%8C-srand"><span class="nav-text"> rand() 和 srand()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#random"><span class="nav-text"> &lt;random&gt;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9D%87%E5%8C%80%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90%E5%99%A8"><span class="nav-text"> 均匀随机数生成器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E5%B8%83%E7%B1%BB%E5%9E%8B"><span class="nav-text"> 分布类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#random_device"><span class="nav-text"> random_device</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text"> 总结</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2025
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Yi Fan</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;|&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#rand-%E5%92%8C-srand"><span class="nav-text"> rand() 和 srand()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#random"><span class="nav-text"> &lt;random&gt;</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9D%87%E5%8C%80%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90%E5%99%A8"><span class="nav-text"> 均匀随机数生成器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E5%B8%83%E7%B1%BB%E5%9E%8B"><span class="nav-text"> 分布类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#random_device"><span class="nav-text"> random_device</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text"> 总结</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/toggle-theme.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/code-block.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    
+        <!-- post-helper -->
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/post/post-helper.js"></script>
+
+        <!-- toc -->
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/post/toc.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- category-page -->
+    
+
+    <!-- links-page -->
+    
+
+    <!-- photos-page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>

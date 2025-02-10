@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Yi Fan">
+    <meta name="msvalidate.01" content="9007710388DA7C23790FC73B316C2B1D" />
+    <meta name="google-site-verification" content="O0fQKhDwSjGzeBg6fUCS3GrIVLbt3Qb7uCHMIKkRGKg" />
+    <link rel="stylesheet" href="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.11.1/katex.min.css">
+    
+    <title>
+        
+            从爬山算法到模拟退火（C++） |
+        
+        y1-fan&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"y1-fan.github.io","root":"/","language":"zh-CN"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#A47B67","title":"y1-fan's Blog","author":"Yi Fan","avatar":"/images/avatar.jpg","logo":null,"favicon":null},"menu":{"Archives":"/archives","Tag":"/tag","Categories":"/categories","Photos":"/photos","About":"/about"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":null,"hitokoto":true},"social_contact":{"enable":true,"links":{"github":"https://github.com/y1-fan","weixin":null,"qq":null,"weibo":null,"steam":"https://steamcommunity.com/profiles/76561198849229745/","twitter":null,"facebook":null,"email":"yi.fan.cn@outlook.com"}},"scroll":{"progress_bar":false,"percent":false,"hide_header":true},"home":{"category":false,"tag":true,"announcement":null},"post":{"author_badge":{"enable":false,"level_badge":false,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"obsidian"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false,"layout":"right"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":true},"lazyload":{"enable":false},"cdn":{"enable":true,"provider":"jsdelivr"},"pjax":{"enable":false},"footer":{"since":2020,"word_count":false,"icp":{"enable":false,"record_code":null,"url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":false,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","photos":[{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/the_weather_project.2ob9na14he.webp","name":"Olafur Eliasson. 《气象计划》（The Weather Project）. 2003/2019."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/la_vierge.1ov6a3ydb4.webp","name":"Max Ernst. 《在三个目击者面前掴打幼年耶稣的圣母：安德烈·布列塔尼、保罗·艾吕雅和画家》（La vierge corrigeant l'enfant Jésus devant trois témoins: André Breton, Paul Eluard et le peintre）. 1926."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/two_shakes_a_tick_and_a_jiffy.9gwb9qrbw4.webp","name":"Julieta Aranda. Two shakes, a tick and a jiffy. 2009."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/R.S.V.P.I.3go550hq7b.webp","name":"Senga Nengudi. 《敬请回复》（R.S.V.P.I.）. 1977/2003."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/valley_curtain.8s3274z1uk.webp","name":"Christo Vladimirov Javacheff. 《山谷窗帘》（Valley Curtain）. 1970-1972. Rifle, Colorado."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/ebb_and_flow.67x7uhz38a.webp","name":"Lawrence Weiner. 《浪奔浪流》（Attached by Ebb & Flow）. 2019. 上海, 中国."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/The-Triumph-of-Death.pf48ysn67.webp","name":"Pieter Bruegel the Elder. 《死亡的胜利》（The Triumph of Death）. 1562."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/528px-The_Vision_of_Saint_John_MET_DT1052.luoy5457.webp","name":"El Greco. 《圣约翰的异象》（The Vision of Saint John）. 1608-1614."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/Caspar_David_Friedrich_-_Das_Eismeer_-_Hamburger_Kunsthalle_-_02.361cnvzj21.webp","name":"Caspar David Friedrich. 《冰海》（Das Eismeer）. 1823-1824."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/Caspar_David_Friedrich's_Chalk_Cliffs_on_Rügen.4xubisivxy.webp","name":"Caspar David Friedrich. 《吕根岛上的白垩岩》（Chalk Cliffs on Rügen）. 1818."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/JEAN_LOUIS_THÉODORE_GÉRICAULT_-_La_Balsa_de_la_Medusa_(Museo_del_Louvre,_1818-19).6f0gkjn0ok.webp","name":"Théodore Géricault. 《美杜莎之筏》（La Balsa de la Medusa）. 1818-1819."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/joseph_albers_fuge.1aos341s12.webp","name":"Josef Albers. Fugue. 1926."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/Robert-Rauschenberg.-Untitled.-1951..6wqtfuajkq.webp","name":"Robert Rauschenberg. Untitled. 1951."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/Robert-Motherwell.-Iberia.-1958.5mnw9isk98.webp","name":"Robert Motherwell. Iberia. 1958."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/Ellsworth-Kelly.-Black.-1951..3gohnr0wi3.webp","name":"Ellsworth Kelly. Black. 1951."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/Caravaggio.-St.-Jerome-Writing.-1605-06.7zqiqq6dig.webp","name":"Caravaggio. St. Jerome Writing. 1605-06."},{"url":"https://cdn.statically.io/gh/y1-fan/picx-images-hosting@master/Metallica-lunare-2006.3d4vq1jjjz.webp","name":"Sandro Sanna. Metallica lunare. 2006."}],"version":"4.0.6"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Sans+TC:wght@100..900&display=swap');
+    </style>
+<meta name="generator" content="Hexo 7.1.1"><link rel="alternate" href="/atom.xml" title="y1-fan's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container border-box">
+
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<style>
+@import url('https://fonts.font.im/css2?&family=Noto+Serif+TC:wght@500&display=swap');
+@font-face {
+    font-family: Futura-Medium;
+    src: url('/font/Futura-Medium.woff');
+}
+</style>
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+            <a class="site-name border-box" href="/" style="font-family: 'Futura-Medium', sans-serif;">
+               y1-fan&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >首页</a>
+                    </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >归档</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tag"
+                            >标签</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >合集</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/photos"
+                            >图像</a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >关于</a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            <li class="drawer-menu-item flex-center">
+                <a class=""
+                   href="/"
+                >首页</a>
+            </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"
+                    >归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tag"
+                    >标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"
+                    >合集</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/photos"
+                    >图像</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about"
+                    >关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        从爬山算法到模拟退火（C++）
+                    </div>
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/avatar.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Yi Fan</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2024-04-05 18:39:39</span>
+            </span>
+
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Mon Apr 08 2024 11:09:51 GMT+0800">2024-04-08 11:09:51</span>
+            </span>
+        
+
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/C/">C++</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E7%AE%97%E6%B3%95/">算法</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body">
+                    
+
+                    <h3 id="爬山算法"><a class="markdownIt-Anchor" href="#爬山算法"></a> 爬山算法</h3>
+<p>峰顶是指，向任何一个方向走都在向下行进的地方。这句看似显然的话构成了爬山算法的基本理论：只要向上走，就可以到达峰顶。</p>
+<p>实现也相当简单，这里以二维上山的情况举例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Position</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">double</span> x,y;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">step</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">// 自定义前进函数</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;pos;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">climb</span><span class="params">(Position &amp;pos)</span></span>&#123;</span><br><span class="line">    <span class="type">double</span> height = pos.y;</span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        pos.<span class="built_in">step</span>(); </span><br><span class="line">        <span class="keyword">if</span> (pos.y &lt; height) <span class="keyword">break</span>; </span><br><span class="line">        <span class="comment">// 前进后如果发现高度下降则退出</span></span><br><span class="line">        height = pos.y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>爬山算法的缺点也是相当明显。虽说找到了峰顶，可那只是一个局部极值，在全局范围上或许还存在着更加优秀的解，但爬山算法一旦找到一个极值便无力继续寻求。因此这个算法还有改进空间。</p>
+<h3 id="模拟退火"><a class="markdownIt-Anchor" href="#模拟退火"></a> 模拟退火</h3>
+<p>我们很容易想到这样一种优化：要是爬山算法中的那个爬山者能够一步跨越一个山峰，到达另一个山峰就好了。这个思路有效解决了爬山算法陷入局部极值的问题，实现了全局的求解。</p>
+<p>为了让位置更有全局性，模拟退火一般会通过随机算法从全局中获取一个位置。然后，比较该位置高度和当前位置的高度。如果该位置高度高于当前位置（假设是上山），那么就将当前位置转移过去；如果该位置高度低于或者等于当前位置，则按照温度数据和高程差构造的函数来确定转移概率，温度越小、高程差越大，则转移概率越小。其中，每一轮计算都会降低温度。</p>
+<p>我不在这里引入计算，但是可以想象，随着时间推进，由于温度的下降，转移到更低处的概率越来越低，因此整体更有可能转移到高处。由于在早期高温时的跳跃的存在，模拟退火算法很难在最后取得局部极值；即使最后温度已经非常低，只要随机到的位置高度高于当前位置，还是能够跳跃过去。这就是模拟退火算法的优势。</p>
+<p>假想有函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mclose">)</span></span></span></span> 的一段需要找到其全局极大值，采用模拟退火算法（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mfrac><mrow><mo>−</mo><mi mathvariant="normal">Δ</mi><mi>E</mi></mrow><mi>T</mi></mfrac></msup></mrow><annotation encoding="application/x-tex">e^\frac{-\Delta E}{T}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.973465em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.973465em;"><span style="top:-3.363em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8720928571428571em;"><span style="top:-2.656em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.13889em;">T</span></span></span></span><span style="top:-3.2255000000000003em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em;"></span></span><span style="top:-3.384em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">Δ</span><span class="mord mathdefault mtight" style="margin-right:0.05764em;">E</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.344em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span></span></span></span></span></span></span></span></span></span></span> 很好地满足了转移概率函数的要求，此处采用此公式来计算转移概率，其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>e</mi></mrow><annotation encoding="application/x-tex">e</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">e</span></span></span></span> 为自然常数，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>E</mi></mrow><annotation encoding="application/x-tex">\Delta E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord">Δ</span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span></span></span></span> 为高差，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span></span></span></span> 为温度）：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Position</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">double</span> x,y;</span><br><span class="line">&#125;pos;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">annealing</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">double</span> T = <span class="number">1000</span>; <span class="comment">// 初始温度</span></span><br><span class="line">    <span class="keyword">while</span> (T &gt; <span class="number">0.001</span>)&#123; <span class="comment">// 终止温度</span></span><br><span class="line">        Position nxt = <span class="built_in">next</span>(); <span class="comment">// 函数 next 随机获取一个位置</span></span><br><span class="line">        <span class="type">double</span> delta = <span class="built_in">abs</span>(nxt.y - pos.y);</span><br><span class="line">        <span class="keyword">if</span> (nxt.y &gt; pos.y) pos = nxt;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">exp</span>(-delta / T) &gt; ((<span class="type">double</span>)<span class="built_in">rand</span>()/RAND_MAX)) pos = nxt;</span><br><span class="line">        &#125;</span><br><span class="line">        T *= <span class="number">0.97</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="小生境方法"><a class="markdownIt-Anchor" href="#小生境方法"></a> 小生境方法</h3>
+<p>并非一定要模拟退火才可以优化爬山算法，实际上，我们也可以找来一群人爬山。</p>
+<p>小生境方法通过构造一个种群，让位置均匀地散布于全局，最终结果是大量初始位置通过爬山算法聚集于所有峰顶，最终找到真正的全局最大值。不过这种方法的问题在于，当种群个体数目太多时，可能会导致运算速度的下降，因此，种群的大小的选择是需要考虑的问题。</p>
+<p>在模拟退火算法中也可以同时采用小生境方法。</p>
+
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/C/">C++</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav">
+                        
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2024/05/13/ancient-music/ancient-music-11/"
+                                   title="古乐11：Ai vist lo lop"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2024/02/07/mathematics/linear-algebra-1-3/"
+                                   title="《线性代数入门》解题笔记 1.3"
+                                >
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%88%AC%E5%B1%B1%E7%AE%97%E6%B3%95"><span class="nav-text"> 爬山算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB"><span class="nav-text"> 模拟退火</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E7%94%9F%E5%A2%83%E6%96%B9%E6%B3%95"><span class="nav-text"> 小生境方法</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2023</span>&nbsp;-&nbsp;2025
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Yi Fan</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;|&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-toggle-theme-mode flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+            <li class="tools-item rss flex-center">
+                <a class="flex-center"
+                   href="/atom.xml"
+                   target="_blank"
+                >
+                    <i class="fas fa-rss"></i>
+                </a>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%88%AC%E5%B1%B1%E7%AE%97%E6%B3%95"><span class="nav-text"> 爬山算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB"><span class="nav-text"> 模拟退火</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E7%94%9F%E5%A2%83%E6%96%B9%E6%B3%95"><span class="nav-text"> 小生境方法</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/toggle-theme.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/code-block.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    
+        <!-- post-helper -->
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/post/post-helper.js"></script>
+
+        <!-- toc -->
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@4.0.6/source/js/post/toc.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- category-page -->
+    
+
+    <!-- links-page -->
+    
+
+    <!-- photos-page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>
