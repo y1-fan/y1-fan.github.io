@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://y1-fan.github.io/about/index.html</loc>
+    
+    <lastmod>2025-02-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://y1-fan.github.io/2025/01/21/article/the-nature-of-literature/</loc>
     
     <lastmod>2025-02-11</lastmod>
@@ -21,15 +30,6 @@
   
   <url>
     <loc>https://y1-fan.github.io/2025/01/08/ancient-cultrue/petit-erya-1/</loc>
-    
-    <lastmod>2025-01-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://y1-fan.github.io/about/index.html</loc>
     
     <lastmod>2025-01-21</lastmod>
     
