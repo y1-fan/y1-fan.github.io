@@ -510,13 +510,6 @@
   </url>
   
   <url>
-    <loc>https://y1-fan.github.io/tags/%E5%8F%A4%E6%96%87%E5%AD%97%E5%AD%A6/</loc>
-    <lastmod>2025-02-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://y1-fan.github.io/tags/%E8%84%91%E6%9C%BA%E6%8E%A5%E5%8F%A3/</loc>
     <lastmod>2025-02-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -546,6 +539,13 @@
   
   <url>
     <loc>https://y1-fan.github.io/tags/%E5%85%89%E5%AD%A6/</loc>
+    <lastmod>2025-02-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://y1-fan.github.io/tags/%E5%8F%A4%E6%96%87%E5%AD%97%E5%AD%A6/</loc>
     <lastmod>2025-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
