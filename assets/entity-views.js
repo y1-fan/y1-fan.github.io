@@ -44,7 +44,7 @@ export async function renderEnsembles(main, setTitle) {
 
     ${adminCreate('ensemble', '新增乐团')}
 
-    <section class="section" aria-label="乐团">
+    <section class="section section--flush" aria-label="乐团">
       ${entityIndex(sections, 'ensemble')}
     </section>
   `;
@@ -108,7 +108,7 @@ export async function renderVenues(main, setTitle) {
 
     ${adminCreate('venue', '新增场馆')}
 
-    <section class="section" aria-label="场馆">
+    <section class="section section--flush" aria-label="场馆">
       ${entityIndex(sections, 'venue')}
     </section>
   `;

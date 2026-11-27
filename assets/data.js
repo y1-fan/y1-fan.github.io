@@ -67,7 +67,11 @@ export function clearDataCache() {
 }
 
 export function loadIndex() {
-  return remember('works', () => api.works().then((data) => ({ works: data.items || [] })));
+  return remember('works', () => api.works().then((data) => ({
+    works: data.items || [],
+    updated: data.meta?.updated || '',
+    demo: Boolean(data.meta?.demo),
+  })));
 }
 
 export function loadEvents() {

@@ -56,21 +56,6 @@
   overflow: hidden;
 }
 
-.work-head::before {
-  content: attr(data-index);
-  position: absolute;
-  right: 320px;
-  bottom: -0.18em;
-  z-index: 0;
-  color: var(--red-soft);
-  font-family: var(--display);
-  font-size: clamp(150px, 21vw, 300px);
-  font-weight: 800;
-  line-height: 0.72;
-  letter-spacing: -0.09em;
-  pointer-events: none;
-}
-
 .work-title-block {
   position: relative;
   z-index: 1;
@@ -570,6 +555,22 @@
   font-family: var(--mono);
   font-size: 10px;
   line-height: 1.5;
+}
+
+.past li a.past-title {
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.past li a.past-title:hover,
+.past li a.past-title:focus-visible {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* 相邻条目 */

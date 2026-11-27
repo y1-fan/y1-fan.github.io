@@ -226,10 +226,6 @@
   letter-spacing: 0.14em;
 }
 
-.board-col--title {
-  color: var(--board-ink);
-}
-
 /* ---------- 行与字符矩阵 ---------- */
 
 .board-rows {

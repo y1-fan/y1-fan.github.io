@@ -56,6 +56,11 @@
   border-top: 1px solid var(--ink);
 }
 
+/* 页头已经有一条 kicker 线时，索引区不再重复画横线。 */
+.section--flush {
+  border-top: 0;
+}
+
 .ticker + .section {
   border-top: 0;
 }
@@ -103,7 +108,6 @@
   margin: 18px 0 0;
   padding: 10px 0;
   border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
 }
 
 .alpha-chip {
@@ -148,7 +152,6 @@
   grid-template-columns: clamp(74px, 8vw, 128px) minmax(0, 1fr);
   gap: clamp(18px, 3vw, 44px);
   padding: 26px 0 32px;
-  border-top: 1px solid var(--ink);
   scroll-margin-top: calc(var(--head-h) + 14px);
 }
 

@@ -24,10 +24,6 @@
     grid-column: 1 / -1;
   }
 
-  .work-head::before {
-    display: none;
-  }
-
   .work-aside {
     padding-top: 18px;
     padding-left: 0;

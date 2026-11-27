@@ -372,16 +372,18 @@ async function renderWorks(token) {
   if (token !== routeToken) return;
 
   const works = index.works || [];
+  const updated = formatUpdated(index.updated);
   setPageTitle('曲目');
   main.innerHTML = `
     <header class="page-head">
       <p class="kicker"><span>Works</span><span>${works.length} 部作品 / 按作曲家拼音排列</span></p>
       <h1>曲目</h1>
+      <p class="notice"><span class="demo-dot" aria-hidden="true"></span>${index.demo ? '示例数据，非真实票务信息' : '信息来自公开渠道'}${updated ? ` · 更新于 ${esc(updated)}` : ''}</p>
     </header>
 
     ${adminCreate('work', '新增曲目')}
 
-    <section class="section" aria-label="曲目">
+    <section class="section section--flush" aria-label="曲目">
       ${composerIndex(works)}
     </section>
   `;
@@ -620,7 +622,7 @@ async function renderWork(slug, token) {
       <span aria-current="page">${esc(page.title)}</span>
     </nav>
 
-    <header class="work-head" data-index="${workNumber}">
+    <header class="work-head">
       <div class="work-title-block">
         <p class="kicker"><span>Work ${workNumber} / ${workTotal}</span><span>${esc(page.composer)}${page.period ? ` · ${esc(page.period)}` : ''}</span></p>
         <h1>${esc(page.title)}</h1>
@@ -717,6 +719,7 @@ function renderPast(past) {
     return `
       <li>
         <span>${esc(formatDateLong(event.date))}</span>
+        <a class="past-title" href="#/event/${encode(event.id)}">${esc(performanceTitle(event))}</a>
         <span>${venue}${event.city ? ` · ${esc(event.city)}` : ''}</span>
       </li>
     `;
