@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="obelisk" data-name="obelisk" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="15 15 70 70">
+  <defs>
+    <style>
+      .gray {
+        fill: #b9b8ba;
+      }
+
+      .red {
+        fill: #D93636;
+      }
+
+      .yellow {
+        fill: #E8C928;
+      }
+
+      .blue {
+        fill: #2859A5;
+      }
+
+    </style>
+  </defs>
+
+  <polygon class="red" points="
+    25 25
+    35 35
+    35 75
+    25 65
+  "/>
+
+  <polygon class="yellow" points="
+    45 25
+    55 35
+    55 75
+    45 65
+  "/>
+
+  <polygon class="blue" points="
+    65 25
+    75 35
+    75 75
+    65 65
+  "/>
+  
+
+</svg>

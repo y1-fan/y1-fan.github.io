@@ -1,0 +1,225 @@
+/*
+ * [INPUT]: 依赖 base.css 的令牌、.panel、.hoverable、.kicker、.demo-dot。
+ * [OUTPUT]: 明亮日历区：Swiss 大字页头、孟菲斯日期色块、实色场次卡。
+ * [POS]: 服务首页 header 之后的演出日历；Hover 只使用位移与硬阴影，不使用 blur。
+ * [PROTOCOL]: Update this header on change, then check CLAUDE.md
+ */
+
+.page-head {
+  position: relative;
+  max-width: none;
+  padding: clamp(30px, 4vw, 52px) 0 10px;
+}
+
+.page-head > * {
+  position: relative;
+  z-index: 1;
+}
+
+.page-head h1 {
+  font-size: clamp(56px, 9vw, 124px);
+}
+
+.page-lead {
+  max-width: 52ch;
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.85;
+}
+
+.notice {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+
+.month {
+  margin-top: 0;
+  padding: 24px 0 0;
+  border-top: 1px solid var(--ink);
+}
+
+.page-head + .month {
+  margin-top: 34px;
+}
+
+.month h2 {
+  display: flex;
+  align-items: baseline;
+  gap: 11px;
+  margin: 0;
+  padding-bottom: 14px;
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: clamp(28px, 3.6vw, 46px);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.month h2::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  flex: none;
+  background: var(--blue);
+}
+
+.month h2 small {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.month-events {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+  counter-reset: event;
+}
+
+.event {
+  position: relative;
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr) 110px;
+  gap: 0;
+  padding: 0;
+  border-radius: 0;
+  counter-increment: event;
+}
+
+.event-date {
+  padding: 18px 14px;
+  border-right: 1px solid var(--ink);
+  background: var(--blue-soft);
+  color: var(--ink);
+}
+
+.event:nth-child(3n + 1) .event-date {
+  background: var(--blue);
+  color: var(--paper);
+}
+
+.event:nth-child(3n + 2) .event-date {
+  background: var(--red);
+  color: var(--ink);
+}
+
+.event:nth-child(3n) .event-date {
+  background: var(--yellow);
+  color: var(--ink);
+}
+
+.event-date b {
+  display: block;
+  color: inherit;
+  font-family: var(--display);
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 0.86;
+  letter-spacing: -0.045em;
+  font-variant-numeric: tabular-nums;
+}
+
+.event-date span {
+  display: block;
+  margin-top: 6px;
+  color: inherit;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+
+.event-body {
+  padding: 18px 20px;
+}
+
+.event-kicker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px 10px;
+  margin: 0 0 5px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.event-kicker::before {
+  content: "NO." counter(event, decimal-leading-zero);
+  color: var(--blue);
+  letter-spacing: 0.06em;
+}
+
+.event-body h3 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+}
+
+.event-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.event-title a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.event-venue {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.event-venue a,
+.event-people a {
+  position: relative;
+  z-index: 2;
+}
+
+.event-people {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10px;
+  line-height: 1.65;
+  letter-spacing: 0.02em;
+}
+
+.event-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 18px 16px;
+  border-left: 1px solid var(--ink);
+}
+
+.event-time {
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}

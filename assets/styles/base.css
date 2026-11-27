@@ -1,0 +1,639 @@
+/*
+ * [INPUT]: 无外部依赖。最先加载，定义全部设计令牌。
+ * [OUTPUT]: 红 / 黄 / 蓝三原色明亮令牌、Segoe UI 字体栈、放大后的小字刻度、深色出发屏令牌、
+ *           国际主义网格、纯色块、平直面板与实色 Hover 基元。
+ * [POS]: Swiss / New Wave × Memphis 的基础层。页面只消费 .panel、.hoverable 与令牌。
+ * [PROTOCOL]: Update this header on change, then check CLAUDE.md
+ */
+
+:root {
+  color-scheme: light;
+
+  --paper: #f3efe3;
+  --paper-2: #e9e3d4;
+  --panel: #fffdf6;
+  --ink: #101010;
+  --ink-2: #33312d;
+  --muted: #5f5b52;
+  --faint: #8a8477;
+  --line: #161616;
+  --line-soft: #d8d0bf;
+
+  /* 三原色：红 / 黄 / 蓝。soft 只用于底与浅底文字，加深色不引入第四色。 */
+  --red: #d93636;
+  --red-soft: #f7d3d3;
+  --yellow: #e8c928;
+  --yellow-soft: #f8efbf;
+  --blue: #2859a5;
+  --blue-soft: #d4deed;
+
+  --board-bg: #0b0a09;
+  --board-cell: #181614;
+  --board-ink: #f1ead9;
+  --board-dim: #8e8574;
+  --board-faint: #625c50;
+  --board-disabled: #4b463d;
+  --board-rule: #2d2923;
+  --board-accent: #e8c928;
+  --board-hinge: #050505;
+  --board-sheen: rgba(255, 255, 255, 0.035);
+  --board-sheen-strong: rgba(255, 255, 255, 0.14);
+  --board-hinge-soft: rgba(11, 10, 9, 0.55);
+
+  --display: "Segoe UI", "Helvetica Neue", Helvetica, "Arial Black", Arial, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  --sans: "Segoe UI", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+    "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+  /* mono 承担“标签字体”语义：优先 Segoe UI，等宽族只作回退，通用族为 sans-serif。 */
+  --mono: "Segoe UI", ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", sans-serif;
+
+  --pad: clamp(18px, 4vw, 56px);
+  --maxw: 1440px;
+  --head-h: 69px;
+  --grid-cols: 12;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--paper);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: linear-gradient(90deg, rgba(16, 16, 16, 0.055) 1px, transparent 1px);
+  background-size: calc((min(100vw, var(--maxw)) - (2 * var(--pad))) / var(--grid-cols)) 100%;
+  background-position: calc(max(0px, (100vw - var(--maxw)) / 2) + var(--pad)) 0;
+  background-repeat: repeat;
+}
+
+main,
+.site-foot {
+  position: relative;
+  z-index: 1;
+}
+
+::selection {
+  background: var(--blue);
+  color: var(--paper);
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid var(--paper);
+  border-radius: 0;
+  background: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  max-width: 100%;
+}
+
+mark {
+  padding: 0 2px;
+  background: var(--yellow);
+  color: var(--ink);
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--pad);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.mono,
+.micro {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.micro {
+  margin: 0;
+  color: var(--faint);
+}
+
+.signal-square {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 7px;
+  background: var(--blue);
+  vertical-align: 1px;
+}
+
+.vertical {
+  margin: 0;
+  color: var(--faint);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+}
+
+.skip {
+  position: absolute;
+  left: 16px;
+  top: -70px;
+  z-index: 100;
+  padding: 9px 14px;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  background: var(--panel);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip:focus {
+  top: 14px;
+}
+
+/* ---------- 平直面板与实色 Hover ---------- */
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--ink);
+}
+
+.hoverable {
+  position: relative;
+  transition:
+    transform 0.16s ease,
+    background-color 0.16s ease,
+    color 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+.hoverable:hover,
+.hoverable:focus-visible {
+  transform: translate(-3px, -3px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.hoverable:active {
+  transform: translate(-1px, -1px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+/* ---------- 共享排版 ---------- */
+
+.kicker {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 0 0 18px;
+  padding-top: 9px;
+  border-top: 1px solid var(--ink);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.kicker span:first-child {
+  color: var(--blue);
+}
+
+.page-head h1,
+.state h1 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--display);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+
+.empty {
+  margin: 24px 0;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+}
+
+/* ---------- 共享组件 ---------- */
+
+kbd {
+  display: inline-grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  line-height: 1;
+}
+
+.chip {
+  padding: 5px 9px;
+  border-radius: 0;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.chip:hover,
+.chip:focus-visible {
+  color: var(--paper);
+  background: var(--ink);
+}
+
+.button {
+  display: inline-block;
+  margin-top: 26px;
+  padding: 10px 16px;
+  border-radius: 0;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  color: var(--paper);
+  background: var(--ink);
+}
+
+.demo-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  flex: none;
+  background: var(--red);
+}
+
+.sep {
+  margin: 0 7px;
+  color: var(--blue);
+}
+
+/* ---------- 顶栏 ---------- */
+
+.site-head {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  border-bottom: 1px solid var(--ink);
+  background: var(--paper);
+}
+
+.head-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  height: calc(var(--head-h) - 5px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex: none;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.brand-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.brand:hover .brand-mark {
+  opacity: 0.75;
+}
+
+.brand-text {
+  display: none;
+}
+
+.topbar-mid {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  color: var(--faint);
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.nav {
+  display: flex;
+  align-items: stretch;
+  flex: none;
+  gap: 0;
+}
+
+.nav > a {
+  padding: 8px 11px;
+  border: 1px solid transparent;
+  border-radius: 0;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.11em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav > a.hoverable:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.nav > a[aria-current="page"] {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.nav > a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: var(--yellow);
+}
+
+.search-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 32px;
+  margin-left: 8px;
+  padding: 0 10px;
+  border-radius: 0;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background: var(--blue);
+  color: var(--paper);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.search-btn span {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.search-btn kbd {
+  border-color: var(--ink);
+}
+
+.search-btn:hover kbd {
+  border-color: var(--paper);
+  background: transparent;
+  color: var(--paper);
+}
+
+.color-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 5px;
+}
+
+.color-bar span:nth-child(1) {
+  background: var(--blue);
+}
+
+.color-bar span:nth-child(2) {
+  background: var(--red);
+}
+
+.color-bar span:nth-child(3) {
+  background: var(--yellow);
+}
+
+/* ---------- 状态页 ---------- */
+
+.loading {
+  padding: 120px 0;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.state {
+  max-width: 720px;
+  margin: 64px 0 40px;
+  padding: 40px;
+  border-radius: 0;
+}
+
+.state h1 {
+  font-size: clamp(34px, 5.5vw, 64px);
+}
+
+.state p {
+  max-width: 56ch;
+  margin: 18px 0 0;
+  color: var(--ink-2);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.error-detail {
+  margin-top: 22px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+.error-detail summary {
+  cursor: pointer;
+}
+
+.error-detail pre {
+  overflow: auto;
+  padding: 14px;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  background: var(--paper-2);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0;
+  white-space: pre-wrap;
+}
+
+/* ---------- 页脚 ---------- */
+
+.site-foot {
+  margin-top: 40px;
+  padding: 28px 0 36px;
+  border-top: 2px solid var(--ink);
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.site-foot::before {
+  content: "MUSICA";
+  display: block;
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto 18px;
+  padding-inline: var(--pad);
+  color: #e3dccb;
+  font-family: var(--display);
+  font-size: clamp(64px, 14vw, 196px);
+  font-weight: 800;
+  line-height: 0.72;
+  letter-spacing: -0.07em;
+  pointer-events: none;
+}
+
+.foot-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.foot-inner p {
+  margin: 0;
+}
+
+.foot-inner b {
+  color: var(--ink-2);
+  font-family: var(--display);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.foot-inner b::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 7px;
+  background: var(--red);
+  vertical-align: 1px;
+}
+
+.foot-inner a {
+  color: var(--ink-2);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.foot-inner a:hover {
+  background: var(--ink);
+  color: var(--paper);
+  border-bottom-color: var(--ink);
+}

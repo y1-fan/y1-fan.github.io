@@ -1,0 +1,119 @@
+<!doctype html>
+<!--
+  [INPUT]: 依赖 assets/styles/ 下的十一份样式（base → home/board/work/calendar/event/search/entity/editor/ai → responsive）、
+           assets/app.js（由它加载 board.js 与 mode.js），assets/logo.svg。
+  [OUTPUT]: 提供站点骨架：首页出发屏容器、顶栏、主内容容器、页脚、搜索 dialog。
+  [POS]: Musica Web App 入口页。所有站内跳转走 hash；静态资源使用相对路径。
+          本地编辑版直接使用本文件；deploy/index.html 由 scripts/build-static.mjs 生成并移除 AI 导航、编辑器与写入口。
+  [PROTOCOL]: Update this header on change, then check CLAUDE.md
+-->
+<!-- 由 npm run build:static 生成的只读静态站点。源文件见项目根目录 index.html。 -->
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Musica · 古典音乐演出与百科</title>
+  <meta name="description" content="曲目、乐团、场馆与未来演出索引。古典音乐作品简介、乐团档案与演出日历。">
+  <meta name="color-scheme" content="light">
+  <meta name="generator" content="musica build:static">
+  <meta name="theme-color" content="#f3efe3">
+  <meta property="og:title" content="Musica · 古典音乐演出与百科">
+  <meta property="og:description" content="读一部作品的来历，也看它接下来在哪里上演。">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles/base.css">
+  <link rel="stylesheet" href="assets/styles/home.css">
+  <link rel="stylesheet" href="assets/styles/board.css">
+  <link rel="stylesheet" href="assets/styles/work.css">
+  <link rel="stylesheet" href="assets/styles/calendar.css">
+  <link rel="stylesheet" href="assets/styles/event.css">
+  <link rel="stylesheet" href="assets/styles/search.css">
+  <link rel="stylesheet" href="assets/styles/entity.css">
+  <link rel="stylesheet" href="assets/styles/responsive.css">
+  <script src="assets/site-data.js"></script>
+  <script type="module" src="assets/app.js"></script>
+  <noscript><style>#board { display: none; }</style></noscript>
+</head>
+<body>
+  <a class="skip" href="#main">跳到主要内容</a>
+
+  <div id="board" class="board">
+    <div class="board-boot">
+      <p class="board-boot-mark">Musica / Departures</p>
+      <p class="board-boot-text">正在接入演出数据…</p>
+    </div>
+  </div>
+
+  <header class="site-head">
+    <div class="head-inner wrap">
+      <a class="brand" href="#/" aria-label="Musica 首页">
+        <span class="brand-mark" aria-hidden="true"><img src="assets/logo.svg" alt=""></span>
+      </a>
+
+      <p class="topbar-mid mono">Classical music / concert index</p>
+
+      <nav class="nav" aria-label="主导航">
+        <a class="hoverable" href="#/" data-nav="home">首页</a>
+        <a class="hoverable" href="#/works" data-nav="works">曲目</a>
+        <a class="hoverable" href="#/ensembles" data-nav="ensembles">乐团</a>
+        <a class="hoverable" href="#/venues" data-nav="venues">场馆</a>
+        <a class="hoverable" href="#/history" data-nav="history">历史</a>
+        <button class="search-btn panel hoverable" type="button" data-open-search aria-label="搜索曲目">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7">
+            <circle cx="11" cy="11" r="6.5"></circle>
+            <path d="m16 16 4.5 4.5"></path>
+          </svg>
+          <span>搜索</span>
+          <kbd>/</kbd>
+        </button>
+      </nav>
+    </div>
+    <div class="color-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+  </header>
+
+  <main id="main" class="wrap" tabindex="-1">
+    <p class="loading">正在载入…</p>
+    <noscript>
+      <section class="state panel">
+        <h1>需要 JavaScript</h1>
+        <p>本站用 JavaScript 通过 API 读取曲目与演出数据。请启用 JavaScript 后重新载入。</p>
+      </section>
+    </noscript>
+  </main>
+
+  <footer class="site-foot">
+    <div class="wrap foot-inner">
+      <p><b>Musica</b> · 古典音乐演出索引</p>
+      <p>演出信息来自乐团与场馆公开渠道 · 只读发布版 · <span id="foot-year">2026</span></p>
+    </div>
+  </footer>
+
+  <dialog id="search-dialog" class="search-dialog panel" aria-label="搜索曲目">
+    <div class="search-panel">
+      <div class="search-top">
+        <span>Search / 曲目检索</span>
+        <span>Musica index</span>
+      </div>
+      <div class="search-row">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7">
+          <circle cx="11" cy="11" r="6.5"></circle>
+          <path d="m16 16 4.5 4.5"></path>
+        </svg>
+        <input id="search-input" type="search" placeholder="搜索曲目、作曲家或关键词…" autocomplete="off" spellcheck="false" aria-label="搜索关键词" aria-controls="search-results">
+        <kbd>Esc</kbd>
+        <button class="search-close panel" type="button" data-close-search aria-label="关闭搜索">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="m6 6 12 12M18 6 6 18"></path>
+          </svg>
+        </button>
+      </div>
+      <div id="search-results" class="search-results" aria-live="polite" aria-label="搜索结果"></div>
+      <div class="search-foot">
+        <span>↑↓ 选择 · Enter 打开</span>
+        <span id="search-count"></span>
+      </div>
+    </div>
+  </dialog>
+
+</body>
+</html>

@@ -1,0 +1,247 @@
+/*
+ * [INPUT]: 依赖 base.css 的令牌、.panel、.hoverable、.kicker 与 work.css 的 .work-aside / .meta。
+ * [OUTPUT]: 乐团与场馆的 A–Z 拼音分区、实体页头、按时间的演出行与实体链接质感。
+ *           索引行 hover 与曲目索引一致：黑底白字；分组面板不做整组位移。
+ * [POS]: 只服务 /ensembles 与 /venues 两类页面；字母分区由 home.css 的 .alpha-* 承担。
+ * [PROTOCOL]: Update this header on change, then check CLAUDE.md
+ */
+
+/* 索引 */
+
+.entity-group {
+  margin: 0;
+  padding: 2px 16px 6px;
+  border-radius: 0;
+  border-top: 4px solid var(--blue);
+}
+
+.alpha-section:nth-child(3n + 2) .entity-group {
+  border-top-color: var(--red);
+}
+
+.alpha-section:nth-child(3n) .entity-group {
+  border-top-color: var(--yellow);
+}
+
+.entity-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.entity-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 11px 6px;
+  border-bottom: 1px solid var(--line-soft);
+  text-decoration: none;
+  transition:
+    background-color 0.16s ease,
+    color 0.16s ease;
+}
+
+.entity-list li:last-child .entity-row {
+  border-bottom: 0;
+}
+
+.entity-row:hover,
+.entity-row:focus-visible {
+  background: var(--ink);
+}
+
+.entity-row-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.entity-row-name {
+  color: var(--ink-2);
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -0.015em;
+  transition: color 0.16s ease;
+}
+
+.entity-row-en {
+  color: var(--muted);
+  font-size: 11.5px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.entity-row-meta {
+  flex: none;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.entity-row:hover .entity-row-name,
+.entity-row:focus-visible .entity-row-name {
+  color: var(--paper);
+}
+
+.entity-row:hover .entity-row-en,
+.entity-row:hover .entity-row-meta,
+.entity-row:focus-visible .entity-row-en,
+.entity-row:focus-visible .entity-row-meta {
+  color: #cfc7b7;
+}
+
+/* 实体页头 */
+
+.entity-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: clamp(28px, 4vw, 64px);
+  padding: 22px 0 34px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.entity-title {
+  min-width: 0;
+}
+
+.entity-head h1 {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: clamp(44px, 7vw, 94px);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.055em;
+}
+
+.entity-meta-empty {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+}
+
+/* 实体场次 */
+
+.entity-events {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.entity-event {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr) 96px;
+  gap: 0;
+  border-radius: 0;
+}
+
+.entity-date {
+  display: block;
+  padding: 16px 12px;
+  border-right: 1px solid var(--ink);
+  background: var(--paper-2);
+}
+
+.entity-date b {
+  display: block;
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+.entity-date span {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.entity-date .entity-year {
+  margin-top: 1px;
+  font-size: 10px;
+}
+
+.entity-event-body {
+  min-width: 0;
+  padding: 15px 18px;
+}
+
+.entity-event-works {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+}
+
+.entity-event-place,
+.entity-event-people {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.entity-event-people {
+  font-family: var(--mono);
+  font-size: 10px;
+}
+
+.entity-event-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 16px 14px;
+  border-left: 1px solid var(--ink);
+}
+
+.entity-past {
+  margin-top: 18px;
+}
+
+/* 实体链接 */
+
+.entity-event a,
+.event-body h3 a,
+.event-venue a,
+.gig-venue a,
+.gig-people a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.event-venue a,
+.gig-venue a,
+.gig-people a {
+  transition: background-color 0.16s ease, color 0.16s ease;
+}
+
+.event-venue a:hover,
+.event-venue a:focus-visible,
+.gig-venue a:hover,
+.gig-venue a:focus-visible,
+.gig-people a:hover,
+.gig-people a:focus-visible {
+  background: var(--blue);
+  color: var(--paper);
+}

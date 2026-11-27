@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>正在返回 · Musica</title>
+<style>
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    display: grid; place-items: center; gap: 12px;
+    padding: 24px; background: #f3efe3; color: #111;
+    font: 400 16px/1.6 "Segoe UI", system-ui, sans-serif;
+  }
+  a { color: #111; }
+</style>
+<script>
+  (function () {
+    var explicitBase = "";
+    var path = location.pathname;
+
+    function redirect(base) {
+      var rest = path.indexOf(base) === 0 ? path.slice(base.length) : path;
+      rest = rest.replace(/index\.html$/, '').replace(/^\/+|\/+$/g, '');
+      location.replace(base + (rest ? '#/' + rest : ''));
+    }
+
+    if (explicitBase) {
+      redirect(explicitBase);
+      return;
+    }
+
+    /* GitHub Pages 项目站点可能位于 /<repo>/。逐级尝试，找到含 site-data.js 的目录。 */
+    var segments = path.split('/').filter(Boolean);
+    var candidates = [];
+    for (var i = segments.length; i >= 0; i -= 1) {
+      candidates.push('/' + segments.slice(0, i).join('/') + (i ? '/' : ''));
+    }
+
+    (function probe(index) {
+      if (index >= candidates.length) {
+        location.replace('/');
+        return;
+      }
+      var candidate = candidates[index];
+      fetch(candidate + 'assets/site-data.js', { method: 'HEAD' })
+        .then(function (response) {
+          if (response.ok) redirect(candidate);
+          else probe(index + 1);
+        })
+        .catch(function () { probe(index + 1); });
+    })(0);
+  })();
+</script>
+</head>
+<body>
+  <p>正在返回 <a href="./">Musica</a>…</p>
+</body>
+</html>

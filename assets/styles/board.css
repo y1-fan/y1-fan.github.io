@@ -1,0 +1,511 @@
+/*
+ * [INPUT]: 依赖 base.css 的字体与深色出发屏令牌。
+ * [OUTPUT]: 首屏机场出发屏：八行四列（日期/演出/乐团/场馆）、逐字翻牌、
+ *           组序号、上一组/暂停/下一组与倒计时进度条。
+ * [POS]: 仅在首页显示，位于 header 之前；深色屏幕滚过整屏后才出现明亮主题。
+ * [PROTOCOL]: Update this header on change, then check CLAUDE.md
+ */
+
+.board {
+  --board-pad: clamp(16px, 3.5vw, 56px);
+  --field-gap-ratio: 0.45;
+  --cell: clamp(
+    13px,
+    calc((min(100vw, 1760px) - (2 * var(--board-pad)) - 14px) / var(--cell-divisor, 47.25)),
+    36px
+  );
+  --field-gap: calc(var(--cell) * var(--field-gap-ratio));
+
+  position: relative;
+  z-index: 1;
+  min-height: 100svh;
+  border-bottom: 2px solid var(--ink);
+  background: var(--board-bg);
+  color: var(--board-ink);
+  font-family: var(--sans);
+}
+
+.board[hidden] {
+  display: none;
+}
+
+/* 数据到达前的深色底：避免首屏先闪出明亮 header。 */
+.board-boot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 100svh;
+  padding: 24px;
+  text-align: center;
+}
+
+.board-boot-mark {
+  margin: 0;
+  color: var(--board-accent);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.board-boot-text {
+  margin: 0;
+  color: var(--board-ink);
+  font-family: var(--display);
+  font-size: clamp(20px, 2.4vw, 32px);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.board-frame {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.6vh, 18px);
+  width: 100%;
+  max-width: 1760px;
+  min-height: 100svh;
+  margin-inline: auto;
+  padding: 18px var(--board-pad) 12px;
+}
+
+/* ---------- 顶部标识 ---------- */
+
+.board-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex: none;
+  padding-top: 12px;
+  border-top: 2px solid var(--board-accent);
+  border-bottom: 1px solid var(--board-rule);
+  padding-bottom: 10px;
+}
+
+.board-brand {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.board-brand-mark {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  flex: none;
+  border: 0;
+  background: transparent;
+}
+
+.board-brand-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.board-clock {
+  margin: 0;
+  color: var(--board-dim);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.board-clock b {
+  margin-right: 6px;
+  color: var(--board-ink);
+  font-size: 13px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+}
+
+/* ---------- 标题与组信息 ---------- */
+
+.board-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(10px, 2vh, 22px);
+  flex: 1;
+  min-height: 0;
+}
+
+.board-title {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex: none;
+}
+
+.board-kicker {
+  margin: 0 0 5px;
+  color: var(--board-accent);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.board-title h1 {
+  margin: 0;
+  color: var(--board-ink);
+  font-family: var(--display);
+  font-size: clamp(28px, 3.2vw, 46px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.board-range {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  margin: 0;
+  color: var(--board-dim);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-align: right;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.board-range span:first-child {
+  color: var(--board-ink);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.1em;
+}
+
+/* ---------- 列头 ---------- */
+
+.board-table {
+  display: flex;
+  flex-direction: column;
+  flex: none;
+  min-height: 0;
+}
+
+.board-columns {
+  display: flex;
+  gap: var(--field-gap);
+  flex: none;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--board-rule);
+}
+
+.board-col {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  width: calc(var(--cells) * var(--cell));
+  flex: none;
+  overflow: hidden;
+  color: var(--board-dim);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.board-col em {
+  color: var(--board-faint);
+  font-size: 10px;
+  font-style: normal;
+  letter-spacing: 0.14em;
+}
+
+.board-col--title {
+  color: var(--board-ink);
+}
+
+/* ---------- 行与字符矩阵 ---------- */
+
+.board-rows {
+  display: grid;
+  grid-template-rows: repeat(8, minmax(36px, calc(var(--cell) * 1.9)));
+  align-content: center;
+  gap: 3px;
+  flex: none;
+  min-height: 0;
+}
+
+.board-row {
+  display: flex;
+  gap: var(--field-gap);
+  min-height: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.board-row--empty {
+  pointer-events: none;
+}
+
+.board-row[href]:hover,
+.board-row[href]:focus-visible {
+  outline: 2px solid var(--board-accent);
+  outline-offset: 2px;
+}
+
+.board-row[href]:hover .flap,
+.board-row[href]:focus-visible .flap {
+  border-color: var(--board-accent);
+  background: var(--board-accent);
+  color: var(--board-bg);
+}
+
+.board-row[href]:hover .flap::after,
+.board-row[href]:focus-visible .flap::after {
+  background: var(--board-hinge-soft);
+}
+
+.board-row[href]:hover .flap::before,
+.board-row[href]:focus-visible .flap::before {
+  background: var(--board-sheen-strong);
+}
+
+.board-line {
+  display: contents;
+}
+
+.board-field {
+  display: flex;
+  width: calc(var(--cells) * var(--cell));
+  flex: none;
+}
+
+.flap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: var(--cell);
+  height: 100%;
+  flex: none;
+  overflow: hidden;
+  border: 1px solid var(--board-rule);
+  background: var(--board-cell);
+  color: var(--board-ink);
+  perspective: 420px;
+}
+
+/* 上下半片的明暗与中缝。中缝覆盖在字符上，形成机械翻板的切割感。 */
+.flap::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 50% 0;
+  z-index: 2;
+  background: var(--board-sheen);
+  pointer-events: none;
+}
+
+.flap::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  z-index: 3;
+  height: 1px;
+  background: var(--board-hinge);
+  pointer-events: none;
+}
+
+.flap-char {
+  position: relative;
+  z-index: 1;
+  display: block;
+  color: inherit;
+  font-family: var(--display);
+  font-size: calc(var(--cell) * 0.78);
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  transform-origin: 50% 50%;
+  backface-visibility: hidden;
+}
+
+.board-field--title .flap-char {
+  font-weight: 800;
+}
+
+.board-field--date .flap-char {
+  font-variant-numeric: tabular-nums;
+}
+
+.flap--blank .flap-char {
+  color: transparent;
+}
+
+/* 两组同形但不同名的关键帧：交替使用即可在不强制回流的情况下重新开始动画。 */
+.flap.flip-a .flap-char {
+  animation: flap-turn-a 90ms cubic-bezier(0.22, 0.68, 0.32, 1) both;
+}
+
+.flap.flip-b .flap-char {
+  animation: flap-turn-b 90ms cubic-bezier(0.22, 0.68, 0.32, 1) both;
+}
+
+.flap.flip-final .flap-char {
+  animation: flap-settle 180ms cubic-bezier(0.24, 0.72, 0.24, 1) both;
+}
+
+@keyframes flap-turn-a {
+  from {
+    opacity: 0.35;
+    transform: rotateX(-88deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+
+@keyframes flap-turn-b {
+  from {
+    opacity: 0.35;
+    transform: rotateX(-88deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+
+@keyframes flap-settle {
+  0% {
+    opacity: 0.5;
+    transform: rotateX(-92deg);
+  }
+  68% {
+    opacity: 1;
+    transform: rotateX(5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+
+/* ---------- 控制与状态 ---------- */
+
+.board-foot {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: none;
+}
+
+.board-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.board-btn {
+  padding: 7px 11px;
+  border: 1px solid var(--board-rule);
+  border-radius: 0;
+  background: transparent;
+  color: var(--board-dim);
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background-color 0.14s ease,
+    border-color 0.14s ease,
+    color 0.14s ease;
+}
+
+.board-btn:hover,
+.board-btn:focus-visible {
+  border-color: var(--board-ink);
+  background: var(--board-ink);
+  color: var(--board-bg);
+}
+
+.board-btn[aria-pressed="true"] {
+  border-color: var(--board-accent);
+  color: var(--board-accent);
+}
+
+.board-btn:disabled {
+  border-color: var(--board-rule);
+  color: var(--board-disabled);
+  cursor: default;
+}
+
+.board-btn:disabled:hover {
+  border-color: var(--board-rule);
+  background: transparent;
+  color: var(--board-disabled);
+}
+
+.board-page {
+  margin: 0 0 0 auto;
+  color: var(--board-ink);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.16em;
+}
+
+.board-progress {
+  height: 2px;
+  overflow: hidden;
+  background: var(--board-rule);
+}
+
+.board-progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--board-accent);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+@keyframes board-countdown {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.board-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: var(--board-dim);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+.board-dot {
+  width: 6px;
+  height: 6px;
+  flex: none;
+  background: var(--board-accent);
+}
+
+.board.is-paused .board-dot {
+  background: var(--board-dim);
+}
