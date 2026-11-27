@@ -28,7 +28,7 @@ import {
 const encode = (value) => encodeURIComponent(String(value || ''));
 
 export async function renderEnsembles(main, setTitle) {
-  const { ensembles, updated, demo } = await loadEnsembles();
+  const { ensembles } = await loadEnsembles();
   setTitle('乐团');
 
   const sorted = [...ensembles].sort((a, b) => pinyinCompare(a.name, b.name));
@@ -39,7 +39,6 @@ export async function renderEnsembles(main, setTitle) {
     <header class="page-head">
       <p class="kicker"><span>Ensembles</span><span>${sorted.length} 个乐团 / 按拼音排列</span></p>
       <h1>乐团</h1>
-      <p class="notice"><span class="demo-dot" aria-hidden="true"></span>${demo ? '示例数据，非真实票务信息' : '信息来自公开渠道'}${updated ? ` · 更新于 ${esc(formatUpdated(updated))}` : ''}</p>
     </header>
 
     ${adminCreate('ensemble', '新增乐团')}
@@ -92,7 +91,7 @@ export async function renderEnsemble(slug, main, setTitle) {
 }
 
 export async function renderVenues(main, setTitle) {
-  const { venues, updated, demo } = await loadVenues();
+  const { venues } = await loadVenues();
   setTitle('场馆');
 
   const sorted = [...venues].sort((a, b) => pinyinCompare(a.name, b.name));
@@ -103,7 +102,6 @@ export async function renderVenues(main, setTitle) {
     <header class="page-head">
       <p class="kicker"><span>Venues</span><span>${sorted.length} 个场馆 / 按拼音排列</span></p>
       <h1>场馆</h1>
-      <p class="notice"><span class="demo-dot" aria-hidden="true"></span>${demo ? '示例数据，非真实票务信息' : '信息来自公开渠道'}${updated ? ` · 更新于 ${esc(formatUpdated(updated))}` : ''}</p>
     </header>
 
     ${adminCreate('venue', '新增场馆')}

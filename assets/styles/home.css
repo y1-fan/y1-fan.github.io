@@ -101,13 +101,13 @@
 
 /* 字母索引：曲目、乐团、场馆共用 */
 
+/* 字母索引条本身就是页头与索引之间的分隔，不再另画横线。 */
 .alpha-nav {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
   margin: 18px 0 0;
-  padding: 10px 0;
-  border-top: 1px solid var(--ink);
+  padding: 4px 0 10px;
 }
 
 .alpha-chip {

@@ -372,13 +372,11 @@ async function renderWorks(token) {
   if (token !== routeToken) return;
 
   const works = index.works || [];
-  const updated = formatUpdated(index.updated);
   setPageTitle('曲目');
   main.innerHTML = `
     <header class="page-head">
       <p class="kicker"><span>Works</span><span>${works.length} 部作品 / 按作曲家拼音排列</span></p>
       <h1>曲目</h1>
-      <p class="notice"><span class="demo-dot" aria-hidden="true"></span>${index.demo ? '示例数据，非真实票务信息' : '信息来自公开渠道'}${updated ? ` · 更新于 ${esc(updated)}` : ''}</p>
     </header>
 
     ${adminCreate('work', '新增曲目')}
