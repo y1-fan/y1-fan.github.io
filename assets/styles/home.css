@@ -45,9 +45,10 @@
   color: var(--blue);
 }
 
+/* 序列复制 8 份，每轮只移动 1 份；7 份余量始终盖住可视区，接缝不露空。 */
 @keyframes tick {
   to {
-    transform: translateX(-50%);
+    transform: translateX(-12.5%);
   }
 }
 

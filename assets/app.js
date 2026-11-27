@@ -526,7 +526,7 @@ function tickerMarkup(next, upcoming, updated) {
   return `
     <div class="ticker" aria-hidden="true">
       <div class="ticker-track">
-        ${[...items, ...items].map((item) => `<span>${esc(item)}</span>`).join('')}
+        ${items.map((item) => `<span>${esc(item)}</span>`).join('').repeat(8)}
       </div>
     </div>
   `;
