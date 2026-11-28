@@ -232,9 +232,12 @@ function performanceRow(event, perspective) {
   const venue = event.venue
     ? `<a href="#/venue/${encode(event.venueSlug)}">${esc(event.venue)}</a>`
     : '—';
-  const ensemble = event.ensemble
-    ? `<a href="#/ensemble/${encode(event.ensembleSlug)}">${esc(event.ensemble)}</a>`
-    : '—';
+  const ensemble = (event.ensembles || [])
+    .filter((item) => item?.name)
+    .map((item) => (item.slug
+      ? `<a href="#/ensemble/${encode(item.slug)}">${esc(item.name)}</a>`
+      : esc(item.name)))
+    .join(' | ') || '—';
   const place = perspective === 'ensemble'
     ? `${venue}${event.city ? ` · ${esc(event.city)}` : ''}`
     : ensemble;

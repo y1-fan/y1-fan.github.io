@@ -122,7 +122,10 @@ function filterPerformances(items, params) {
   if (work) output = output.filter((item) => (item.works || []).some((entry) => entry.slug === work));
 
   const ensemble = params.get('ensemble');
-  if (ensemble) output = output.filter((item) => item.ensemble?.slug === ensemble);
+  if (ensemble) {
+    output = output.filter((item) => (item.ensembles || []).some((entry) => entry.slug === ensemble)
+      || item.ensemble?.slug === ensemble);
+  }
 
   const venue = params.get('venue');
   if (venue) output = output.filter((item) => item.venue?.slug === venue);

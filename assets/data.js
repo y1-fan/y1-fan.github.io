@@ -3,9 +3,10 @@
  * [OUTPUT]: 导出 loadIndex、loadEvents、loadSearchIndex、loadWork、loadPerformance、
  *           loadEnsembles、loadEnsemble、loadVenues、loadVenue、getUpcoming、getPast、
  *           eventsForWork、formatDateParts、formatDateLong、formatMonth、formatUpdated、
- *           localToday、relativeDay、eventPeople、performanceTitle、pinyinCompare、
+ *           localToday、relativeDay、eventPeople、ensembleText、performanceTitle、pinyinCompare、
  *           pinyinInitial、groupByPinyinInitial、deletePerformance、deleteWork、deleteEnsemble、deleteVenue、clearDataCache、loadHealth。
  * [POS]: 站点唯一的数据访问层。它把 API 的演出对象归一化成视图可消费的形状，
+ *        多乐团保留 ensembles 数组，同时把首个乐团写回 ensemble 兼容旧视图；
  *        并集中处理日期边界；视图不直接 fetch，也不自己判断“未来演出”。
  * [PROTOCOL]: Update this header on change, then check CLAUDE.md
  */
@@ -146,11 +147,24 @@ export function loadVenue(slug) {
  */
 function normalizePerformance(performance) {
   const venue = performance.venue || null;
-  const ensemble = performance.ensemble || null;
+  const sourceEnsembles = Array.isArray(performance.ensembles) && performance.ensembles.length
+    ? performance.ensembles
+    : performance.ensemble ? [performance.ensemble] : [];
+  const ensembles = sourceEnsembles
+    .filter((item) => item && item.name)
+    .map((item) => ({
+      id: item.id,
+      slug: item.slug || '',
+      name: item.name,
+      city: item.city || '',
+      country: item.country || '',
+    }));
+  const ensemble = ensembles[0] || null;
   const works = Array.isArray(performance.works) ? performance.works : [];
 
   return {
     ...performance,
+    ensembles,
     ensemble: ensemble?.name || '',
     ensembleSlug: ensemble?.slug || '',
     ensembleCity: ensemble?.city || '',
@@ -161,6 +175,13 @@ function normalizePerformance(performance) {
     works: works.map((work) => work.slug),
     workItems: works,
   };
+}
+
+/** 多乐团显示文本：按 API 顺序用 | 连接；旧数据回退到单乐团字段。 */
+export function ensembleText(event) {
+  const list = Array.isArray(event?.ensembles) ? event.ensembles : [];
+  if (list.length) return list.map((item) => item?.name).filter(Boolean).join(' | ');
+  return typeof event?.ensemble === 'string' ? event.ensemble.trim() : '';
 }
 
 /* 日期与演出 */
@@ -240,7 +261,7 @@ export function performanceTitle(event) {
   const title = String(event?.title || '').trim();
   if (title) return title;
   const note = String(event?.note || '').trim();
-  const ensemble = String(event?.ensemble || '').trim();
+  const ensemble = ensembleText(event);
   if (ensemble && note) return `${ensemble} · ${note}`;
   if (note) return note;
   if (ensemble) return `${ensemble} 音乐会`;
@@ -324,7 +345,10 @@ export function relativeDay(date, today = localToday()) {
 
 export function eventPeople(event, options = {}) {
   const parts = [];
-  if (options.withEnsemble !== false && event.ensemble) parts.push(event.ensemble);
+  if (options.withEnsemble !== false) {
+    const ensembles = ensembleText(event);
+    if (ensembles) parts.push(ensembles);
+  }
   for (const person of event.soloists || []) {
     if (!person || !person.role) continue;
     parts.push(`${person.role} ${person.name || '待定'}`);

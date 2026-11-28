@@ -24,6 +24,7 @@ import {
   formatUpdated,
   relativeDay,
   eventPeople,
+  ensembleText,
   performanceTitle,
   pinyinCompare,
   groupByPinyinInitial,
@@ -408,9 +409,7 @@ async function renderEvent(id, token) {
   const venue = event.venue
     ? `<a href="#/venue/${encode(event.venueSlug)}">${esc(event.venue)}</a>`
     : '场馆待定';
-  const ensemble = event.ensemble
-    ? `<a href="#/ensemble/${encode(event.ensembleSlug)}">${esc(event.ensemble)}</a>`
-    : '';
+  const ensemble = ensembleLinksMarkup(event);
   const people = eventPeople(event, { withEnsemble: false });
 
   const meta = [
@@ -515,10 +514,11 @@ function programRow(work, index) {
 function tickerMarkup(next, upcoming, updated) {
   const first = next[0];
   const date = first ? formatDateParts(first.date) : null;
+  const ensemble = first ? ensembleText(first) : '';
   const items = [
     `${upcoming.length} 场未来演出`,
     first && date
-      ? `Next / ${date.year}.${date.month}.${date.day} / ${first.ensemble || first.venue} / ${first.city || ''}`
+      ? `Next / ${date.year}.${date.month}.${date.day} / ${ensemble || first.venue} / ${first.city || ''}`
       : 'No upcoming concerts',
     `Updated / ${formatUpdated(updated) || '—'}`,
   ];
@@ -672,6 +672,17 @@ function renderGigs(upcoming, past, eventData, title) {
   `;
 }
 
+/** 多乐团链接：标题里已经出现的乐团不再重复显示。 */
+function ensembleLinksMarkup(event, options = {}) {
+  const title = String(options.omitInTitle || '');
+  return (event.ensembles || [])
+    .filter((item) => item?.name && !(title && title.includes(item.name)))
+    .map((item) => (item.slug
+      ? `<a href="#/ensemble/${encode(item.slug)}">${esc(item.name)}</a>`
+      : esc(item.name)))
+    .join(' | ');
+}
+
 function gigRow(event) {
   const date = formatDateParts(event.date);
   const title = performanceTitle(event);
@@ -680,12 +691,9 @@ function gigRow(event) {
   const venue = event.venue
     ? `<a href="#/venue/${encode(event.venueSlug)}">${esc(event.venue)}</a>`
     : '场馆待定';
-  const ensemble = event.ensemble
-    ? `<a href="#/ensemble/${encode(event.ensembleSlug)}">${esc(event.ensemble)}</a>`
-    : '';
-  const ensembleInTitle = Boolean(event.ensemble && title.includes(event.ensemble));
+  const ensemble = ensembleLinksMarkup(event, { omitInTitle: title });
   const place = [
-    ensembleInTitle ? '' : ensemble,
+    ensemble,
     `${venue}${event.city ? ` · ${esc(event.city)}` : ''}`,
   ].filter(Boolean).join(' · ');
 
@@ -741,10 +749,7 @@ function eventCard(event) {
   const venue = event.venue
     ? `<a href="#/venue/${encode(event.venueSlug)}">${esc(event.venue)}</a>`
     : '场馆待定';
-  const ensembleInTitle = Boolean(event.ensemble && title.includes(event.ensemble));
-  const ensemble = event.ensemble && !ensembleInTitle
-    ? `<a href="#/ensemble/${encode(event.ensembleSlug)}">${esc(event.ensemble)}</a>`
-    : '';
+  const ensemble = ensembleLinksMarkup(event, { omitInTitle: title });
 
   return `
     <article class="event panel hoverable">

@@ -1,6 +1,6 @@
 /*
  * [INPUT]: 依赖 base.css 的字体与深色出发屏令牌。
- * [OUTPUT]: 首屏机场出发屏：八行四列（日期/演出/乐团/场馆）、逐字翻牌、
+ * [OUTPUT]: 首屏机场出发屏：十二行四列（日期/演出/乐团/场馆）、逐字翻牌、
  *           组序号、上一组/暂停/下一组与倒计时进度条。
  * [POS]: 仅在首页显示，位于 header 之前；深色屏幕滚过整屏后才出现明亮主题。
  * [PROTOCOL]: Update this header on change, then check CLAUDE.md
@@ -65,6 +65,7 @@
   gap: clamp(8px, 1.6vh, 18px);
   width: 100%;
   max-width: 1760px;
+  height: 100svh;
   min-height: 100svh;
   margin-inline: auto;
   padding: 18px var(--board-pad) 12px;
@@ -191,7 +192,7 @@
 .board-table {
   display: flex;
   flex-direction: column;
-  flex: none;
+  flex: 1;
   min-height: 0;
 }
 
@@ -230,10 +231,10 @@
 
 .board-rows {
   display: grid;
-  grid-template-rows: repeat(8, minmax(36px, calc(var(--cell) * 1.9)));
+  grid-template-rows: repeat(var(--board-rows, 12), minmax(0, calc(var(--cell) * 1.9)));
   align-content: center;
   gap: 3px;
-  flex: none;
+  flex: 1;
   min-height: 0;
 }
 

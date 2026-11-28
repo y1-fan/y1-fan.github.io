@@ -69,6 +69,7 @@
   }
 
   .board-frame {
+    height: auto;
     min-height: 100svh;
     gap: 8px;
     padding: 10px var(--board-pad) 10px;

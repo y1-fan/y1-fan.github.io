@@ -1,15 +1,15 @@
 /**
  * [INPUT]: 依赖 data.js 的 formatDateParts / performanceTitle 与 md.js 的 escapeHtml；由 app.js 传入未来演出。
- * [OUTPUT]: 导出 buildBoardPages 与 mountBoard。前者把演出记录切成每页 8 行；
+ * [OUTPUT]: 导出 buildBoardPages 与 mountBoard。前者把演出记录切成每页 12 行；
  *           后者渲染首屏出发屏，驱动逐字翻牌、分组循环、自动播放与手动控制。
  * [POS]: 首页首屏的唯一渲染器。它不读取数据文件，只消费 app.js 已汇合的演出。
  * [PROTOCOL]: Update this header on change, then check CLAUDE.md
  */
 
-import { formatDateParts, performanceTitle } from './data.js';
+import { ensembleText, formatDateParts, performanceTitle } from './data.js';
 import { escapeHtml as esc } from './md.js';
 
-const ROWS_PER_PAGE = 8;
+const ROWS_PER_PAGE = 12;
 const AUTO_INTERVAL = 10000;
 
 /* 列宽以“一张牌”为单位。修改这里，行内 --cells 与根级 --cell-divisor 自动跟随。 */
@@ -43,7 +43,7 @@ const SCRAMBLE = [
 /* 数据 */
 
 /**
- * 把按时间排好的演出切成固定 8 行的组。最后一组不足 8 行时，页面用空白牌补齐。
+ * 把按时间排好的演出切成固定 12 行的组。最后一组不足 12 行时，页面用空白牌补齐。
  * 返回值是纯视图模型，不引用原始 JSON，方便日后替换为后台接口。
  */
 export function buildBoardPages(upcoming) {
@@ -61,7 +61,7 @@ function toBoardRow(event) {
   const date = formatDateParts(event.date);
   const dateText = date.month ? `${date.month}${date.day}` : '待定';
   const title = performanceTitle(event);
-  const ensemble = event.ensemble || '—';
+  const ensemble = ensembleText(event) || '—';
   const venue = event.venue || '待定';
 
   return {
@@ -77,7 +77,8 @@ function toBoardRow(event) {
 
 function fieldChars(row, field) {
   if (!row) return [];
-  const chars = [...String(row[field.key] ?? '')];
+  /* 翻牌格只放可见字符：空格不单独占牌，避免标题、乐团与场馆中间出现空档。 */
+  const chars = [...String(row[field.key] ?? '').replace(/\s+/g, '')];
   if (chars.length > field.cells) return [...chars.slice(0, field.cells - 1), '…'];
   return chars;
 }
@@ -182,6 +183,7 @@ export function mountBoard(root, pages, options = {}) {
   root.style.setProperty('--cell-divisor', String(TOTAL_CELLS + (FIELDS.length - 1) * FIELD_GAP_RATIO));
   root.style.setProperty('--field-gap-ratio', String(FIELD_GAP_RATIO));
   root.style.setProperty('--mobile-cells', String(MOBILE_CELLS));
+  root.style.setProperty('--board-rows', String(ROWS_PER_PAGE));
   root.innerHTML = boardMarkup(total, demo);
 
   const rowEls = [...root.querySelectorAll('[data-row]')];
@@ -474,6 +476,7 @@ export function mountBoard(root, pages, options = {}) {
     root.style.removeProperty('--cell-divisor');
     root.style.removeProperty('--field-gap-ratio');
     root.style.removeProperty('--mobile-cells');
+    root.style.removeProperty('--board-rows');
     root.classList.remove('is-paused');
     root.hidden = true;
   }
